@@ -7,11 +7,11 @@ import { newsletters } from "~/data/newsletters";
 
 export default component$(() => {
   return (
-    <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-3xl bg-white/30">
+    <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-3xl bg-white/20">
       <header>
         <h1 class="text-center xdxd !text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-10 md:mb-16 font-heading">
            <span class="bg-gradient-to-r from-primary-600 via-tertiary-600 to-primary-700 bg-clip-text text-transparent">
-              Newsletter
+              Our Newsletter
             </span>
         </h1>
       </header>

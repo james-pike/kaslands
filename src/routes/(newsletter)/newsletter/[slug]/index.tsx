@@ -41,21 +41,20 @@ export default component$(() => {
           <h1 class="leading-tighter font-heading text-primary-700 mx-auto mb-8 max-w-3xl px-4 text-4xl font-bold tracking-tighter sm:px-6 md:text-5xl">
             {post.title}
           </h1>
-          {post.image ? (
-            <img
-              src={post.image}
-              class="mx-auto mt-4 mb-6 max-h-56 max-w-full bg-gray-400 dark:bg-slate-700 sm:rounded-md lg:max-w-6xl"
-              sizes="(max-width: 900px) 400px, 900px"
-              alt={post.excerpt}
-              loading="eager"
-              width={900}
-              height={480}
-            />
-          ) : (
-            <div class="mx-auto max-w-3xl px-4 sm:px-6">
-              <div class="border-t dark:border-slate-700" />
-            </div>
-          )}
+{post.image ? (
+  <div class="mx-auto mt-4 mb-6 max-w-full overflow-hidden bg-gray-400 dark:bg-slate-700 sm:rounded-md lg:max-w-4xl">
+    <img
+      src={post.image}
+      class="h-48 w-full object-cover sm:h-64 lg:h-80"
+      alt={post.excerpt}
+      loading="eager"
+    />
+  </div>
+) : (
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+    <div class="border-t dark:border-slate-700" />
+  </div>
+)}
         </header>
         <div
           class="prose-md prose-headings:font-heading prose-headings:leading-tighter container prose prose-lg mx-auto mt-8 max-w-3xl px-6 prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg dark:prose-invert dark:prose-headings:text-slate-300 dark:prose-a:text-primary-400 sm:px-6 lg:prose-xl"
