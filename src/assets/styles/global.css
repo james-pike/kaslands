@@ -1,0 +1,322 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+ /* Set Della Respira as default font for body */
+  body {
+    font-family: "Della Respira", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+    .border-half {
+    border-width: 0.5px;
+  }
+
+/* Watercolor texture with enhanced noise */
+.bg-watercolor-texture {
+  background-image: 
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+  background-repeat: repeat;
+  background-size: 150px 150px; /* Smaller size for denser texture */
+  opacity: 0.5; /* Increased opacity for more visible texture */
+}
+
+.fade-mask-center {
+  mask-image: radial-gradient(ellipse 120% 50% at 50% 20%, black 75%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 120% 50% at 50% 20%, black 75%, transparent 95%);
+}
+
+.fade-mask-top {
+  mask-image: radial-gradient(ellipse 120% 50% at 50% 80%, black 75%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 120% 50% at 50% 80%, black 75%, transparent 95%);
+}
+
+
+
+/* Optional: Layer a second subtle texture for added depth (uncomment if desired) */
+/* .bg-watercolor-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Cfilter id="noiseFilter2"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="2" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter2)"/%3E%3C/svg%3E');
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.2;
+} */
+
+/* Floating animation for blurry balls */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@layer base {
+
+
+
+  /* CSS PARSER: START - DO NOT REMOVE */
+  .simple {
+    --border-width: 0px;
+    --stroke-width: 0px;
+    --shadow-base: 0 1px 2px 0 rgba(0, 0, 0, 0.01);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 1);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.01);
+    --transform-press: scale(0.95);
+  }
+
+}
+
+
+
+
+  /* use colors from colors.ts */
+
+
+
+.xdxd {
+  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+  font-size: 1.05em; /* Increases base font size by 10%, adjust as needed */
+  font-weight: 600; /* Explicitly set to normal weight */
+}
+
+.della {
+  font-family: "Della Respira", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+.header .lead {
+  max-width: 620px;
+}
+.gallery-container a {
+  width: 240px;
+  margin: 5px;
+}
+
+.gallery-container a img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+}
+
+
+@layer components {
+
+
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-scroll {
+    display: flex;
+    animation: scroll-left 40s linear infinite;
+    white-space: nowrap;
+    animation-delay: 1.5s; /* <-- Delay before scroll starts */
+
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-75%);
+    }
+  }
+  
+  /* Ensure the parent container hides overflow */
+  .relative.overflow-hidden {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Optional: Pause animation on hover */
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+  
+ 
+
+
+  .carousel-conditional {
+    position: relative;
+    height: 200px;
+  }
+   
+  .carousel-conditional .carousel-slide {
+    opacity: 0;
+    transition: opacity 0.5s;
+    /* NOT display block */
+    display: revert;
+    position: absolute;
+    inset: 0;
+  }
+   
+  .carousel-conditional .carousel-slide[data-active] {
+    opacity: 1;
+  }
+  
+
+  [data-aw-toggle-menu] path {
+    @apply transition;
+  }
+  [data-aw-toggle-menu].expanded g > path:first-child {
+    @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
+  }
+
+  [data-aw-toggle-menu].expanded g > path:last-child {
+    @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+  }
+}
+
+
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+.carousel-animation {
+  transition: 0.35s transform cubic-bezier(0.57, 0.16, 0.95, 0.67);
+}
+
+
+
+.carousel-pagination-bullet {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.carousel-pagination-bullet[data-active] {
+  background-color: #000 !important;
+  transform: scale(1.2);
+}
+
+
+
+.texture-fixed{
+  background-attachment: fixed;
+  background-color:  hsl(var(--primary) /10%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.texture{
+  background-color:  hsl(var(--primary) /10%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+@layer qwik-ui {
+  [data-qui-carousel-viewport] {
+    overflow: hidden;
+  }
+
+  [data-qui-carousel-scroller] {
+    transform: var(--transform);
+    will-change: transform;
+    transition: 0.3s transform ease-out;
+
+    display: flex;
+    gap: var(--gap);
+    flex-direction: var(--orientation);
+
+    /* for initial slide position */
+    scroll-snap-type: both mandatory;
+    max-height: calc(var(--max-slide-height));
+  }
+
+  [data-qui-carousel-slide] {
+    /* default, feel free to override */
+    --total-gap-width: calc(var(--gap) * (var(--slides-per-view) - 1));
+    --available-slide-width: calc(100% - var(--total-gap-width));
+    --slide-width: calc(var(--available-slide-width) / var(--slides-per-view));
+
+    flex-basis: var(--slide-width);
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-qui-carousel-player] {
+      display: none;
+    }
+  }
+}
+
+/* src/root.css */
+.carousel-container {
+  overflow: hidden;
+}
+.carousel-container .flex {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-container .min-w-full {
+  flex: 0 0 100%;
+}
+@media (min-width: 768px) {
+  .carousel-container .md\:min-w-\[50\%\] {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .carousel-container .lg\:min-w-\[33\.333\%\] {
+    flex: 0 0 33.333%;
+  }
+}
+
+/* src/root.css */
+.scrollbar-invisible::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-invisible {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
