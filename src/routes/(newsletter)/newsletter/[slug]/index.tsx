@@ -38,7 +38,7 @@ export default component$(() => {
               })}
             </time>
           </p>
-          <h1 class="leading-tighter font-heading mx-auto mb-8 max-w-3xl px-4 text-4xl font-bold tracking-tighter sm:px-6 md:text-5xl">
+          <h1 class="leading-tighter font-heading text-primary-700 mx-auto mb-8 max-w-3xl px-4 text-4xl font-bold tracking-tighter sm:px-6 md:text-5xl">
             {post.title}
           </h1>
           {post.image ? (
