@@ -242,9 +242,7 @@ export default component$(() => {
             <p class="text-xl text-primary-700 dark:text-primary-300">
               Loading gallery images...
             </p>
-            <p class="text-sm text-primary-600 dark:text-primary-400 mt-2">
-              Check browser console for debugging information
-            </p>
+          
           </div>
         </div>
       </section>
@@ -276,7 +274,7 @@ export default component$(() => {
                 <img
                   src={galleryImages.value[currentIndex.value].src}
                   alt={galleryImages.value[currentIndex.value].alt}
-                  class="w-full max-h-[80vh] object-contain transition-opacity duration-500"
+                  class="w-full max-h-[60vh] object-contain transition-opacity duration-500"
                   onError$={(event) => {
                     console.error('Image failed to load:', galleryImages.value[currentIndex.value].src);
                     // You could set a fallback image here

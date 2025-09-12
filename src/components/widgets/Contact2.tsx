@@ -47,16 +47,16 @@ export default component$(() => {
           </h2>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
+        <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
           {/* Left side image */}
-          <div class="relative rounded-2xl overflow-hidden shadow-xl border-2 border-secondary-200/50 flex justify-center">
+          <div class="relative rounded-2xl overflow-hidden shadow-xl border-2 border-secondary-200/50">
             <Image
               src="/images/space.jpeg"
               layout="constrained"
               width={600}
               height={400}
               alt="Terra Pottery Studio"
-              class="w-full h-auto max-w-full object-cover"
+              class="w-full h-auto max-w-full mx-auto object-cover"
               breakpoints={[320, 480, 640, 768, 1024]}
             />
             <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/60 via-transparent to-transparent"></div>

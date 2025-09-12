@@ -127,7 +127,7 @@ export default component$(() => {
                 {/* Info */}
                 <div class="flex flex-col p-4">
                   <div class="flex flex-row items-center justify-center gap-4 mb-3">
-                    <h3 class="text-base font-bold text-secondary-900 dark:text-secondary-100 line-clamp-2">
+                    <h3 class="text-base font-bold text-secondary-900 dark:text-secondary-100 text-center line-clamp-2">
                       {workshop.name}
                     </h3>
                     {workshop.isActive ? (
