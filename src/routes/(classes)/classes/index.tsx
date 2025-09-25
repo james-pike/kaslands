@@ -15,23 +15,25 @@ interface Workshop {
 export const useClassesData = routeLoader$(async () => {
   try {
     const classes = await getClasses();
-    return classes.map(classItem => ({
-      id: classItem.id?.toString() || '',
-      name: classItem.name?.toString() || '',
-      description: classItem.description?.toString() || '',
-      image: classItem.image?.toString() || '',
-      url: classItem.url?.toString() || '',
-      // ✅ Normalize number (0/1) into booleans
-      isActive: classItem.isActive === 1,
-    }));
+    return classes
+      .map(classItem => ({
+        id: classItem.id?.toString() || '',
+        name: classItem.name?.toString() || '',
+        description: classItem.description?.toString() || '',
+        image: classItem.image?.toString() || '',
+        url: classItem.url?.toString() || '',
+        // ✅ Normalize number (0/1) into booleans
+        isActive: classItem.isActive === 1,
+      }))
+      // ✅ Filter out inactive classes
+      .filter(classItem => classItem.isActive);
   } catch (error) {
     console.error('Error fetching classes:', error);
-  throw error; // or show fallback with reason
-    }
+    throw error; // or show fallback with reason
+  }
 });
 
 export default component$(() => {
-  const expandedWorkshop = useSignal<string | null>(null);
   const classesData = useClassesData();
   const workshops = useSignal<Workshop[]>([]);
 
@@ -85,29 +87,25 @@ export default component$(() => {
             <p class="text-primary-700 dark:text-primary-300 text-lg">No classes available at the moment.</p>
           </div>
         ) : (
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
             {workshops.value.map((workshop) => (
-              <div
+              <a
                 key={workshop.id}
+                href={workshop.url || "https://bookeo.com/earthenvessels"}
+                target="_blank"
+                rel="noopener noreferrer"
                 class={[
-                  "break-inside-avoid group backdrop-blur-sm border-2 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-xl hover:border-secondary-200 hover:bg-white/45",
-                  expandedWorkshop.value === workshop.id
-                    ? "bg-white/40 border-secondary-200"
-                    : "bg-white/35 border-primary-200 dark:border-secondary-700",
+                  "break-inside-avoid group backdrop-blur-sm border-2 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-xl hover:border-secondary-200 hover:bg-white/45 cursor-pointer block mb-6",
+                  "bg-white/35 border-primary-200 dark:border-secondary-700",
                 ]}
                 style={{
-                  minHeight: "280px",
                   transitionProperty:
                     "transform, opacity, margin, box-shadow, background-color, border-color",
-                  transform: expandedWorkshop.value === workshop.id ? "scale(1.02)" : "scale(1)",
                 }}
                 role="button"
                 tabIndex={0}
-                aria-expanded={expandedWorkshop.value === workshop.id}
-                onClick$={() => {
-                  expandedWorkshop.value =
-                    expandedWorkshop.value === workshop.id ? null : workshop.id;
-                }}
+                aria-label={`Book ${workshop.name}`}
+                // Card clicks will now just navigate to the booking URL
               >
                 {/* Image */}
                 {workshop.image && (
@@ -130,44 +128,23 @@ export default component$(() => {
                     <h3 class="text-base font-bold text-secondary-900 dark:text-secondary-100 text-center line-clamp-2">
                       {workshop.name}
                     </h3>
-                    {workshop.isActive ? (
-                      <a
-                        href={workshop.url || "https://bookeo.com/earthenvessels"}
-                        class="px-3 py-1 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-sm font-medium rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-200"
-                        role="button"
-                        aria-label={`Book ${workshop.name}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Book
-                      </a>
-                    ) : (
-                      <button
-                        class="px-3 py-1 bg-gradient-to-r from-yellow-400 to-yellow-400 text-white text-sm font-medium rounded-xl transition-all duration-200"
-                        aria-label={`Archived ${workshop.name}`}
-                        disabled
-                      >
-                        Archived
-                      </button>
-                    )}
+                    <span
+                      class="px-3 py-1 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-sm font-medium rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-200"
+                      role="button"
+                      aria-label={`Book ${workshop.name}`}
+                    >
+                      Book
+                    </span>
                   </div>
 
                   {/* Description */}
-                  <p
-                    class={[
-                      "text-primary-700 dark:text-primary-300 text-sm text-center transition-all duration-300 ease-in-out",
-                      expandedWorkshop.value !== workshop.id && "line-clamp-4",
-                    ]}
-                    style={{
-                      maxHeight: expandedWorkshop.value === workshop.id ? "1000px" : "6em",
-                      overflow: "hidden",
-                      transitionProperty: "max-height",
-                    }}
-                  >
-                    {workshop.description}
-                  </p>
+                  <div>
+                    <p class="text-primary-700 dark:text-primary-300 text-sm text-center">
+                      {workshop.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         )}
