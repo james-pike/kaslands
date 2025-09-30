@@ -25,7 +25,7 @@ export default component$(() => {
   }
 
   return (
-    <section class="mx-auto py-8 sm:py-16 lg:py-20">
+    <section class="mx-auto max-w-2xl py-8 sm:py-16 lg:py-20">
       <article>
         <header class={post.image ? "text-center" : ""}>
           <p class="mx-auto max-w-3xl px-4 sm:px-6">
