@@ -9,10 +9,13 @@ import LandingCards from "~/components/LandingCards";
 export default component$(() => {
   return (
     <>
+<div class="md:pt-5 pt-2">
+       <div class=" hidden md:block absolute top-10 left-[480px] w-[700px] h-[500px]  bg-primary-200/80 rounded-full blur-xl animate-float" aria-hidden="true"></div> 
+
       <Hero />
     
       <LandingCards/>
-      
+      </div>
     </>
   );
 });

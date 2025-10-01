@@ -92,7 +92,7 @@ export default component$(() => {
    {/* Banner - Both mobile and desktop */}
       <div
         class={`
-          bg-primary-200/70 max-w-7xl md:mx-auto 
+          bg-primary-200/70 max-w-7xl md:mx-auto px-0.5
            shadow-md
           transition-all duration-100 ease-in-out
           ${store.showBanner ? 'h-auto py-0.5 opacity-100' : 'h-0 py-0 opacity-0 overflow-hidden'}
