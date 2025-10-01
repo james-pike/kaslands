@@ -7,7 +7,9 @@ import Footer from "~/components/widgets/Footer";
 import { tursoClient } from "~/lib/turso";
 //
 
-interface Banner { id: number; title: string; subtitle: string; message: string; }
+interface Banner {
+  length: number; id: number; title: string; subtitle: string; message: string; 
+}
 
 export const useBannerLoader = routeLoader$(async (event) => { try { const client = tursoClient(event); const result = await client.execute("SELECT * FROM banners LIMIT 1"); if (result.rows.length === 0) { return null; } const row = result.rows[0]; return { id: Number(row.id) || 0, title: String(row.title) || '', subtitle: String(row.subtitle) || '', message: String(row.message) || '', } as Banner; } catch (error) { console.error("Error loading banner:", error); return null; } });
 
@@ -17,7 +19,8 @@ export default component$(() => {
   });
   return (
     <>
-      <main class="mt-20">
+      <main class="mt-10">
+        
         <Slot />
       </main>
       <Footer />

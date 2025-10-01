@@ -4,12 +4,13 @@ import { Image } from "@unpic/qwik";
 export default component$(() => {
   return (
     <section class="relative overflow-hidden">
+      
       {/* Background with pottery texture */}
       <div class="absolute inset-0 opacity-20" aria-hidden="true"></div>
 
       {/* Floating decorative elements */}
    
-   
+
       
 
       <div class="grid grid-cols-1 md:grid-cols-2 items-center">

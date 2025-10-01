@@ -42,16 +42,16 @@ export default component$(() => {
         <ServiceWorkerRegister />
         {/* Image preloads with correct types */}
         <link rel="preload" href="/images/logo22.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/images/bowls.jpeg" as="image" type="image/jpeg" />
-        <link rel="preload" href="/images/turtle.jpeg" as="image" type="image/jpeg" />
-        <link rel="preload" href="/images/lantern.jpeg" as="image" type="image/jpeg" />
         <link rel="preload" href="/images/hero.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/images/mug.jpg" as="image" type="image/jpeg" />
         <link rel="preload" href="/images/logo2-cropped.svg" as="image" type="image/svg+xml" />
       </head>
-      <body class="bg-white antialiased -mt-20">
+      <body class=" antialiased ">
         <Header />
         <div class="relative md:border-x mx-auto max-w-7xl overflow-x-hidden">
+
+        
+                       {/* <div class="absolute top-0 left-80 w-[600px] h-[600px]  bg-primary-200 rounded-full blur-xl animate-float" aria-hidden="true"></div> */}
+
           <div class="absolute inset-0 z-[-1] bg-watercolor-texture opacity-50 bg-secondary-100/50" aria-hidden="true"></div>
           <div class="absolute inset-0 z-[-1] bg-gradient-to-br from-primary-100/95 via-primary-200/80 to-tertiary-200/85" aria-hidden="true"></div>
           <div class="absolute inset-0 z-[-1] bg-gradient-to-t from-tertiary-300/40 via-primary-200/50 to-primary-100/60" aria-hidden="true"></div>
