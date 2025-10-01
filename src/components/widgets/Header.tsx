@@ -102,10 +102,10 @@ export default component$(() => {
           <div class="flex items-center justify-between gap-2">
             <div class="flex-1 min-w-0 overflow-hidden">
               {/* Mobile: Scrolling text */}
-              <div class="md:hidden relative h-6 flex items-center">
+              <div class="md:hidden relative h-6 flex items-center text-primary-700">
                 <div class="animate-scroll whitespace-nowrap">
                   <span class="inline-flex items-center gap-2 mx-3">
-                    <h3 class="font-bold text-xs ">{bannerMessages.value?.title}</h3>
+                    <h3 class="font-bold text-xs text-primary-600 ">{bannerMessages.value?.title}</h3>
                     <span class="text-xs opacity-90">•</span>
                     <span class="text-xs opacity-90">{bannerMessages.value?.subtitle}</span>
                                         <span class="text-xs opacity-90">•</span>
@@ -115,7 +115,7 @@ export default component$(() => {
                   </span>
                   {/* Duplicate for seamless loop */}
                   <span class="inline-flex items-center gap-2">
-                    <h3 class="font-bold text-xs">{bannerMessages.value?.title}</h3>
+                    <h3 class="font-bold text-xs text-primary-600">{bannerMessages.value?.title}</h3>
                     <span class="text-xs opacity-90">•</span>
                     <span class="text-xs opacity-90">{bannerMessages.value?.subtitle}</span>
                                         <span class="text-xs opacity-90">•</span>
@@ -127,8 +127,8 @@ export default component$(() => {
               </div>
               
               {/* Desktop: Static wrapped text */}
-              <div class="hidden md:flex items-center gap-2 flex-wrap">
-                <h3 class="font-bold text-xs  whitespace-nowrap">{bannerMessages.value?.title}</h3>
+              <div class="hidden md:flex items-center gap-2 flex-wrap text-primary-700">
+                <h3 class="font-bold text-xs text-primary-600 whitespace-nowrap">{bannerMessages.value?.title}</h3>
                 <span class="text-xs opacity-90">•</span>
                 <span class="text-xs md:text-sm opacity-90">{bannerMessages.value?.subtitle}</span>
                                     <span class="text-xs opacity-90">•</span>
