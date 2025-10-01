@@ -104,7 +104,7 @@ export default component$(() => {
               {/* Mobile: Scrolling text */}
               <div class="md:hidden relative h-6 flex items-center">
                 <div class="animate-scroll whitespace-nowrap">
-                  <span class="inline-flex items-center gap-2 mx-2">
+                  <span class="inline-flex items-center gap-2 mx-3">
                     <h3 class="font-bold text-xs ">{bannerMessages.value?.title}</h3>
                     <span class="text-xs opacity-90">•</span>
                     <span class="text-xs opacity-90">{bannerMessages.value?.subtitle}</span>
