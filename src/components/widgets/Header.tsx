@@ -111,7 +111,7 @@ export default component$(() => {
                                         <span class="text-xs opacity-90">•</span>
 
                     <span class="text-xs opacity-90">{bannerMessages.value?.message}</span>
-                    <span class="text-xs opacity-90 mx-8">•</span>
+                    <span class="text-xs opacity-0 mx-8">•</span>
                   </span>
                   {/* Duplicate for seamless loop */}
                   <span class="inline-flex items-center gap-2">
@@ -121,7 +121,7 @@ export default component$(() => {
                                         <span class="text-xs opacity-90">•</span>
 
                     <span class="text-xs opacity-90">{bannerMessages.value?.message}</span>
-                    <span class="text-xs opacity-90 mx-8">•</span>
+                    <span class="text-xs opacity-0 mx-8">•</span>
                   </span>
                 </div>
               </div>

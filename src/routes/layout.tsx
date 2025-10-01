@@ -19,7 +19,7 @@ export default component$(() => {
   });
   return (
     <>
-      <main class="mt-10">
+      <main class="mt-2">
         
         <Slot />
       </main>

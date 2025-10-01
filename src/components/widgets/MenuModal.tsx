@@ -157,7 +157,7 @@ export default component$(() => {
   return (
     <>
       <Modal.Root bind:show={show}>
-        <div class="absolute top-2 right-2  md:static">
+        <div class="absolute top-2 right-3  md:static">
           <Modal.Trigger
             class={cn(
               "p-2 py-1  rounded-lg border backdrop-blur-sm transition-all duration-300",
