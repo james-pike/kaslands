@@ -105,35 +105,35 @@ export default component$(() => {
               <div class="md:hidden relative h-6 flex items-center text-primary-700">
                 <div class="animate-scroll whitespace-nowrap">
                   <span class="inline-flex items-center gap-2 mx-3">
-                    <h3 class="font-bold text-xs text-primary-600 ">{bannerMessages.value?.title}</h3>
-                    <span class="text-xs opacity-90">•</span>
-                    <span class="text-xs opacity-90">{bannerMessages.value?.subtitle}</span>
+                    <h3 class="font-bold text-sm text-primary-600 ">{bannerMessages.value?.title}</h3>
+                    <span class="text-md opacity-90">•</span>
+                    <span class="text-md opacity-90">{bannerMessages.value?.subtitle}</span>
                                         <span class="text-xs opacity-90">•</span>
 
-                    <span class="text-xs opacity-90">{bannerMessages.value?.message}</span>
-                    <span class="text-xs opacity-0 mx-8">•</span>
+                    <span class="text-md opacity-90">{bannerMessages.value?.message}</span>
+                    <span class="text-md opacity-0 mx-8">•</span>
                   </span>
                   {/* Duplicate for seamless loop */}
                   <span class="inline-flex items-center gap-2">
                     <h3 class="font-bold text-xs text-primary-600">{bannerMessages.value?.title}</h3>
-                    <span class="text-xs opacity-90">•</span>
-                    <span class="text-xs opacity-90">{bannerMessages.value?.subtitle}</span>
+                    <span class="text-md opacity-90">•</span>
+                    <span class="text-md opacity-90">{bannerMessages.value?.subtitle}</span>
                                         <span class="text-xs opacity-90">•</span>
 
-                    <span class="text-xs opacity-90">{bannerMessages.value?.message}</span>
-                    <span class="text-xs opacity-0 mx-8">•</span>
+                    <span class="text-md opacity-90">{bannerMessages.value?.message}</span>
+                    <span class="text-md opacity-0 mx-8">•</span>
                   </span>
                 </div>
               </div>
               
               {/* Desktop: Static wrapped text */}
               <div class="hidden md:flex items-center gap-2 flex-wrap text-primary-700">
-                <h3 class="font-bold text-xs text-primary-600 whitespace-nowrap">{bannerMessages.value?.title}</h3>
-                <span class="text-xs opacity-90">•</span>
-                <span class="text-xs md:text-sm opacity-90">{bannerMessages.value?.subtitle}</span>
-                                    <span class="text-xs opacity-90">•</span>
+                <h3 class="font-bold text-md text-primary-600 whitespace-nowrap">{bannerMessages.value?.title}</h3>
+                <span class="text-md opacity-90">•</span>
+                <span class="text-md md:text-md opacity-90">{bannerMessages.value?.subtitle}</span>
+                                    <span class="text-sm opacity-90">•</span>
 
-                <span class="text-xs md:text-sm opacity-90">{bannerMessages.value?.message}</span>
+                <span class="text-md md:text-sm opacity-90">{bannerMessages.value?.message}</span>
               </div>
             </div>
           </div>
