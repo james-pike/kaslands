@@ -10,6 +10,8 @@ export default component$(() => {
   return (
     <>
 <div class="md:pt-5 pt-2">
+         <div class=" hidden md:block absolute top-10 left-[46%] -translate-x-[46%] w-[700px] h-[500px]  bg-gradient-to-br from-primary-200/70  to primary-200/70 rounded-full blur-xl animate-float" aria-hidden="true"></div> 
+
   <div class="hidden md:block absolute top-8 left-[44%] -translate-x-[44%] w-[300px] h-[300px] border-[1px] border-primary-500/80 rounded-full blur-sm animate-float" aria-hidden="true"></div> 
  
    <div class="hidden md:block absolute top-10 left-[85%] -translate-x-[85%] w-[200px] h-[200px] border-[1px] border-primary-500/80 rounded-full blur-sm animate-floatx" aria-hidden="true"></div> 
