@@ -16,6 +16,7 @@ export default component$(() => {
   const isHomeRoute = location.url.pathname === "/";
 
   const bannerMessages = useBannerLoader(); // Ensure the banner loader is invoked
+  const hasBannerMessages = useSignal<boolean>(false);
   
 
   // Hardcoded banner data for testing - array for multiple messages
@@ -43,6 +44,10 @@ export default component$(() => {
       store.isMobile = e.matches;
     };
     mediaQuery.addEventListener("change", handler);
+
+    // Check if banner messages exist and are valid
+    hasBannerMessages.value = !!(bannerMessages.value && 
+      (Array.isArray(bannerMessages.value) ? bannerMessages.value.length > 0 : !!bannerMessages.value));
 
     // Cycle through banner messages every 4 seconds (only if there are multiple messages)
     let interval: NodeJS.Timeout | undefined;
@@ -89,56 +94,54 @@ export default component$(() => {
   return (
     <>
       {/* Banner - Both mobile and desktop */}
-   {/* Banner - Both mobile and desktop */}
-      <div
-        class={`
-          bg-primary-200/70 max-w-7xl md:mx-auto px-0.5
-           shadow-md
-          transition-all duration-100 ease-in-out
-          ${store.showBanner ? 'h-auto py-0.5 opacity-100' : 'h-0 py-0 opacity-0 overflow-hidden'}
-        `}
-      >
-        <div class="mx-auto px-0 md:px-6 max-w-7xl">
-          <div class="flex items-center justify-between gap-2">
-            <div class="flex-1 min-w-0 overflow-hidden">
-              {/* Mobile: Scrolling text */}
-              <div class="md:hidden relative h-6 flex items-center text-primary-700">
-                <div class="animate-scroll whitespace-nowrap">
-                  <span class="inline-flex items-center gap-2 mx-3">
-                    <h3 class="font-bold text-md text-primary-600 ">{bannerMessages.value?.title}</h3>
-                    <span class="text-md opacity-90">•</span>
-                    <span class="text-md opacity-90">{bannerMessages.value?.subtitle}</span>
-                                        <span class="text-xs opacity-90">•</span>
-
-                    <span class="text-md opacity-90">{bannerMessages.value?.message}</span>
-                    <span class="text-md opacity-0 mx-8">•</span>
-                  </span>
-                  {/* Duplicate for seamless loop */}
-                  <span class="inline-flex items-center gap-2">
-                    <h3 class="font-bold text-md text-primary-600">{bannerMessages.value?.title}</h3>
-                    <span class="text-md opacity-90">•</span>
-                    <span class="text-md opacity-90">{bannerMessages.value?.subtitle}</span>
-                                        <span class="text-md opacity-90">•</span>
-
-                    <span class="text-md opacity-90">{bannerMessages.value?.message}</span>
-                    <span class="text-md opacity-0 mx-8">•</span>
-                  </span>
+      {(hasBannerMessages.value ?? false) && (
+        <div
+          class={`
+            bg-primary-200/70 max-w-7xl md:mx-auto px-0.5
+             shadow-md
+            transition-all duration-100 ease-in-out
+            ${store.showBanner ? 'h-auto py-0.5 opacity-100' : 'h-0 py-0 opacity-0 overflow-hidden'}
+          `}
+        >
+          <div class="mx-auto px-0 md:px-6 max-w-7xl">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex-1 min-w-0 overflow-hidden">
+                {/* Mobile: Scrolling text */}
+                <div class="md:hidden relative h-6 flex items-center text-primary-700">
+                  <div class="animate-scroll whitespace-nowrap">
+                    <span class="inline-flex items-center gap-2 mx-3">
+                      <h3 class="font-bold text-md text-primary-600 ">{bannerMessages.value?.title}</h3>
+                      <span class="text-md opacity-90">•</span>
+                      <span class="text-md opacity-90">{bannerMessages.value?.subtitle}</span>
+                      <span class="text-xs opacity-90">•</span>
+                      <span class="text-md opacity-90">{bannerMessages.value?.message}</span>
+                      <span class="text-md opacity-0 mx-8">•</span>
+                    </span>
+                    {/* Duplicate for seamless loop */}
+                    <span class="inline-flex items-center gap-2">
+                      <h3 class="font-bold text-md text-primary-600">{bannerMessages.value?.title}</h3>
+                      <span class="text-md opacity-90">•</span>
+                      <span class="text-md opacity-90">{bannerMessages.value?.subtitle}</span>
+                      <span class="text-md opacity-90">•</span>
+                      <span class="text-md opacity-90">{bannerMessages.value?.message}</span>
+                      <span class="text-md opacity-0 mx-8">•</span>
+                    </span>
+                  </div>
                 </div>
-              </div>
-              
-              {/* Desktop: Static wrapped text */}
-              <div class="hidden md:flex items-center gap-2 flex-wrap text-primary-700">
-                <h3 class="font-bold text-md text-primary-600 whitespace-nowrap">{bannerMessages.value?.title}</h3>
-                <span class="text-md opacity-90">•</span>
-                <span class="text-md md:text-md opacity-90">{bannerMessages.value?.subtitle}</span>
-                                    <span class="text-sm opacity-90">•</span>
-
-                <span class="text-md md:text-sm opacity-90">{bannerMessages.value?.message}</span>
+                
+                {/* Desktop: Static wrapped text */}
+                <div class="hidden md:flex items-center gap-2 flex-wrap text-primary-700">
+                  <h3 class="font-bold text-md text-primary-600 whitespace-nowrap">{bannerMessages.value?.title}</h3>
+                  <span class="text-md opacity-90">•</span>
+                  <span class="text-md md:text-md opacity-90">{bannerMessages.value?.subtitle}</span>
+                  <span class="text-sm opacity-90">•</span>
+                  <span class="text-md md:text-sm opacity-90">{bannerMessages.value?.message}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       
       <style>
         {`
