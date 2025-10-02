@@ -157,9 +157,9 @@ export default component$(() => {
               </span>
             </h2>
           </div>
-          <div class="text-center py-12 text-primary-600 text-lg">
+          {/* <div class="text-center py-12 text-primary-600 text-lg">
             Loading reviews...
-          </div>
+          </div> */}
         </div>
       </section>
     );

@@ -91,7 +91,7 @@ export default component$(() => {
               Frequently Asked Questions
             </span>
           </h2>
-          <p class="text-primary-700 dark:text-primary-300">Loading FAQs...</p>
+          {/* <p class="text-primary-700 dark:text-primary-300">Loading FAQs...</p> */}
         </div>
       </section>
     );

@@ -84,7 +84,7 @@ export default component$(() => {
 
         {workshops.value.length === 0 ? (
           <div class="text-center py-12">
-            <p class="text-primary-700 dark:text-primary-300 text-lg">No classes available at the moment.</p>
+            {/* <p class="text-primary-700 dark:text-primary-300 text-lg"></p> */}
           </div>
         ) : (
           <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
