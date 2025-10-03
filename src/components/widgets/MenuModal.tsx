@@ -161,7 +161,7 @@ export default component$(() => {
         <div class="absolute top-2 right-3  md:static">
           <Modal.Trigger
             class={cn(
-              "p-2 py-1  rounded-lg border backdrop-blur-sm transition-all duration-300",
+              "p-2 py-1 -mt-1 rounded-lg border backdrop-blur-sm transition-all duration-300",
               "bg-white/35 mb-1 border-primary-200 dark:border-secondary-700 hover:shadow-xl hover:bg-white/45"
             )}
           >
@@ -209,7 +209,7 @@ export default component$(() => {
       <img
         src="/images/sticker.webp"
         alt="Jar Icon"
-        class="w-6 h-6 transform transition-transform duration-300 group-hover:rotate-12 group-hover:translate-y-1 group-hover:-translate-x-1"
+        class="w-6 h-6 transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
       />
     </span>
     <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>

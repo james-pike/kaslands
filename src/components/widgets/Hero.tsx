@@ -13,7 +13,7 @@ export default component$(() => {
 
       
 
-      <div class="grid grid-cols-1 md:grid-cols-2 items-center bg-primary-300">
+      <div class="grid grid-cols-1 md:grid-cols-3 items-center bg-primary-300">
         {/* Mobile Logo */}
         <img
           src="/images/logo.jpg"
@@ -21,8 +21,8 @@ export default component$(() => {
           class=" h-auto border-x border-8 border-primary-300 border-t-0  w-full md:hidden"
         />
 
-        {/* Left Column (Desktop) / Text Content (Mobile) */}
-        <div class="relative z-10 order-1 flex items-center justify-center px-4 pt-4 pb-10 md:px-8 md:py-12 md:order-1">
+        {/* Left Column (Desktop) / Text Content (Mobile) - Takes up 2 columns on desktop */}
+        <div class="relative z-10 order-1 md:col-span-2 flex items-center justify-center px-4 pt-4 pb-10 md:px-8 md:py-12 md:order-1">
           <div class="text-center md:text-left px-6">
             {/* Headline (Desktop only) */}
             <h1 class=" hidden md:block text-4xl md:text-6xl font-bold tracking-tight md:mb-4 mb-8 md:-mt-0  ">
@@ -47,9 +47,11 @@ No Team, No Utility. Straight meme! Laugh and Buy everytime we convert or get bl
               >
                 <span class="relative z-10 flex items-center gap-1">
                   Get $BMT
-                  <svg class="w-5 h-5 -ml-0.5 transform group-hover:translate-x-0.75 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
+                    <img
+        src="/images/sticker.webp"
+        alt="Jar Icon"
+        class="w-6 h-6 transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+      />
                 </span>
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent opacity-0 group-hover:opacity-90 transform group-hover:translate-x-full transition-all duration-500"></div>
@@ -81,7 +83,7 @@ No Team, No Utility. Straight meme! Laugh and Buy everytime we convert or get bl
                 aria-label="Book a workshop"
               >
                 <span class="relative z-10 flex items-center gap-1">
-                  Follow Twitter
+                  Follow 
                   <svg class="w-5 h-5 -ml-0.5 transform group-hover:translate-x-0.75 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
@@ -104,26 +106,15 @@ No Team, No Utility. Straight meme! Laugh and Buy everytime we convert or get bl
           />
         </div> */}
 
-        {/* Desktop Right Column: Image */}
-        <div class="hidden md:block relative order-3 md:order-2 py-12 pr-8">
+        {/* Desktop Right Column: Image - Takes up 1 column on desktop */}
+        <div class="hidden md:block relative order-3 md:order-2 md:col-span-1 pr-8 -ml-20 ">
           <img
             src="/images/logo.jpg"
             alt="earthen vessels Pottery"
-            class="w-3/4 h-[600px] object-contain rounded-2xl shadow-xl border-2 border-primary-300"
+            class="w-full h-[600px] object-contain rounded-2xl shadow-xl border-2 border-primary-300"
           />
         </div>
       </div>
     </section>
   );
 });
-
-
-
-
-
-
-
-
-
-
-

@@ -120,9 +120,14 @@ export default component$(() => {
     if (!cryptoPrice.value) {
       return [
         {
-          message: ""
+          message: "Check out our latest updates and improvements!"
         },
-    
+        {
+          message: "Join us for a pottery workshop this weekend!"
+        },
+        {
+          message: "Celebrate creativity with our open studio sessions!"
+        }
       ];
     }
 
@@ -134,7 +139,7 @@ export default component$(() => {
       {
         title: `${priceEmoji} BMT $${(marketCap / 1000).toFixed(2)}K`,
         subtitle: `$${usd.toFixed(6)} USD`,
-        message: `${kas.toFixed(8)} KAS  `,
+        message: `${kas.toFixed(8)} KAS • ${priceChange24h >= 0 ? '+' : ''}${priceChange24h.toFixed(2)}% (24h)`,
         customClass: changeColor
       },
     ];
@@ -238,7 +243,7 @@ export default component$(() => {
         id="header"
         class={`
           sticky top-0 z-40 flex-none mx-auto max-w-7xl 
-          transition-all duration-300 ease-in-out border-b-4 md:border-b-8 border-primary-500
+          transition-all duration-300 ease-in-out border-b-4 border-primary-500
           ${store.isScrolling
             ? "bg-primary-300 md:bg-primary-100/80 dark:bg-primary-900/80 md:backdrop-blur-sm"
             : "bg-primary-300"
@@ -260,14 +265,14 @@ export default component$(() => {
         <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
             <a class="flex items-center pb-1 -mt-2" href="/">
-              <div style={{ width: "100px", height: "40px", position: "relative" }}>
+              <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:h-[80px]">
                 <img
                   src={isHomeRoute ? "/images/sticker.webp" : "/images/sticker.webp"}
                   alt={isHomeRoute ? "Logo Cropped" : "Logo"}
                   class={{
                     "absolute top-1 left-1 object-contain": true,
-                    "w-[40px] h-[40px]": isHomeRoute,
-                    "w-[100px] h-[40px]": !isHomeRoute,
+                    "w-[40px] h-[40px] md:w-[80px] md:h-[80px]": isHomeRoute,
+                    "w-[100px] h-[40px] md:w-[200px] md:h-[80px]": !isHomeRoute,
                   }}
                   style={{ display: isInitialized.value ? "none" : "block" }}
                 />
@@ -288,7 +293,8 @@ export default component$(() => {
                       src="/images/sticker.webp"
                       alt="Logo"
                       class={{
-                        "absolute top-1 -left-1 w-[100px] h-[40px] object-contain": true,
+                        "absolute top-1 -left-1 object-contain": true,
+                        "w-[100px] h-[40px] md:w-[200px] md:h-[80px]": true,
                         "transition-all duration-500 ease-in-out": store.isMobile && isHomeRoute,
                         "opacity-0 -translate-x-full": store.isMobile && isHomeRoute && !store.isScrolling,
                         "opacity-100 translate-x-0": !store.isMobile || !isHomeRoute || store.isScrolling,
