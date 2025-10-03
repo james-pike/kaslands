@@ -1,12 +1,12 @@
 export const SITE = {
-  name: "earthen vessels",
+  name: "BMT - Bitcoin Maxi Tears" ,
 
   title:
-    "earthen vessels" ,
+    "BMT - Bitcoin Maxi Tears" ,
   description:
-    "earthen vessels - Listening, Connecting, Creating" ,
+    "BMT - Bitcoin Maxi Tears" ,
 
-  origin: "https://earthenvessels.ca",
+  origin: "https://maxitest.com",
   basePathname: "/",
   trailingSlash: true,
 };

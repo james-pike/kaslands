@@ -125,32 +125,33 @@ export default component$(() => {
   const banners = useBannerLoader(); // Ensure the banner loader is invoked
 
   const menuItems = [
-    { title: "This Is Us", href: "/team/", hasSubmenu: false },
-    {
-      title: "About",
-      href: "/about/",
-      hasSubmenu: true,
-      subitems: [
-        { title: "Our Space", href: "/about" },
-        { title: "What To Expect", href: "/about#what-to-expect" },
-        { title: "Newsletter", href: "/newsletter" },
-            { title: "Gallery", href: "/gallery/", badge: null },
+    { title: "About", href: "/", hasSubmenu: false },
+    // {
+    //   title: "About",
+    //   href: "/about/",
+    //   hasSubmenu: true,
+    //   subitems: [
+    //     { title: "Our Space", href: "/about" },
+    //     { title: "What To Expect", href: "/about#what-to-expect" },
+    //     { title: "Newsletter", href: "/newsletter" },
+    //         { title: "Gallery", href: "/gallery/", badge: null },
 
-        { title: "FAQ", href: "/faq" },
-      ],
-    },
-    {
-      title: "Classes",
-      href: "/classes/",
-      hasSubmenu: true,
-      subitems: [
-        { title: "Our Offerings", href: "/classes" },
-        { title: "Gift Cards", href: "https://bookeo.com/earthenvessels/buyvoucher" },
-      ],
-    },
-    { title: "Reviews", href: "/reviews/", badge: null },
-    { title: "Connections", href: "/connections/", badge: null },
-        { title: "Contact", href: "/contact/", badge: null },
+    //     { title: "FAQ", href: "/faq" },
+    //   ],
+    // },
+    // {
+    //   title: "Classes",
+    //   href: "/classes/",
+    //   hasSubmenu: true,
+    //   subitems: [
+    //     { title: "Our Offerings", href: "/classes" },
+    //     { title: "Gift Cards", href: "https://bookeo.com/earthenvessels/buyvoucher" },
+    //   ],
+    // },
+            { title: "Roadmap", href: "/", badge: null },
+    { title: "Exchanges", href: "/", badge: null },
+    { title: "Media", href: "/", badge: null },
+    { title: "FAQ", href: "/", badge: null },
 
   ];
 
@@ -175,8 +176,11 @@ export default component$(() => {
           <div class="rounded-t-none border-primary-200 bg-white/50 dark:bg-gray-900 p-2">
             <Modal.Title class="pt-3 pb-2 pl-2.5">
               <a href="/" class="focus:outline-none">
-                <div style="width: 100px; height: 40px;">
-                  <img src="/images/logo2.svg" alt="Logo" />
+                <div class="flex flex-row"  style=" height: 40px;">
+                                    <img src="/images/sticker.webp" alt="Logo" />
+
+                                  <h1 class="text-xl pt-2">BTC MAXI TEARS</h1>
+
                 </div>
               </a>
             </Modal.Title>
@@ -195,17 +199,22 @@ export default component$(() => {
             <div class="sm:max-w-md px-5 pt-4 flex flex-row items-center justify-between gap-4 lg:justify-start lg:max-w-7xl">
               <div class="flex-shrink-0">
                 <a
-                  href="https://www.bookeo.com/earthenvessels"
-                  class="group relative inline-flex items-center justify-center px-5 py-2.5 !text-lg font-medium text-white bg-gradient-to-r from-primary-600 via-primary-700 to-primary-600 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300"
-                  role="button"
-                  aria-label="Book a workshop"
-                >
-                  <span class="relative z-10 flex items-center gap-2">
-                    Book A Class
-                   
-                  </span>
-                  <div class="absolute inset-0 bg-gradient-to-r from-primary-300/40 via-primary-200/30 to-primary-300/40 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
+    href="#"
+    class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+    role="button"
+    aria-label="Book a workshop"
+  >
+    <span class="relative z-10 flex items-center gap-1">
+      Get $BMT 
+      <img
+        src="/images/sticker.webp"
+        alt="Jar Icon"
+        class="w-6 h-6 transform transition-transform duration-300 group-hover:rotate-12 group-hover:translate-y-1 group-hover:-translate-x-1"
+      />
+    </span>
+    <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent opacity-0 group-hover:opacity-90 transform group-hover:translate-x-full transition-all duration-500"></div>
+  </a>
               </div>
               <div class="flex-shrink-0 flex gap-6">
                 <a

@@ -28,17 +28,17 @@ module.exports = {
       colors: {
         // Reassign primary, secondary, and tertiary to primary, secondary, and tertiary
         primary: {
-          50: '#f6f7f6',
-          100: '#e3e7e3',
-          200: '#c7d0c7',
-          300: '#a3b1a3',
-          400: '#7a8c7a',
-          500: '#5f715f',
-          600: '#4a5a4a',
-          700: '#3d483d',
-          800: '#333b33',
-          900: '#2c322c',
-          950: '#161a16',
+         "50": "#eef6fb",
+  "100": "#d6e6f2",
+  "200": "#b3cce4",
+  "300": "#6eb0c8",
+  "400": "#5d87bd",
+  "500": "#56a4c8",
+  "600": "#355a90",
+  "700": "#2a4774",
+  "800": "#213a5e",
+  "900": "#1a2e4c",
+  "950": "#0f1a2e"
         
         },
         secondary: {

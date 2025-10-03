@@ -1,6 +1,13 @@
 # Menu
 
-## [This Is Us](/team)
+## [About](#)
+## [Roadmap](#)
+## [Exchanges](#)
+## [Memes](#)
+## [FAQ](#)
+
+
+
 
 ## About
 - [Our Space](/about)

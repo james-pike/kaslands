@@ -3,7 +3,6 @@ import { routeLoader$ } from "@builder.io/qwik-city";
 import { inject } from "@vercel/analytics";
 
 
-import Footer from "~/components/widgets/Footer";
 import { tursoClient } from "~/lib/turso";
 //
 
@@ -19,11 +18,11 @@ export default component$(() => {
   });
   return (
     <>
-      <main class="mt-2">
+      <main class="mt-0">
         
         <Slot />
       </main>
-      <Footer />
+      {/* <Footer /> */}
       
     </>
   );
