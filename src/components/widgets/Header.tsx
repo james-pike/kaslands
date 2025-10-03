@@ -120,14 +120,9 @@ export default component$(() => {
     if (!cryptoPrice.value) {
       return [
         {
-          message: "Check out our latest updates and improvements!"
+          message: ""
         },
-        {
-          message: "Join us for a pottery workshop this weekend!"
-        },
-        {
-          message: "Celebrate creativity with our open studio sessions!"
-        }
+    
       ];
     }
 
@@ -139,7 +134,7 @@ export default component$(() => {
       {
         title: `${priceEmoji} BMT $${(marketCap / 1000).toFixed(2)}K`,
         subtitle: `$${usd.toFixed(6)} USD`,
-        message: `${kas.toFixed(8)} KAS • ${priceChange24h >= 0 ? '+' : ''}${priceChange24h.toFixed(2)}% (24h)`,
+        message: `${kas.toFixed(8)} KAS  `,
         customClass: changeColor
       },
     ];
@@ -243,7 +238,7 @@ export default component$(() => {
         id="header"
         class={`
           sticky top-0 z-40 flex-none mx-auto max-w-7xl 
-          transition-all duration-300 ease-in-out border-b-4 border-primary-500
+          transition-all duration-300 ease-in-out border-b-4 md:border-b-8 border-primary-500
           ${store.isScrolling
             ? "bg-primary-300 md:bg-primary-100/80 dark:bg-primary-900/80 md:backdrop-blur-sm"
             : "bg-primary-300"
