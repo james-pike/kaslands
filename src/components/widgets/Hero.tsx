@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import { Image } from "@unpic/qwik";
 
 export default component$(() => {
   return (
@@ -106,7 +105,7 @@ No Team, No Utility. Straight meme! Laugh and Buy everytime we convert or get bl
           <img
             src="/images/logo.jpg"
             alt="earthen vessels Pottery"
-            class="w-full max-h-96 object-contain rounded-2xl shadow-xl border-2 border-primary-300"
+            class="w-full h-[600px] object-contain rounded-2xl shadow-xl border-2 border-primary-300"
           />
         </div>
       </div>

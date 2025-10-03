@@ -3,8 +3,6 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 import { SITE } from "~/config.mjs";
 import Hero from "~/components/widgets/Hero";
 
-import LandingCards from "~/components/LandingCards";
-import TickerBanner from "~/components/widgets/TickerBanner";
 
 
 export default component$(() => {
