@@ -100,7 +100,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                 class={cn(
                   "block lg text-gray-700 !text-xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200",
                   isActive &&
-                    "bg-primary-100 dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
+                    "bg-primary-300/50 dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
                   "hover:bg-primary-100 dark:hover:bg-primary-100/80"
                 )}
                 onClick$={closeModal}
@@ -173,7 +173,7 @@ export default component$(() => {
           position="left"
           class="dark:bg-gray-950 border-r border-primary-200 overflow-y-auto max-h-[100vh]"
         >
-          <div class="rounded-t-none border-primary-200 bg-white/50 dark:bg-gray-900 p-2">
+          <div class="rounded-t-none border-primary-200 bg-white/30 dark:bg-gray-900 p-2">
             <Modal.Title class="pt-3 pb-2 pl-2.5">
               <a href="/" class="focus:outline-none">
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
@@ -195,7 +195,7 @@ export default component$(() => {
             <CustomAccordion items={menuItems} show={show} />
           </nav>
 
-          <div class="rounded-b-2xl border-t border-primary-200 bg-white/50 dark:bg-gray-900 pb-5">
+          <div class="rounded-b-2xl border-t border-primary-200 bg-white/30 dark:bg-gray-900 pb-5">
             <div class="sm:max-w-md px-5 pt-4 flex flex-row items-center justify-between gap-4 lg:justify-start lg:max-w-7xl">
               <div class="flex-shrink-0">
                 <a
