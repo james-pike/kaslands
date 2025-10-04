@@ -120,13 +120,11 @@ export default component$(() => {
     if (!cryptoPrice.value) {
       return [
         {
-          message: "Check out our latest updates and improvements!"
+          message: "X Raid Promontion Banner"
         },
+      
         {
-          message: "Join us for a pottery workshop this weekend!"
-        },
-        {
-          message: "Celebrate creativity with our open studio sessions!"
+          message: "Binance Listing Banner"
         }
       ];
     }
@@ -269,39 +267,8 @@ export default component$(() => {
                 <img
                   src={isHomeRoute ? "/images/sticker.webp" : "/images/sticker.webp"}
                   alt={isHomeRoute ? "Logo Cropped" : "Logo"}
-                  class={{
-                    "absolute top-1 left-1 object-contain": true,
-                    "w-[40px] h-[40px] md:w-[80px] md:h-[80px]": isHomeRoute,
-                    "w-[100px] h-[40px] md:w-[200px] md:h-[80px]": !isHomeRoute,
-                  }}
-                  style={{ display: isInitialized.value ? "none" : "block" }}
+                  class="absolute top-1 left-1 object-contain   h-[50px] md:w-[200px] md:h-[80px]"
                 />
-                {isInitialized.value && (
-                  <>
-                    {store.isMobile && isHomeRoute && (
-                      <img
-                        src="/images/sticker.webp"
-                        alt="Logo Cropped"
-                        class={{
-                          "absolute top-1 left-1 w-[50px] h-[50px] object-contain transition-all duration-500 ease-in-out": true,
-                          "opacity-100 translate-x-0": !store.isScrolling,
-                          "opacity-0 translate-x-full": store.isScrolling,
-                        }}
-                      />
-                    )}
-                    <img
-                      src="/images/sticker.webp"
-                      alt="Logo"
-                      class={{
-                        "absolute top-1 -left-1 object-contain": true,
-                        "w-[100px] h-[40px] md:w-[200px] md:h-[80px]": true,
-                        "transition-all duration-500 ease-in-out": store.isMobile && isHomeRoute,
-                        "opacity-0 -translate-x-full": store.isMobile && isHomeRoute && !store.isScrolling,
-                        "opacity-100 translate-x-0": !store.isMobile || !isHomeRoute || store.isScrolling,
-                      }}
-                    />
-                  </>
-                )}
               </div>
             </a>
             <div class="flex items-center md:hidden gap-1">
@@ -462,7 +429,7 @@ export default component$(() => {
             <div class="items-center flex mr-2 justify-between w-full md:w-auto">
               <a
                 href="#"
-                class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-500 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+                class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
                 role="button"
                 aria-label="Book a workshop"
               >
