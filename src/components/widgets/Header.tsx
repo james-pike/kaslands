@@ -159,7 +159,7 @@ export default component$(() => {
           ${store.showBanner ? 'h-auto py-0.5 opacity-100' : 'h-0 py-0 opacity-0 overflow-hidden'}
         `}
       >
-        <div class="mx-auto px-0 md:px-6 max-w-7xl">
+        <div class="mx-auto px-0 md:px-10 max-w-7xl">
           <div class="flex items-center justify-between gap-2">
             <div class="flex-1 min-w-0 overflow-hidden">
               {/* Mobile: Scrolling text */}
@@ -265,7 +265,7 @@ export default component$(() => {
         <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
             <a class="flex items-center pb-1 -mt-2" href="/">
-              <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:h-[80px]">
+              <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                 <img
                   src={isHomeRoute ? "/images/sticker.webp" : "/images/sticker.webp"}
                   alt={isHomeRoute ? "Logo Cropped" : "Logo"}
@@ -459,7 +459,7 @@ export default component$(() => {
             ) : null}
           </nav>
           <div class="hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0">
-            <div class="items-center flex justify-between w-full md:w-auto">
+            <div class="items-center flex mr-2 justify-between w-full md:w-auto">
               <a
                 href="#"
                 class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
@@ -471,7 +471,7 @@ export default component$(() => {
                   <img
                     src="/images/sticker.webp"
                     alt="Jar Icon"
-                    class="w-6 h-6 transform transition-transform duration-300 group-hover:rotate-12 group-hover:translate-y-1 group-hover:-translate-x-1"
+        class="w-8 h-8 transform transition-transform duration-300 -ml-1 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
                 </span>
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
