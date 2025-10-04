@@ -179,7 +179,7 @@ export default component$(() => {
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
                                     <img src="/images/sticker.webp" alt="Logo" />
 
-                                  <h1 class="text-xl ml-1 pt-2">BTC MAXI TEARS</h1>
+                                  <h1 class="text-xl ml-1 pt-2"> <span class="text-[#f29b10]">₿TC</span> MAXI TEARS</h1>
 
                 </div>
               </a>
