@@ -31,10 +31,13 @@ interface SubMenuItem {
 }
 
 export default component$(() => {
+  // Easy toggle: Set to false to disable banner completely
+  const BANNER_ENABLED = true;
+  
   const store = useStore({
     isScrolling: false,
     isMobile: false,
-    showBanner: true,
+    showBanner: false,
   });
 
   const isInitialized = useSignal(false);
@@ -149,6 +152,7 @@ export default component$(() => {
   return (
     <>
       {/* Banner - Both mobile and desktop */}
+      {BANNER_ENABLED && (
       <div
         class={`
           bg-primary-500 max-w-7xl md:mx-auto px-0.5
@@ -210,9 +214,29 @@ export default component$(() => {
                 <span class="text-md md:text-sm opacity-90">{currentMessage.message}</span>
               </div>
             </div>
+            
+            {/* Close button */}
+            <button
+              onClick$={() => {
+                store.showBanner = false;
+              }}
+              class="flex-shrink-0 p-1 hover:bg-primary-600/30 rounded transition-colors duration-200 group"
+              aria-label="Close banner"
+            >
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                class="h-4 w-4 text-primary-700 group-hover:text-primary-800" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
+      )}
       
       <style>
         {`
