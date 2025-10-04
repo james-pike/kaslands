@@ -32,12 +32,12 @@ interface SubMenuItem {
 
 export default component$(() => {
   // Easy toggle: Set to false to disable banner completely
-  const BANNER_ENABLED = true;
+  const BANNER_ENABLED = false;
   
   const store = useStore({
     isScrolling: false,
     isMobile: false,
-    showBanner: false,
+    showBanner: true,
   });
 
   const isInitialized = useSignal(false);
