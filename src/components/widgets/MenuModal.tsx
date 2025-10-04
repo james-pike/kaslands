@@ -195,7 +195,7 @@ export default component$(() => {
             <CustomAccordion items={menuItems} show={show} />
           </nav>
 
-          <div class="rounded-b-2xl border-t border-primary-200 bg-white/30 dark:bg-gray-900 pb-5">
+          <div class="rounded-b-2xl border-t border-primary-200 bg-white/20 dark:bg-gray-900 pb-5">
             <div class="sm:max-w-md px-5 pt-4 flex flex-row items-center justify-between gap-4 lg:justify-start lg:max-w-7xl">
               <div class="flex-shrink-0">
                 <a
