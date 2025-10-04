@@ -219,8 +219,8 @@ export default component$(() => {
               <div class="flex-shrink-0 flex gap-6">
                 <a
                   href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  // target="_blank"
+                  // rel="noopener noreferrer"
                   class="text-gray-600 dark:text-gray-200 hover:text-primary-800 dark:hover:text-primary-400 transition-colors"
                 >
 <svg width="30px" height="30px" viewBox="0 0 24 24" fill="#" class="" xmlns="http://www.w3.org/2000/svg">
@@ -232,8 +232,8 @@ export default component$(() => {
 </svg>                 </a>
                 <a
                   href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  // target="_blank"
+                  // rel="noopener noreferrer"
                   class="text-gray-600 dark:text-gray-200 hover:text-primary-800 dark:hover:text-primary-400 transition-colors"
                 >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#" class="bi bi-twitter-x" viewBox="0 0 16 16" id="Twitter-X--Streamline-Bootstrap" height="28" width="28">
