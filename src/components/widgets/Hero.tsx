@@ -107,7 +107,7 @@ No Team, No Utility. Straight meme! Laugh and Buy everytime we convert or get bl
         </div> */}
 
         {/* Desktop Right Column: Image - Takes up 1 column on desktop */}
-        <div class="hidden md:block relative order-3 md:order-2 md:col-span-1 pr-8 py-12 -ml-20 ">
+        <div class="hidden md:block relative order-3 md:order-2 md:col-span-1 pr-8 py-8 -ml-20 ">
           <img
             src="/images/logo.jpg"
             class="w-full h-[600px] object-contain rounded-2xl shadow-xl border-2 border-primary-300"
