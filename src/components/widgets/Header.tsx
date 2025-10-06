@@ -307,7 +307,7 @@ export default component$(() => {
         id="header"
         class={`
           sticky top-0 z-40 flex-none mx-auto max-w-7xl 
-          transition-all duration-300 ease-in-out border-b-4 border-primary-500
+          transition-all duration-300 ease-in-out
           ${store.isScrolling
             ? "bg-white/70 dark:bg-primary-900/80 md:backdrop-blur-sm"
             : "bg-white/80"
