@@ -2,7 +2,6 @@ import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 import { SITE } from "~/config.mjs";
 
-import Connections from "./(connections)/connections";
 
 
 
