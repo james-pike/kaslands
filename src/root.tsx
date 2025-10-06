@@ -2,7 +2,6 @@ import { component$, useStyles$ } from "@builder.io/qwik";
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
 import { RouterHead } from "~/components/common/RouterHead";
 import styles from "~/assets/styles/global.css?inline";
-import Header from "./components/widgets/Header";
 
 export default component$(() => {
   useStyles$(styles);
@@ -40,18 +39,29 @@ export default component$(() => {
         <link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet" />
         <RouterHead />
         <ServiceWorkerRegister />
+        {/* Video preload */}
+        <link rel="preload" href="/images/hero.webm" as="video" type="video/webm" />
         {/* Image preloads with correct types */}
         <link rel="preload" href="/images/logo22.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/images/hero.webp" as="image" type="image/webp" />
         <link rel="preload" href="/images/logo2-cropped.svg" as="image" type="image/svg+xml" />
       </head>
-      <body class=" antialiased ">
-        <Header />
-        <div class="relative md:border-x mx-auto max-w-7xl bg-primary-300 overflow-x-hidden">
+      <body class="antialiased overflow-x-hidden">
+        {/* Background video layer */}
+        <div class="fixed inset-0 opacity-80" aria-hidden="true">
+          <video
+            autoplay
+            loop
+            muted
+            playsInline
+            class="w-full h-full object-cover"
+          >
+            <source src="/images/hero.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
-        
-                       {/* <div class="absolute top-0 left-80 w-[600px] h-[600px]  bg-primary-200 rounded-full blur-xl animate-float" aria-hidden="true"></div> */}
-
+        {/* Content layer */}
+        <div class="relative z-10">
           <RouterOutlet />
         </div>
       </body>

@@ -268,7 +268,7 @@ export default component$(() => {
           transition-all duration-300 ease-in-out border-b-4 border-primary-500
           ${store.isScrolling
             ? "bg-primary-300 md:bg-primary-100/80 dark:bg-primary-900/80 md:backdrop-blur-sm"
-            : "bg-primary-300"
+            : "bg-teal-200/30"
           }
         `}
         window:onScroll$={() => {

@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <section class="relative overflow-hidden">
+    <section class="relative overflow-hidden py-28">
       {/* Background with pottery texture */}
       <div class="absolute inset-0 opacity-20" aria-hidden="true"></div>
 
@@ -12,20 +12,20 @@ export default component$(() => {
 
       
 
-      <div class="grid grid-cols-1 md:grid-cols-3 items-center bg-primary-300">
+      <div class="grid grid-cols-1 md:grid-cols-1 items-center bg-transparent">
         {/* Mobile Logo */}
-        <img
+        {/* <img
           src="/images/logo.jpg"
           class=" h-auto border-x border-8 border-primary-300 border-t-0  w-full md:hidden"
-        />
+        /> */}
 
         {/* Left Column (Desktop) / Text Content (Mobile) - Takes up 2 columns on desktop */}
         <div class="relative z-10 order-1 md:col-span-2 md:-ml-16 flex items-center justify-center px-4 md:px-0 pt-4 pb-10   md:order-1">
-          <div class="text-center md:text-left px-6 md:px-0">
+          <div class="text-center md:text-left  bg-white/70 p-8 ">
             {/* Headline (Desktop only) */}
-            <h1 class=" hidden md:block text-4xl md:text-7xl font-bold tracking-tight md:mb-4 mb-8 md:-mt-0  ">
-              <span class="bg-gradient-to-r  from-[#f29b10]  to-[#f29b10]  bg-clip-text text-transparent">
-                ₿TC <span class="text-black"> MAXI </span> <span class="text-black">TEARS</span> 
+            <h1 class="  text-5xl text-center md:text-7xl font-bold tracking-tight md:mb-4 mb-8 md:-mt-0  ">
+              <span class="bg-teal-300  bg-clip-text text-transparent">
+                KASLANDS
               </span>
             </h1>
             {/* Slogan */}
@@ -107,12 +107,12 @@ No Team, No Utility. Straight meme! Laugh and Buy everytime we convert or get bl
         </div> */}
 
         {/* Desktop Right Column: Image - Takes up 1 column on desktop */}
-        <div class="hidden md:block relative order-3 md:order-2 md:col-span-1 pr-8 py-8 -ml-20 ">
+        {/* <div class="hidden md:block relative order-3 md:order-2 md:col-span-1 pr-8 py-8 -ml-20 ">
           <img
             src="/images/logo.jpg"
             class="w-full h-[600px] object-contain rounded-2xl shadow-xl border-2 border-primary-300"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );
