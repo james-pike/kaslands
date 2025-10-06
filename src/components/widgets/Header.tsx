@@ -330,16 +330,16 @@ export default component$(() => {
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
             <a class="flex items-center pb-1 -mt-2" href="/">
               <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
-                <img
+                {/* <img
                   src={isHomeRoute ? "/images/sticker.webp" : "/images/sticker.webp"}
                   alt={isHomeRoute ? "Logo Cropped" : "Logo"}
                   class="absolute top-1 left-1 object-contain   h-[50px] md:w-[200px] md:h-[80px]"
-                />
+                /> */}
               </div>
             </a>
                 <a
 
-                class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1 h-10 py-2 px-2 md:px-4 font-semibold shadow-none text-md w-auto"
+                class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1  py-2 px-2 md:px-4 font-semibold shadow-none text-md w-auto"
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
                 onClick$={toggleAudio}
               >

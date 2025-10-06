@@ -100,7 +100,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                 class={cn(
                   "block lg text-gray-700 !text-xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200",
                   isActive &&
-                    "bg-primary-300/50 dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
+                    " dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
                   "hover:bg-primary-100 dark:hover:bg-primary-100/80"
                 )}
                 onClick$={closeModal}
@@ -125,7 +125,7 @@ export default component$(() => {
   const banners = useBannerLoader(); // Ensure the banner loader is invoked
 
   const menuItems = [
-    { title: "About", href: "/", hasSubmenu: false },
+    { title: "Story", href: "/", hasSubmenu: false },
     // {
     //   title: "About",
     //   href: "/about/",
@@ -177,9 +177,9 @@ export default component$(() => {
             <Modal.Title class="pt-3 pb-2 pl-2.5">
               <a href="/" class="focus:outline-none">
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
-                                    <img src="/images/sticker.webp" alt="Logo" />
+                                    {/* <img src="/images/sticker.webp" alt="Logo" /> */}
 
-                                  <h1 class="text-xl ml-1 pt-2"> ₿TC MAXI TEARS</h1>
+                                  <h1 class="text-xl text-teal-800 ml-1 pt-2"> KASLANDS</h1>
 
                 </div>
               </a>
@@ -205,7 +205,7 @@ export default component$(() => {
     aria-label="Book a workshop"
   >
     <span class="relative z-10 flex items-center gap-1">
-      Get $BMT 
+      Mint $LANDS
       <img
         src="/images/sticker.webp"
         alt="Jar Icon"
