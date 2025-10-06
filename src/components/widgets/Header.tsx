@@ -43,7 +43,6 @@ export default component$(() => {
 
   const isInitialized = useSignal(false);
   const location = useLocation();
-  const isHomeRoute = location.url.pathname === "/";
 
   const cryptoPrice = useSignal<CryptoPrice | null>(null);
   const currentMessageIndex = useSignal(0);
