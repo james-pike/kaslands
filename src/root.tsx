@@ -45,26 +45,26 @@ export default component$(() => {
         <link rel="preload" href="/images/logo22.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/images/logo2-cropped.svg" as="image" type="image/svg+xml" />
       </head>
-      <body class="antialiased overflow-x-hidden">
-        {/* Background video layer */}
-        <div class="fixed inset-0 opacity-80" aria-hidden="true">
-          <video
-            autoplay
-            loop
-            muted
-            playsInline
-            class="w-full h-full object-cover"
-          >
-            <source src="/images/hero.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+  <body class="antialiased overflow-x-hidden">
+  {/* Background video layer - fixed with 100svh to prevent zoom */}
+  <div class="fixed inset-0 opacity-80 h-screen" style="height: 100svh;" aria-hidden="true">
+    <video
+      autoplay
+      loop
+      muted
+      playsInline
+      class="w-full h-full object-cover"
+    >
+      <source src="/images/hero.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-        {/* Content layer */}
-        <div class="relative z-10">
-          <RouterOutlet />
-        </div>
-      </body>
+  {/* Content layer */}
+  <div class="relative z-10">
+    <RouterOutlet />
+  </div>
+</body>
     </QwikCityProvider>
   );
 });

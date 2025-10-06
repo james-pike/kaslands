@@ -309,8 +309,8 @@ export default component$(() => {
           sticky top-0 z-40 flex-none mx-auto max-w-7xl 
           transition-all duration-300 ease-in-out border-b-4 border-primary-500
           ${store.isScrolling
-            ? "bg-primary-300 md:bg-primary-100/80 dark:bg-primary-900/80 md:backdrop-blur-sm"
-            : "bg-teal-200/30"
+            ? "bg-white/70 dark:bg-primary-900/80 md:backdrop-blur-sm"
+            : "bg-white/80"
           }
         `}
         window:onScroll$={() => {
