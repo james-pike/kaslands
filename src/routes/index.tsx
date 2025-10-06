@@ -9,7 +9,7 @@ import Connections from "./(connections)/connections";
 export default component$(() => {
   return (
     <>
-<div class="">
+{/* <div class="">
          <div class=" hidden md:block absolute top-10 left-[46%] -translate-x-[46%] w-[700px] h-[500px]  bg-primary-200/50 rounded-full blur-xl animate-float" aria-hidden="true"></div> 
 
   <div class="hidden md:block absolute top-8 left-[44%] -translate-x-[44%] w-[300px] h-[300px] border-[2px] border-white rounded-full blur-sm animate-float" aria-hidden="true"></div> 
@@ -21,9 +21,8 @@ export default component$(() => {
   class="hidden  md:block absolute top-[15%] left-[60%] -translate-x-[60%] w-[300px] h-[300px] border-[2.5px] border-white rounded-full blur-sm animate-float"
   aria-hidden="true"
 ></div>
-  {/* <TickerBanner/> */}
 
-</div>
+</div> */}
       <Connections/>
     </>
   );

@@ -37,19 +37,19 @@ export default component$(() => {
   
   return (
     <div class="flex flex-col">
-      {/* Header: order-1 on mobile, order-2 on desktop */}
-      <div class="order-1 md:order-2">
+      {/* Header: order-1 on mobile, order-2 on desktop - STICKY */}
+      <div class="order-1 md:order-1 sticky top-0 z-20">
         <Header />
       </div>
       
       {/* Hero: order-2 on mobile, order-1 on desktop */}
-      <div class="order-2 md:order-1">
+      <div class="order-2 md:order-2">
         <Hero />
       </div>
 
       {/* Main content: always comes after header/hero with order-3 */}
       <main class="mt-0 order-3">
-        <div class="relative md:border-x mx-auto max-w-7xl bg-teal-200/30 overflow-x-hidden">
+        <div class="relative md:border-x mx-auto max-w-7xl bg-white/70 overflow-x-hidden">
           <Slot />
         </div>
       </main>

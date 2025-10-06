@@ -1,7 +1,8 @@
-import { component$, useStore, useVisibleTask$, useSignal } from "@builder.io/qwik";
+import { component$, useStore, useVisibleTask$, useSignal, $ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
+import { LuPause, LuPlay } from "@qwikest/icons/lucide";
 
 interface CryptoPrice {
   usd: number;
@@ -47,11 +48,52 @@ export default component$(() => {
   const cryptoPrice = useSignal<CryptoPrice | null>(null);
   const currentMessageIndex = useSignal(0);
 
+    const audioRef = useSignal<HTMLAudioElement>();
+  const isPlaying = useSignal(false);
+
+    const toggleAudio = $(async () => {
+    const audio = audioRef.value;
+    if (audio) {
+      if (isPlaying.value) {
+        audio.pause();
+        isPlaying.value = false;
+        console.log("Audio paused");
+      } else {
+        try {
+          await audio.play();
+          isPlaying.value = true;
+          console.log("Audio playing");
+        } catch (error) {
+          console.error("Failed to play audio:", error);
+        }
+      }
+    } else {
+      console.error("Audio element not available");
+    }
+  });
+
+  const handleAudioEnded = $(() => {
+    isPlaying.value = false;
+  });
+
+
+
   // Fetch BMT price data
   useVisibleTask$(async () => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
     store.isMobile = mediaQuery.matches;
     isInitialized.value = true;
+
+        const audio = audioRef.value;
+    if (audio && !isPlaying.value) {
+      try {
+        await audio.play();
+        isPlaying.value = true;
+        console.log("Audio auto-started on visibility");
+      } catch (error) {
+        console.error("Failed to auto-play audio:", error);
+      }
+    }
     
     const handler = (e: MediaQueryListEvent) => {
       store.isMobile = e.matches;
@@ -295,6 +337,20 @@ export default component$(() => {
                 />
               </div>
             </a>
+                <a
+
+                class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1 h-10 py-2 px-2 md:px-4 font-semibold shadow-none text-md w-auto"
+                aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
+                onClick$={toggleAudio}
+              >
+                {isPlaying.value ? <LuPause /> : <LuPlay />}
+              </a>
+              <audio
+                ref={audioRef}
+                src="/images/hero.mp3"
+                preload="auto"
+                onEnded$={handleAudioEnded}
+              />
             <div class="flex items-center md:hidden gap-1">
               <MenuModal />
             </div>
@@ -451,6 +507,7 @@ export default component$(() => {
           </nav>
           <div class="hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0">
             <div class="items-center flex mr-2 justify-between w-full md:w-auto">
+             
               <a
                 href="#"
                 class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
