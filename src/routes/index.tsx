@@ -23,7 +23,6 @@ export default component$(() => {
 ></div>
 
 </div> */}
-      <Connections/>
     </>
   );
 });
