@@ -1,10 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 import { SITE } from "~/config.mjs";
-import Hero from "~/components/widgets/Hero";
-import Reviews from "./(reviews)/reviews";
-import FAQ2 from "~/components/widgets/FAQ2";
-import Newsletter from "./(newsletter)/newsletter";
+
 import Connections from "./(connections)/connections";
 
 
