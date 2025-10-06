@@ -310,7 +310,7 @@ export default component$(() => {
           transition-all duration-300 ease-in-out
           ${store.isScrolling
             ? "bg-white/70 dark:bg-primary-900/80 md:backdrop-blur-sm"
-            : "bg-white/80"
+            : "bg-transparent"
           }
         `}
         window:onScroll$={() => {
@@ -515,7 +515,7 @@ export default component$(() => {
                 aria-label="Book a workshop"
               >
                 <span class="relative z-10 flex items-center gap-1">
-                  Get $BMT 
+                  MINT
                   <img
                     src="/images/sticker.webp"
                     alt="Jar Icon"
