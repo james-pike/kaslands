@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <section class="relative overflow-hidden py-14 md:py-32">
+    <section class="relative overflow-hidden py-8 md:py-32">
       {/* Background with pottery texture */}
       <div class="absolute inset-0 opacity-20" aria-hidden="true"></div>
 
@@ -23,7 +23,7 @@ export default component$(() => {
         <div class="relative z-10 order-1 md:col-span-2 md:-ml-16 flex items-center justify-center px-4 md:px-0 pt-4 pb-10   md:order-1">
           <div class="text-center md:text-left  bg-white/70 p-8 ">
             {/* Headline (Desktop only) */}
-            <h1 class="  text-5xl text-center md:text-7xl font-bold tracking-tight md:mb-4 mb-8 md:-mt-0  ">
+            <h1 class="  text-5xl text-center md:text-8xl font-bold tracking-tight md:mb-4 mb-8 md:-mt-0  ">
               <span class="bg-teal-300  bg-clip-text text-transparent">
                 KASLANDS
               </span>
@@ -35,7 +35,7 @@ export default component$(() => {
               </span>
             </h2> */}
             {/* Subtitle */}
-            <p class="text-xl -mx-2 md:text-2xl font-light text-primary-800 mb-6 max-w-2xl md:mx-0">
+            <p class="text-2xl -mx-2 md:text-2xl font-light text-primary-800 mb-6 max-w-2xl md:mx-0">
 No Team, No Utility. Straight meme! Laugh and Buy everytime we convert or get blocked by a BTC Maxi.            </p>
  <a
                 href="#"
