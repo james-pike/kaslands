@@ -309,7 +309,7 @@ export default component$(() => {
           transition-all duration-300 ease-in-out
           ${store.isScrolling
             ? "bg-white/70 dark:bg-primary-900/80 md:backdrop-blur-sm"
-            : "bg-transparent"
+            : "bg-white/65"
           }
         `}
         window:onScroll$={() => {
