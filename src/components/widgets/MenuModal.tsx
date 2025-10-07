@@ -161,7 +161,7 @@ export default component$(() => {
         <Modal.Trigger
           class={cn(
             "p-2 py-1.5 mt-1  transition-all duration-300",
-            "bg-white/70 mb-1 mr-0.5 dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
+            "bg-white/70 mb-1 mr-0.75 dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
           )}
         >
           <IconHamburger class="w-6 h-7 text-teal-400 dark:text-secondary-200" />
@@ -171,7 +171,7 @@ export default component$(() => {
           position="left"
           class="dark:bg-gray-950 border-r border-primary-200 overflow-y-auto max-h-[100vh]"
         >
-          <div class="rounded-t-none border-primary-200 bg-white/30 dark:bg-gray-900 p-2">
+          <div class="rounded-t-none border-primary-200 bg-white/50 dark:bg-gray-900 p-2">
             <Modal.Title class="pt-3 pb-2 pl-2.5">
               <a href="/" class="focus:outline-none">
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
