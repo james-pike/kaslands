@@ -20,7 +20,7 @@ export default component$(() => {
         /> */}
 
         {/* Left Column (Desktop) / Text Content (Mobile) - Takes up 2 columns on desktop */}
-        <div class="relative z-10 order-1 md:col-span-2 md:-ml-16 flex items-center justify-center px-4 md:px-0 pt-4 pb-10   md:order-1">
+        <div class="relative z-10 order-1 md:col-span-2 md:-ml-16 flex items-center justify-center px-3 md:px-0 pt-4 pb-10   md:order-1">
           <div class="text-center md:text-left  bg-white/65 p-8 pt-12">
             {/* Headline (Desktop only) */}
             <h1 class="  text-5xl text-center md:text-8xl font-bold tracking-tight md:mb-4 mb-8 md:-mt-0  ">
