@@ -160,8 +160,8 @@ export default component$(() => {
       <Modal.Root bind:show={show}>
         <Modal.Trigger
           class={cn(
-            "p-2 py-1 -mt-1 rounded-lg border transition-all duration-300",
-            "bg-white/35 mb-1 dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
+            "p-2 py-1.5 mt-1  transition-all duration-300",
+            "bg-white/70 mb-1 mr-2 dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
           )}
         >
           <IconHamburger class="w-6 h-7 text-teal-400 dark:text-secondary-200" />

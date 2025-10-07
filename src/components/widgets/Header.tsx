@@ -304,7 +304,7 @@ export default component$(() => {
       <header
         id="header"
         class={`
-          sticky top-0 z-40 mt-2 flex-none mx-auto max-w-7xl 
+          sticky top-0 z-40 mt-1 flex-none mx-auto max-w-7xl 
           transition-all duration-300 ease-in-out
           ${store.isScrolling
             ? "bg-white/70 dark:bg-primary-900/80 md:backdrop-blur-sm"
@@ -324,19 +324,16 @@ export default component$(() => {
         }}
       >
         <div class="absolute inset-0" aria-hidden="true"></div>
-        <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
+        <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:items-center max-w-7xl">
+          {/* Logo Section */}
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between items-center">
             <a class="flex items-center pb-1 -mt-2" href="/">
-            
               <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
-                {/* <img
-                  src={isHomeRoute ? "/images/sticker.webp" : "/images/sticker.webp"}
-                  alt={isHomeRoute ? "Logo Cropped" : "Logo"}
-                  class="absolute top-1 left-1 object-contain   h-[50px] md:w-[200px] md:h-[80px]"
-                /> */}
+                {/* Logo placeholder */}
               </div>
             </a>
 
+            {/* Mobile buttons (MenuModal only for mobile) */}
             <div class="flex items-center md:hidden gap-2">
               <a
                 class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md"
@@ -345,17 +342,15 @@ export default component$(() => {
               >
                 {isPlaying.value ? <IconPause /> : <IconPlay />}
               </a>
-              <audio
-                ref={audioRef}
-                src="/images/heroes.mp3"
-                preload="auto"
-                onEnded$={handleAudioEnded}
-              />
               <MenuModal />
             </div>
           </div>
+          
+          {/* Navigation: Centered on desktop */}
           <nav
-            class="items-center w-full md:w-auto hidden md:flex dark:text-white overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5 group"
+            class={`
+              items-center w-full md:w-auto hidden md:flex dark:text-white overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-auto group
+            `}
             aria-label="Main navigation"
           >
             {menu && menu.items ? (
@@ -504,9 +499,26 @@ export default component$(() => {
               </ul>
             ) : null}
           </nav>
+          
+          {/* Right-side buttons: Audio + MINT */}
           <div class="hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0">
-            <div class="items-center flex mr-2 justify-between w-full md:w-auto">
-             
+            <div class="items-center flex mr-2 justify-between w-full md:w-auto gap-2">
+              {/* Audio Play/Pause Button */}
+              <a
+                class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md"
+                aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
+                onClick$={toggleAudio}
+              >
+                {isPlaying.value ? <IconPause /> : <IconPlay />}
+              </a>
+              <audio
+                ref={audioRef}
+                src="/images/heroes.mp3"
+                preload="auto"
+                onEnded$={handleAudioEnded}
+              />
+              
+              {/* MINT Button */}
               <a
                 href="#"
                 class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
@@ -518,7 +530,7 @@ export default component$(() => {
                   <img
                     src="/images/sticker.webp"
                     alt="Jar Icon"
-        class="w-8 h-8 transform transition-transform duration-300 -ml-1 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    class="w-8 h-8 transform transition-transform duration-300 -ml-1 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
                 </span>
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
