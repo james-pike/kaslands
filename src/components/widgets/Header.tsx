@@ -505,7 +505,7 @@ export default component$(() => {
             <div class="items-center flex mr-2 justify-between w-full md:w-auto gap-2">
               {/* Audio Play/Pause Button */}
               <a
-                class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md"
+                class="btn bg-white/50 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md"
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
                 onClick$={toggleAudio}
               >
