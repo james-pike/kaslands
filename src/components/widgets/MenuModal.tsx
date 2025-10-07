@@ -161,11 +161,11 @@ export default component$(() => {
         <div class="absolute top-2 right-3  md:static">
           <Modal.Trigger
             class={cn(
-              "p-2 py-1 -mt-1 rounded-lg border backdrop-blur-sm transition-all duration-300",
-              "bg-white/35 mb-1 border-primary-200 dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
+              "p-2 py-1 -mt-1 mr-1 rounded-lg border backdrop-blur-sm transition-all duration-300",
+              "bg-white/35 mb-1 dark:border-primary-500 hover:shadow-xl hover:bg-white/45"
             )}
           >
-            <IconHamburger class="w-6 h-7 text-secondary-800/50 dark:text-secondary-200" />
+            <IconHamburger class="w-6 h-7 text-teal-400 dark:text-secondary-200" />
           </Modal.Trigger>
         </div>
 

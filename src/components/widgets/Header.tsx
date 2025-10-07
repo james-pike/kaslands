@@ -3,6 +3,8 @@ import { useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
 import { LuPause, LuPlay } from "@qwikest/icons/lucide";
+import IconPlay from "../IconPlay";
+import IconPause from "../IconPause";
 
 interface CryptoPrice {
   usd: number;
@@ -309,7 +311,7 @@ export default component$(() => {
           transition-all duration-300 ease-in-out
           ${store.isScrolling
             ? "bg-white/70 dark:bg-primary-900/80 md:backdrop-blur-sm"
-            : "bg-white/65"
+            : "bg-white/70"
           }
         `}
         window:onScroll$={() => {
@@ -328,6 +330,7 @@ export default component$(() => {
         <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
             <a class="flex items-center pb-1 -mt-2" href="/">
+            
               <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                 {/* <img
                   src={isHomeRoute ? "/images/sticker.webp" : "/images/sticker.webp"}
@@ -336,13 +339,15 @@ export default component$(() => {
                 /> */}
               </div>
             </a>
-                <a
+           
+            <div class="flex items-center md:hidden gap-1">
+                   <a
 
                 class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1  py-2 px-2 md:px-4 font-semibold shadow-none text-md w-auto"
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
                 onClick$={toggleAudio}
               >
-                {isPlaying.value ? <LuPause /> : <LuPlay />}
+                {isPlaying.value ? <IconPause /> : <IconPlay />}
               </a>
               <audio
                 ref={audioRef}
@@ -350,7 +355,6 @@ export default component$(() => {
                 preload="auto"
                 onEnded$={handleAudioEnded}
               />
-            <div class="flex items-center md:hidden gap-1">
               <MenuModal />
             </div>
           </div>
@@ -368,7 +372,7 @@ export default component$(() => {
                         <>
                           <button
                             class={`
-                              hover:text-[#f29b10]
+                              hover:text-teal-400
                               px-4 py-3
                               flex items-center
                               transition-all duration-200
@@ -379,7 +383,7 @@ export default component$(() => {
                               after:bottom-[6px]
                               after:left-1/2
                               after:h-[2px]
-                              after:bg-[#f29b10]
+                              after:bg-teal-400
                               after:transition-all
                               after:duration-200
                               ${isActive
@@ -426,7 +430,7 @@ export default component$(() => {
                                   <a
                                     class={`
                                       hover:bg-muted
-                                      hover:text-[#f29b10]
+                                      hover:text-teal-400
                                       py-2 px-5
                                       block
                                       whitespace-no-wrap
@@ -437,7 +441,7 @@ export default component$(() => {
                                       after:bottom-[4px]
                                       after:left-1/2
                                       after:h-[2px]
-                                      after:bg--[#f29b10]
+                                      after:bg--teal-400
                                       after:transition-all
                                       after:duration-200
                                       ${isDropdownActive
@@ -474,7 +478,7 @@ export default component$(() => {
                         <a
                           class={`
                             hover:bg-muted
-                            hover:text-[#f29b10]
+                            hover:text-teal-400
                             px-4 py-3
                             flex items-center
                             relative
@@ -484,12 +488,12 @@ export default component$(() => {
                             after:bottom-[6px]
                             after:left-1/2
                             after:h-[2px]
-                            after:bg-[#f29b10]
+                            after:bg-teal-400
                             after:transition-all
                             after:duration-200
                             rounded-base
                             ${isActive
-                              ? "text-[#f29b10] after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2"
+                              ? "text-teal-400 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2"
                               : "after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
                             }
                           `}

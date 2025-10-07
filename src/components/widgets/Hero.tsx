@@ -36,7 +36,8 @@ export default component$(() => {
             </h2> */}
             {/* Subtitle */}
             <p class="text-2xl -mx-2 md:text-2xl font-light text-primary-800 mb-6 max-w-2xl md:mx-0">
-No Team, No Utility. Straight meme! Laugh and Buy everytime we convert or get blocked by a BTC Maxi.            </p>
+
+Uniting Kaspa projects & members to create the ultimate virtual community. All things Kaspa web3 related, Tokens, NFTs, Metaverse, Websites, & Games.      </p>
  <a
                 href="#"
                 class="w-full sm:w-auto my-1.5 mx-1 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-500 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
