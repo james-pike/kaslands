@@ -1,12 +1,12 @@
 export const SITE = {
-  name: "BMT - Bitcoin Maxi Tears" ,
+  name: "Kaslands" ,
 
   title:
-    "BMT - Bitcoin Maxi Tears" ,
+    "Kaslands" ,
   description:
-    "BMT - Bitcoin Maxi Tears" ,
+    "Kaslands" ,
 
-  origin: "https://maxitest.com",
+  origin: "https://kaslands.com",
   basePathname: "/",
   trailingSlash: true,
 };

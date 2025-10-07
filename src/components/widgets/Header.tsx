@@ -48,10 +48,10 @@ export default component$(() => {
   const cryptoPrice = useSignal<CryptoPrice | null>(null);
   const currentMessageIndex = useSignal(0);
 
-    const audioRef = useSignal<HTMLAudioElement>();
+  const audioRef = useSignal<HTMLAudioElement>();
   const isPlaying = useSignal(false);
 
-    const toggleAudio = $(async () => {
+  const toggleAudio = $(async () => {
     const audio = audioRef.value;
     if (audio) {
       if (isPlaying.value) {
@@ -76,15 +76,13 @@ export default component$(() => {
     isPlaying.value = false;
   });
 
-
-
   // Fetch BMT price data
   useVisibleTask$(async () => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
     store.isMobile = mediaQuery.matches;
     isInitialized.value = true;
 
-        const audio = audioRef.value;
+    const audio = audioRef.value;
     if (audio && !isPlaying.value) {
       try {
         await audio.play();
@@ -306,7 +304,7 @@ export default component$(() => {
       <header
         id="header"
         class={`
-          sticky top-0 z-40 flex-none mx-auto max-w-7xl 
+          sticky top-0 z-40 mt-2 flex-none mx-auto max-w-7xl 
           transition-all duration-300 ease-in-out
           ${store.isScrolling
             ? "bg-white/70 dark:bg-primary-900/80 md:backdrop-blur-sm"
@@ -327,7 +325,7 @@ export default component$(() => {
       >
         <div class="absolute inset-0" aria-hidden="true"></div>
         <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
-          <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
+          <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between items-center">
             <a class="flex items-center pb-1 -mt-2" href="/">
             
               <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
@@ -338,11 +336,10 @@ export default component$(() => {
                 /> */}
               </div>
             </a>
-           
-            <div class="flex items-center md:hidden gap-1">
-                   <a
 
-                class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1  py-2 px-2 md:px-4 font-semibold shadow-none text-md w-auto"
+            <div class="flex items-center md:hidden gap-2">
+              <a
+                class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md"
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
                 onClick$={toggleAudio}
               >
@@ -350,7 +347,7 @@ export default component$(() => {
               </a>
               <audio
                 ref={audioRef}
-                src="/images/hero.mp3"
+                src="/images/heroes.mp3"
                 preload="auto"
                 onEnded$={handleAudioEnded}
               />
