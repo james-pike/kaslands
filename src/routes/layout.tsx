@@ -2,7 +2,6 @@ import { component$, Slot, useVisibleTask$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { inject } from "@vercel/analytics";
 import Header from "~/components/widgets/Header";
-import Hero from "~/components/widgets/Hero";
 
 import { tursoClient } from "~/lib/turso";
 
@@ -43,13 +42,11 @@ export default component$(() => {
       </div>
       
       {/* Hero: order-2 on mobile, order-1 on desktop */}
-      <div class="order-2 md:order-2">
-        <Hero />
-      </div>
+  
 
       {/* Main content: always comes after header/hero with order-3 */}
       <main class="mt-0 order-3">
-        <div class="relative md:border-x mx-auto max-w-7xl bg-white/70 overflow-x-hidden">
+        <div class="relative  mx-auto max-w-7xl  overflow-x-hidden">
           <Slot />
         </div>
       </main>

@@ -1,0 +1,118 @@
+.carousel-root {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-slide {
+  /* max-height: 10rem; */
+  -webkit-user-select: none; /* support for Safari */
+  user-select: none;
+  /* background-color: hsl(var(--primary)); */
+}
+
+
+
+.carousel-pagination {
+  display: flex;
+  
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-buttons button {
+  padding: 0.5rem;
+}
+
+.carousel-buttons button:hover {
+  background-color: hsla(var(--primary) / 0.08);
+}
+
+.carousel-buttons button:disabled {
+  opacity: 0.5;
+}
+
+.carousel-pagination-bullet {
+  cursor: pointer;
+  padding-inline: 0.5rem;
+  outline: none;
+}
+
+.carousel-pagination-bullet[data-active] {
+  outline: 2px dotted hsl(var(--primary));
+  background-color: hsla(var(--primary) / 0.08);
+}
+
+.carousel-pagination-bullet:hover {
+  background-color: hsla(var(--primary) / 0.08);
+}
+
+.carousel-conditional {
+  position: relative;
+  height: 200px;
+}
+
+.carousel-conditional .carousel-slide {
+  opacity: 0;
+  transition: opacity 0.5s;
+  /* NOT display block */
+  display: revert;
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-conditional .carousel-slide[data-active] {
+  opacity: 1;
+}
+
+.carousel-stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.carousel-step {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.carousel-step::before {
+  content: attr(data-step);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: hsl(var(--muted));
+
+  /* Slight adjustment for visual centering */
+  padding-bottom: 0.1em;
+}
+
+.carousel-step[data-current]::before {
+  background-color: hsl(var(--primary));
+}
+
+.carousel-animation {
+  transition: 0.35s transform cubic-bezier(0.57, 0.16, 0.95, 0.67);
+}
+
+.progress-separator::after {
+  height: 0%;                    /* Starts empty */
+  transition: height 3s linear;  /* 3-second fill duration */
+  background: hsl(var(--primary)); /* Primary color fill */
+}
+
+.progress-separator.active::after {
+  height: 100%;                  /* Fills to bottom */
+}

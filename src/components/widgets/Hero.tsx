@@ -21,7 +21,7 @@ export default component$(() => {
           <div class="text-center md:text-left bg-white/60 p-8 pt-12">
             {/* Headline (Desktop only) */}
             <h1 class="text-5xl text-center md:text-8xl font-bold tracking-tight md:mb-4 mb-8 md:-mt-0">
-              <span class="bg-teal-400 bg-clip-text text-transparent">
+              <span class="bg-primary-400 bg-clip-text text-transparent">
                 KASLANDS
               </span>
             </h1>
