@@ -152,8 +152,8 @@ export default component$(() => {
     items: [
       { text: "About", href: "#" },
       { text: "Roadmap", href: "#" },
-      { text: "Exchanges", href: "#" },
-      { text: "Memes", href: "#" },
+      { text: "Collections", href: "#" },
+      { text: "Media", href: "#" },
       { text: "FAQ", href: "#" },
     ],
   };
