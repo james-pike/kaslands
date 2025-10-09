@@ -2,6 +2,7 @@ import { component$, Slot, useVisibleTask$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { inject } from "@vercel/analytics";
 import Header from "~/components/widgets/Header";
+import Hero from "~/components/widgets/Hero";
 
 import { tursoClient } from "~/lib/turso";
 
@@ -36,6 +37,8 @@ export default component$(() => {
   
   return (
     <div class="flex flex-col">
+
+      <Hero/>
       {/* Header: order-1 on mobile, order-2 on desktop - STICKY */}
       <div class="order-1 md:order-1 sticky top-0 z-20">
         <Header />

@@ -150,11 +150,13 @@ export default component$(() => {
 
   const menu: { items: MenuItem[] } = {
     items: [
+            { text: "Collections", href: "/collections" },
+
       { text: "About", href: "#" },
-      { text: "Collections", href: "#" },
-      { text: "Roadmap", href: "#" },
       { text: "Media", href: "#" },
-      { text: "FAQ", href: "#" },
+            { text: "Merch", href: "#" },
+
+      // { text: "FAQ", href: "#" },
     ],
   };
 
@@ -304,11 +306,11 @@ export default component$(() => {
       <header
         id="header"
         class={`
-          sticky top-0 z-40 mt-1 flex-none mx-auto max-w-7xl 
+          sticky top-0 z-40 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md 
           transition-all duration-300 ease-in-out
           ${store.isScrolling
-            ? "bg-white/30 dark:bg-primary-900/80 md:backdrop-blur-sm"
-            : "bg-transparent md:backdrop-blur-none"
+            ? "bg-black/40 dark:bg-primary-900/80 md:backdrop-blur-sm"
+            : "bg-black/40 md:backdrop-blur-none"
           }
         `}
         window:onScroll$={() => {
@@ -354,7 +356,7 @@ export default component$(() => {
             aria-label="Main navigation"
           >
             {menu && menu.items ? (
-              <ul class="flex flex-col md:flex-row text-white/80 md:self-center w-full md:w-auto text-xl md:text-2xl tracking-[0.01rem] font-medium">
+              <ul class="flex flex-col md:flex-row text-white/70 md:self-center w-full md:w-auto text-xl md:text-2xl tracking-[0.01rem] font-medium">
                 {menu.items.map(({ text, href, items }, key) => {
                   const isActive = location.url.pathname === href;
                   return (
@@ -363,7 +365,7 @@ export default component$(() => {
                         <>
                           <button
                             class={`
-                              hover:text-teal-400
+                              hover:text-purple-600
                               px-4 py-3
                               flex items-center
                               transition-all duration-200
@@ -374,7 +376,7 @@ export default component$(() => {
                               after:bottom-[6px]
                               after:left-1/2
                               after:h-[2px]
-                              after:bg-teal-400
+                              after:bg-purple-600
                               after:transition-all
                               after:duration-200
                               ${isActive
@@ -421,7 +423,7 @@ export default component$(() => {
                                   <a
                                     class={`
                                       hover:bg-muted
-                                      hover:text-teal-400
+                                      hover:text-purple-600
                                       py-2 px-5
                                       block
                                       whitespace-no-wrap
@@ -432,7 +434,7 @@ export default component$(() => {
                                       after:bottom-[4px]
                                       after:left-1/2
                                       after:h-[2px]
-                                      after:bg--teal-400
+                                      after:bg--purple-600
                                       after:transition-all
                                       after:duration-200
                                       ${isDropdownActive
@@ -469,7 +471,7 @@ export default component$(() => {
                         <a
                           class={`
                             hover:bg-muted
-                            hover:text-teal-400
+                            hover:text-purple-600
                             px-4 py-3
                             flex items-center
                             relative
@@ -479,12 +481,12 @@ export default component$(() => {
                             after:bottom-[6px]
                             after:left-1/2
                             after:h-[2px]
-                            after:bg-teal-400
+                            after:bg-purple-600
                             after:transition-all
                             after:duration-200
                             rounded-base
                             ${isActive
-                              ? "text-teal-400 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2"
+                              ? "text-purple-600 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2"
                               : "after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
                             }
                           `}
@@ -505,7 +507,7 @@ export default component$(() => {
             <div class="items-center flex mr-2 justify-between w-full md:w-auto gap-2">
               {/* Audio Play/Pause Button */}
               <a
-                class="btn bg-white/30 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md"
+                class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md"
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
                 onClick$={toggleAudio}
               >
@@ -519,7 +521,7 @@ export default component$(() => {
               />
               
               {/* MINT Button */}
-              <a
+              {/* <a
                 href="#"
                 class="w-full sm:w-auto bg-white/30 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
                 role="button"
@@ -535,7 +537,7 @@ export default component$(() => {
                 </span>
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent opacity-0 group-hover:opacity-90 transform group-hover:translate-x-full transition-all duration-500"></div>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

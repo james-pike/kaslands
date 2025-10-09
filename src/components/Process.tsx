@@ -185,7 +185,7 @@ export default component$(() => {
 
   return (
     <>
-      <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl border-primary-300 border rounded-xl md:mx-auto mx-3 bg-white/40">
+      <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl !rounded-t-none border-none rounded-xl md:mx-auto mx-3 bg-black/50">
     <Heading/>
         {/* <Carousel.Root 
           class="carousel-root" 
@@ -280,6 +280,7 @@ export default component$(() => {
             </div>
           </div>
         </Carousel.Root> */}
+        <div class="h-[500px]"></div>
       </Card.Root>
     </>
   );

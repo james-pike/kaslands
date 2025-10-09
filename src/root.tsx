@@ -40,7 +40,7 @@ export default component$(() => {
         <RouterHead />
         <ServiceWorkerRegister />
         {/* Video preload */}
-        <link rel="preload" href="/images/hero.webm" as="video" type="video/webm" />
+        <link rel="preload" href="/images/hero4.mp4" as="video" type="video/mp4" />
         {/* Image preloads with correct types */}
         <link rel="preload" href="/images/logo22.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/images/logo2-cropped.svg" as="image" type="image/svg+xml" />
@@ -55,7 +55,7 @@ export default component$(() => {
       playsInline
       class="w-full h-full object-cover"
     >
-      <source src="/images/hero2.webm" type="video/webm" />
+      <source src="/images/hero4.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
