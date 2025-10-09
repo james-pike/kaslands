@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <section class="relative overflow-hidden py-0 -mt-4 md:py-32">
+    <section class="relative overflow-hidden py-0 -mt-4 md:py-8">
       {/* Background with pottery texture */}
       <div class="absolute inset-0 opacity-20" aria-hidden="true"></div>
 
@@ -18,10 +18,10 @@ export default component$(() => {
 
         {/* Left Column (Desktop) / Text Content (Mobile) - Takes up 2 columns on desktop */}
         <div class="relative z-10 order-1 md:col-span-2 md:-ml-16 flex items-center justify-center px-3 md:px-0 pt-4 pb-10 md:order-1">
-          <div class="text-center md:text-left bg-white/30 p-8 pt-12">
+          <div class="text-center md:text-left  p-4  rounded-xl">
             {/* Headline (Desktop only) */}
-            <h1 class="text-5xl text-center md:text-8xl font-bold tracking-tight md:mb-4 mb-8 md:-mt-0">
-              <span class="bg-primary-400 bg-clip-text text-transparent">
+            <h1 class="text-5xl text-center md:text-8xl font-bold tracking-tight  md:-mt-0">
+              <span class="bg-white/70 bg-clip-text text-transparent">
                 KASLANDS
               </span>
             </h1>
@@ -32,12 +32,12 @@ export default component$(() => {
               </span>
             </h2> */}
             {/* Subtitle */}
-            <p class="text-2xl -mx-2 md:text-2xl text-center font-light text-primary-800 mb-6 max-w-2xl md:mx-0">
+            {/* <p class="text-2xl -mx-2 md:text-2xl text-center font-light text-primary-800 mb-6 max-w-2xl md:mx-0">
               Uniting Kaspa projects & members to create the ultimate virtual community. All things Kaspa web3 related, Tokens, NFTs, Metaverse, Websites, & Games.
-            </p>
+            </p> */}
 
             {/* Button Container: Centered on desktop */}
-            <div class="flex flex-col md:flex-row md:justify-center gap-y-3 md:gap-x-4 md:gap-y-0">
+            {/* <div class="flex flex-col md:flex-row md:justify-center gap-y-3 md:gap-x-4 md:gap-y-0">
               <a
                 href="#"
                 class="w-full sm:w-auto my-1.5 mx-1 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-500 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
@@ -115,7 +115,7 @@ export default component$(() => {
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent opacity-0 group-hover:opacity-90 transform group-hover:translate-x-full transition-all duration-500"></div>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 

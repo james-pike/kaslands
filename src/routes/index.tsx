@@ -3,6 +3,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { SITE } from "~/config.mjs";
 import Hero from "~/components/widgets/Hero";
+import Process from "~/components/Process";
 
 
 
@@ -19,10 +20,13 @@ export default component$(() => {
         <Hero />
       </div>
 
+
       {/* Main content: always comes after header/hero with order-3 */}
       <main class="mt-0 order-3">
         <div class="relative  mx-auto max-w-7xl  overflow-x-hidden">
           <Slot />
+                <Process/>
+
         </div>
       </main>
       {/* <Footer /> */}

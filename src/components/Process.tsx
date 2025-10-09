@@ -1,6 +1,5 @@
-import { component$, useSignal, useComputed$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
-import { Carousel } from '@qwik-ui/headless';
-import { cn } from '@qwik-ui/utils';
+import { component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
+
 
 import styles from './carousel.css?inline';
 import { Card } from './ui/Card';
@@ -139,7 +138,7 @@ export default component$(() => {
     }
   `);
 
-  const space = { marginBlock: '1rem' };
+  // const space = { marginBlock: '1rem' };
 
   const isPlaying = useSignal<boolean>(false);
   const hasCompletedOneCycle = useSignal<boolean>(false);
@@ -167,7 +166,7 @@ export default component$(() => {
   const selectedIndex = useSignal(0);
   const previousIndex = useSignal(0);
 
-  const progressIndex = useComputed$(() => selectedIndex.value);
+  // const progressIndex = useComputed$(() => selectedIndex.value);
 
   useVisibleTask$(({ track }) => {
     track(() => selectedIndex.value);
@@ -179,16 +178,16 @@ export default component$(() => {
   // });
 
   // Tailwind opacity classes
-  const opacityClass = useComputed$(() => {
-    const opacity = (selectedIndex.value + 1) * 10;
-    return `bg-primary-300/${opacity}`;
-  });
+  // const opacityClass = useComputed$(() => {
+  //   const opacity = (selectedIndex.value + 1) * 10;
+  //   return `bg-primary-300/${opacity}`;
+  // });
 
   return (
     <>
-      <Card.Root class="p-5 md:p-8 mb-4 pt-14 max-w-6xl mx-auto bg-white/80">
+      <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl border-primary-300 border rounded-xl md:mx-auto mx-3 bg-white/40">
     <Heading/>
-        <Carousel.Root 
+        {/* <Carousel.Root 
           class="carousel-root" 
           gap={30} 
           bind:selectedIndex={selectedIndex}
@@ -200,7 +199,9 @@ export default component$(() => {
               class={cn("w-1/3 rounded hidden md:block aspect-square", opacityClass.value)}
             />
             <div class="flex flex-row items-start w-full md:flex-1">
-              {/* Vertical progress line */}
+
+
+
               <div class="flex flex-col items-center justify-start w-2 mr-3">
                 {roadmapPhases.map((_, index) => (
                   <>
@@ -229,7 +230,6 @@ export default component$(() => {
                 ))}
               </div>
 
-              {/* Stepper with alternating steps and slides */}
               <Carousel.Stepper class="carousel-stepper w-full flex flex-col">
                 {roadmapPhases.map((phase, index) => (
                   <>
@@ -279,7 +279,7 @@ export default component$(() => {
               </Carousel.Stepper>
             </div>
           </div>
-        </Carousel.Root>
+        </Carousel.Root> */}
       </Card.Root>
     </>
   );

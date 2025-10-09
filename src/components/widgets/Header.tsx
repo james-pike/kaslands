@@ -151,8 +151,8 @@ export default component$(() => {
   const menu: { items: MenuItem[] } = {
     items: [
       { text: "About", href: "#" },
-      { text: "Roadmap", href: "#" },
       { text: "Collections", href: "#" },
+      { text: "Roadmap", href: "#" },
       { text: "Media", href: "#" },
       { text: "FAQ", href: "#" },
     ],
@@ -307,7 +307,7 @@ export default component$(() => {
           sticky top-0 z-40 mt-1 flex-none mx-auto max-w-7xl 
           transition-all duration-300 ease-in-out
           ${store.isScrolling
-            ? "bg-white/70 dark:bg-primary-900/80 md:backdrop-blur-sm"
+            ? "bg-white/30 dark:bg-primary-900/80 md:backdrop-blur-sm"
             : "bg-transparent md:backdrop-blur-none"
           }
         `}
@@ -521,7 +521,7 @@ export default component$(() => {
               {/* MINT Button */}
               <a
                 href="#"
-                class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+                class="w-full sm:w-auto bg-white/30 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
                 role="button"
                 aria-label="Book a workshop"
               >
