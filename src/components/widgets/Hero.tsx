@@ -37,7 +37,7 @@ export default component$(() => {
         0 0 40px rgba(255, 182, 193, 0.6),
         0 0 50px rgba(255, 182, 193, 0.4),
         0 0 75px rgba(255, 182, 193, 0.3);
-      animation: neon-flicker 2s infinite alternate;
+      animation: neon-flicker 4s infinite alternate;
     }
   `);
 
