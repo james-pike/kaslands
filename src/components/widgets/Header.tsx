@@ -515,7 +515,7 @@ export default component$(() => {
               </a>
               <audio
                 ref={audioRef}
-                src="/images/heroes.mp3"
+                src="/images/hero1.mp3"
                 preload="auto"
                 onEnded$={handleAudioEnded}
               />

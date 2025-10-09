@@ -14,12 +14,12 @@ export default component$(() => {
       }
       50% {
         text-shadow: 
-          0 0 15px rgba(255, 255, 255, 1),
-          0 0 25px rgba(255, 255, 255, 0.8),
-          0 0 35px rgba(255, 182, 193, 1),
-          0 0 50px rgba(255, 182, 193, 0.8),
-          0 0 65px rgba(255, 182, 193, 0.6),
-          0 0 90px rgba(255, 182, 193, 0.4);
+          0 0 12px rgba(255, 255, 255, 0.85),
+          0 0 22px rgba(255, 255, 255, 0.65),
+          0 0 32px rgba(255, 182, 193, 0.85),
+          0 0 42px rgba(255, 182, 193, 0.65),
+          0 0 55px rgba(255, 182, 193, 0.45),
+          0 0 80px rgba(255, 182, 193, 0.35);
       }
     }
 
@@ -37,7 +37,7 @@ export default component$(() => {
         0 0 40px rgba(255, 182, 193, 0.6),
         0 0 50px rgba(255, 182, 193, 0.4),
         0 0 75px rgba(255, 182, 193, 0.3);
-      animation: neon-flicker 4s infinite alternate;
+      animation: neon-flicker 2s infinite alternate;
     }
   `);
 
