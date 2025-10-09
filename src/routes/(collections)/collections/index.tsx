@@ -2,7 +2,7 @@ import { component$, Slot } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { SITE } from "~/config.mjs";
-import Process from "~/components/Process";
+import Collections from "~/components/widgets/Collections";
 
 
 
@@ -24,8 +24,7 @@ export default component$(() => {
       <main class="mt-0 order-3">
         <div class="relative  mx-auto max-w-7xl  overflow-x-hidden">
           <Slot />
-                <Process/>
-
+<Collections />
         </div>
       </main>
       {/* <Footer /> */}

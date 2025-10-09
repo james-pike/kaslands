@@ -42,7 +42,7 @@ export default component$(() => {
   `);
 
   return (
-    <section class="relative overflow-hidden py-0 -mt-4 md:py-8">
+    <section class="hidden md:block relative overflow-hidden py-0 -mt-4 md:py-8">
       <div class="absolute inset-0 opacity-20" aria-hidden="true"></div>
 
       <div class="grid grid-cols-1 md:grid-cols-1 items-center bg-transparent">

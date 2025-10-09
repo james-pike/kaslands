@@ -24,7 +24,7 @@ const initialCollectionItems: CollectionItem[] = [
 
 export default component$(() => {
   const selectedCollection = useSignal('A');
-  const sortBy = useSignal<'id' | 'rarity'>('id');
+  const sortBy = useSignal('id');
   const filterRarity = useSignal<Rarity | 'All'>('All');
 
   // Define rarity order for sorting
@@ -35,14 +35,16 @@ export default component$(() => {
     Legendary: 4,
   };
 
-  // Computed: filtered & sorted items
+  // Computed property for filtered and sorted items
   const filteredItems = useComputed$(() => {
     return initialCollectionItems
-      .filter((item) => item.collection === selectedCollection.value)
-      .filter((item) => filterRarity.value === 'All' || item.rarity === filterRarity.value)
+      .filter(item => item.collection === selectedCollection.value)
+      .filter(item => filterRarity.value === 'All' || item.rarity === filterRarity.value)
       .sort((a, b) => {
         if (sortBy.value === 'id') return a.id - b.id;
-        if (sortBy.value === 'rarity') return rarityOrder[a.rarity] - rarityOrder[b.rarity];
+        if (sortBy.value === 'rarity') {
+          return rarityOrder[a.rarity] - rarityOrder[b.rarity];
+        }
         return 0;
       });
   });
@@ -50,17 +52,16 @@ export default component$(() => {
   const collections = ['A', 'B', 'C', 'D'];
 
   return (
-    <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-black/50">
+    <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl !rounded-t-none border-none rounded-xl md:mx-auto mx-3 bg-black/50">
       <Heading />
-
       <div class="flex flex-row h-[calc(100vh-12rem)]">
-        {/* Sidebar */}
-        <aside class="w-1/4 pr-4 border-r border-gray-700 overflow-y-auto">
+        {/* Sidebar: 1/4 width */}
+        <div class="w-1/4 pr-4 border-r border-gray-700">
           <div class="flex flex-col space-y-2">
-            {collections.map((collection) => (
+            {collections.map(collection => (
               <button
                 key={collection}
-                class={`p-3 text-left rounded-lg transition-colors duration-150 ${
+                class={`p-3 text-left rounded-lg transition-colors ${
                   selectedCollection.value === collection
                     ? 'bg-blue-600 text-white'
                     : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
@@ -71,21 +72,18 @@ export default component$(() => {
               </button>
             ))}
           </div>
-        </aside>
+        </div>
 
-        {/* Main Content */}
-        <main class="w-3/4 pl-4 flex flex-col">
+        {/* Main Content: 3/4 width */}
+        <div class="w-3/4 pl-4">
           {/* Filtering and Sorting Controls */}
-          <div class="flex justify-between mb-4 flex-none">
+          <div class="flex justify-between mb-4">
             <div>
               <label class="mr-2 text-gray-300">Filter by Rarity:</label>
               <select
                 class="p-2 rounded bg-gray-800 text-white"
                 value={filterRarity.value}
-                onChange$={(e) =>
-                  (filterRarity.value = (e.target as HTMLSelectElement)
-                    .value as Rarity | 'All')
-                }
+                onChange$={(e) => (filterRarity.value = (e.target as HTMLSelectElement).value as Rarity | 'All')}
               >
                 <option value="All">All</option>
                 <option value="Common">Common</option>
@@ -94,15 +92,12 @@ export default component$(() => {
                 <option value="Legendary">Legendary</option>
               </select>
             </div>
-
             <div>
               <label class="mr-2 text-gray-300">Sort by:</label>
               <select
                 class="p-2 rounded bg-gray-800 text-white"
                 value={sortBy.value}
-                onChange$={(e) =>
-                  (sortBy.value = (e.target as HTMLSelectElement).value as 'id' | 'rarity')
-                }
+                onChange$={(e) => (sortBy.value = (e.target as HTMLSelectElement).value)}
               >
                 <option value="id">ID</option>
                 <option value="rarity">Rarity</option>
@@ -110,28 +105,24 @@ export default component$(() => {
             </div>
           </div>
 
-          {/* Grid Container (scrollable area) */}
-          <div class="flex-1 overflow-y-auto pr-2">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {filteredItems.value.length > 0 ? (
-                filteredItems.value.map((item) => (
-                  <div
-                    key={item.id}
-                    class="p-4 bg-gray-800 rounded-lg text-white shadow-md hover:bg-gray-700 transition-colors duration-150"
-                  >
-                    <h3 class="font-semibold text-lg mb-1">{item.name}</h3>
-                    <p class="text-gray-300 text-sm">Rarity: {item.rarity}</p>
-                    <p class="text-gray-400 text-sm">ID: {item.id}</p>
-                  </div>
-                ))
-              ) : (
-                <p class="text-gray-400 col-span-full text-center mt-6">
-                  No items found for this collection.
-                </p>
-              )}
-            </div>
+          {/* Grid of Collection Items */}
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 overflow-y-auto h-full">
+            {filteredItems.value.length > 0 ? (
+              filteredItems.value.map(item => (
+                <div
+                  key={item.id}
+                  class="p-4 bg-gray-800 rounded-lg text-white"
+                >
+                  <h3 class="font-bold">{item.name}</h3>
+                  <p>Rarity: {item.rarity}</p>
+                  <p>ID: {item.id}</p>
+                </div>
+              ))
+            ) : (
+              <p class="text-gray-400">No items found for this collection.</p>
+            )}
           </div>
-        </main>
+        </div>
       </div>
     </Card.Root>
   );

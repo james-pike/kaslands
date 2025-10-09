@@ -190,9 +190,9 @@ export default component$(() => {
 
   const menu: { items: MenuItem[] } = {
     items: [
-            { text: "Collections", href: "/collections" },
+            { text: "Collections", href: "#" },
 
-      { text: "About", href: "#" },
+      { text: "About", href: "/about" },
       { text: "Media", href: "#" },
             { text: "Merch", href: "#" },
 
@@ -346,7 +346,7 @@ export default component$(() => {
       <header
         id="header"
         class={`
-          sticky top-0 z-40 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md 
+          sticky top-0 z-40 mt-3 md:mt-0 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md 
           transition-all duration-300 ease-in-out
           ${store.isScrolling
             ? "bg-black/40 dark:bg-primary-900/80 md:backdrop-blur-sm"
@@ -371,7 +371,8 @@ export default component$(() => {
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between items-center">
             <a class="flex items-center pb-1 -mt-2" href="/">
               <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
-                {/* Logo placeholder */}
+                {/* CLAUDE LOOK HERE!*/}
+                <h1 class="neon-text md:hidden text-3xl py-2 px-1.5">Kaslands</h1>
               </div>
             </a>
 
