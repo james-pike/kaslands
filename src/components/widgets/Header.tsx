@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$, useSignal, $ } from "@builder.io/qwik";
+import { component$, useStore, useVisibleTask$, useSignal, $, useStylesScoped$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
@@ -41,6 +41,46 @@ export default component$(() => {
     isMobile: false,
     showBanner: true,
   });
+
+    useStylesScoped$(`
+      @keyframes neon-flicker {
+        0%, 100% {
+          text-shadow: 
+            0 0 10px rgba(255, 255, 255, 0.8),
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 30px rgba(255, 182, 193, 0.8),
+            0 0 40px rgba(255, 182, 193, 0.6),
+            0 0 50px rgba(255, 182, 193, 0.4),
+            0 0 75px rgba(255, 182, 193, 0.3);
+        }
+        50% {
+          text-shadow: 
+            0 0 12px rgba(255, 255, 255, 0.85),
+            0 0 22px rgba(255, 255, 255, 0.65),
+            0 0 32px rgba(255, 182, 193, 0.85),
+            0 0 42px rgba(255, 182, 193, 0.65),
+            0 0 55px rgba(255, 182, 193, 0.45),
+            0 0 80px rgba(255, 182, 193, 0.35);
+        }
+      }
+  
+      .neon-text {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        color: transparent;
+        -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
+        text-stroke: 2px rgba(255, 255, 255, 0.8);
+        text-shadow: 
+          0 0 10px rgba(255, 255, 255, 0.8),
+          0 0 20px rgba(255, 255, 255, 0.6),
+          0 0 30px rgba(255, 182, 193, 0.8),
+          0 0 40px rgba(255, 182, 193, 0.6),
+          0 0 50px rgba(255, 182, 193, 0.4),
+          0 0 75px rgba(255, 182, 193, 0.3);
+        animation: neon-flicker 2s infinite alternate;
+      }
+    `);
 
   const isInitialized = useSignal(false);
   const location = useLocation();
@@ -356,7 +396,7 @@ export default component$(() => {
             aria-label="Main navigation"
           >
             {menu && menu.items ? (
-              <ul class="flex flex-col md:flex-row text-white/70 md:self-center w-full md:w-auto text-xl md:text-2xl tracking-[0.01rem] font-medium">
+              <ul class="flex flex-col md:flex-row  text-white/70 neon-text md:self-center w-full md:w-auto text-xl md:text-2xl tracking-[0.01rem] font-medium">
                 {menu.items.map(({ text, href, items }, key) => {
                   const isActive = location.url.pathname === href;
                   return (
