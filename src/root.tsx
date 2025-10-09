@@ -44,6 +44,8 @@ export default component$(() => {
         {/* Image preloads with correct types */}
         <link rel="preload" href="/images/logo22.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/images/logo2-cropped.svg" as="image" type="image/svg+xml" />
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet"/>
+
       </head>
   <body class="antialiased overflow-x-hidden">
   {/* Background video layer - fixed with 100svh to prevent zoom */}
