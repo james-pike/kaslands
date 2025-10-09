@@ -1,6 +1,5 @@
 import { component$ } from '@builder.io/qwik';
 import { Separator } from './ui/Separator';
-import { LuBook } from '@qwikest/icons/lucide';
 
 export default component$(() => {
   return (
@@ -32,7 +31,7 @@ export default component$(() => {
 
         <div class="flex items-center">
           {/* Example icon using an SVG; you can replace with your preferred icon */}
-<LuBook/>
+{/* <LuBook/> */}
         
         </div>
 

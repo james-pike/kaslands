@@ -164,7 +164,7 @@ export default component$(() => {
             "bg-white/30 mb-1 mr-0.75 dark:border-primary-500 hover:shadow-xl hover:bg-white/30"
           )}
         >
-          <IconHamburger class="w-6 h-7 text-teal-400 dark:text-secondary-200" />
+          <IconHamburger class="w-6 h-7 text-white/80 dark:text-secondary-200" />
         </Modal.Trigger>
 
         <Modal.Panel
