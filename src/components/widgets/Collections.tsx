@@ -150,31 +150,34 @@ export default component$(() => {
 
           {/* Grid Container (scrollable area) */}
           <div class="flex-1 overflow-y-auto pr-2">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredItems.value.length > 0 ? (
-                filteredItems.value.map((item) => (
-                  <div
-                    key={item.id}
-                    class="bg-gray-800/95 rounded-lg text-white shadow-md hover:bg-gray-700 transition-colors duration-150 overflow-hidden"
-                  >
-                    <img 
-                      src={`https://picsum.photos/seed/${item.id}/400/500`}
-                      alt={item.name}
-                      class="w-full h-48 object-cover"
-                    />
-                    <div class="p-4">
-                      <h3 class="font-semibold text-lg mb-1">{item.name}</h3>
-                      <p class="text-gray-300 text-sm">Rarity: {item.rarity}</p>
-                      <p class="text-gray-400 text-sm">ID: {item.id}</p>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <p class="text-gray-400 col-span-full text-center mt-6">
-                  No items found for this collection.
-                </p>
-              )}
-            </div>
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {filteredItems.value.length > 0 ? (
+    filteredItems.value.map((item) => (
+      <div
+        key={item.id}
+        class="bg-gray-800/95 rounded-lg text-white shadow-md hover:bg-gray-700 transition-colors duration-150 overflow-hidden"
+      >
+        <img 
+          src={`https://picsum.photos/seed/${item.id}/400/500`}
+          alt={item.name}
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-2"> {/* Reduced padding from p-4 to p-2 for compactness */}
+          <h3 class="font-semibold text-base mb-1 truncate">{item.name}</h3> {/* Added truncate to limit name to one line */}
+          <div class="flex justify-between flex-wrap gap-2 text-gray-300 text-xs"> {/* Reduced text size to text-xs and added flex-wrap */}
+                        <span>ID: {item.id}</span>
+
+            <span>{item.rarity}</span>
+          </div>
+        </div>
+      </div>
+    ))
+  ) : (
+    <p class="text-gray-400 col-span-full text-center mt-6">
+      No items found for this collection.
+    </p>
+  )}
+</div>
           </div>
         </main>
       </div>
