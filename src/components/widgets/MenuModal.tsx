@@ -24,7 +24,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
   const normalizePath = (path: string) => path.replace(/\/$/, "");
 
   return (
-    <div class="border-t border-primary-200">
+    <div class="border-t border-black/50">
       {items.map((item, index) => {
         // Check if the current route matches the item or any subitem
         const currentPath = normalizePath(location.url.pathname);
@@ -38,7 +38,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
           <div
             key={index}
             class={cn(
-              index > 0 && "border-t border-primary-200",
+              index > 0 && "border-t border-black/50",
               index === items.length - 1 && "border-b-0"
             )}
           >
@@ -46,9 +46,9 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
               <>
                 <button
                   class={cn(
-                    "!text-xl font-medium text-gray-700 dark:text-gray-200 flex items-center justify-between w-full p-2.5 px-5",
+                    "!text-xl font-medium text-white/90 dark:text-gray-200 flex items-center justify-between w-full p-2.5 px-5",
                     isActive &&
-                      "bg-primary-100 dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
+                      "bg-primary-100 dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
                     "hover:bg-primary-100 dark:hover:bg-primary-100/80 transition-all duration-200"
                   )}
                   onClick$={() => (openIndex.value = openIndex.value === index ? null : index)}
@@ -79,9 +79,9 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                           <a
                             href={subitem.href}
                             class={cn(
-                              "block text-gray-700 dark:text-gray-200 !text-xl p-3 pl-1 font-medium transition-all duration-200",
+                              "block text-white/90 dark:text-gray-200 !text-xl p-3 pl-1 font-medium transition-all duration-200",
                               isSubitemActive &&
-                                "bg-primary-100 dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
+                                "bg-primary-100 dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
                               "hover:bg-primary-100 dark:hover:bg-primary-100/80"
                             )}
                             onClick$={closeModal}
@@ -98,9 +98,9 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
               <a
                 href={item.href}
                 class={cn(
-                  "block lg text-gray-700 !text-xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200",
+                  "block lg text-white/90 !text-xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200",
                   isActive &&
-                    " dark:bg-primary-100/80 !important text-primary-800 dark:text-secondary-800 !important font-bold !important",
+                    " dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
                   "hover:bg-primary-100 dark:hover:bg-primary-100/80"
                 )}
                 onClick$={closeModal}
@@ -125,7 +125,7 @@ export default component$(() => {
   const banners = useBannerLoader(); // Ensure the banner loader is invoked
 
   const menuItems = [
-    { title: "Story", href: "/", hasSubmenu: false },
+    { title: "About", href: "/about", hasSubmenu: false },
     // {
     //   title: "About",
     //   href: "/about/",
@@ -148,10 +148,9 @@ export default component$(() => {
     //     { title: "Gift Cards", href: "https://bookeo.com/earthenvessels/buyvoucher" },
     //   ],
     // },
-            { title: "Roadmap", href: "/", badge: null },
-    { title: "Exchanges", href: "/", badge: null },
-    { title: "Media", href: "/", badge: null },
-    { title: "FAQ", href: "/", badge: null },
+            { title: "Collections", href: "/collections", badge: null },
+    { title: "Merch", href: "/merch", badge: null },
+    { title: "FAQ", href: "/faq", badge: null },
 
   ];
 
@@ -161,7 +160,7 @@ export default component$(() => {
         <Modal.Trigger
           class={cn(
             "p-2 py-1.5 mt-1  transition-all duration-300",
-            "bg-white/30 mb-1 mr-0.75 dark:border-primary-500 hover:shadow-xl hover:bg-white/30"
+            "bg-gray-900/80 mb-1 mr-0.75 dark:border-primary-500 hover:shadow-xl hover:bg-gray-900/80"
           )}
         >
           <IconHamburger class="w-6 h-7 text-white/80 dark:text-secondary-200" />
@@ -171,13 +170,13 @@ export default component$(() => {
           position="left"
           class="dark:bg-gray-950 border-r border-primary-200 overflow-y-auto max-h-[100vh]"
         >
-          <div class="rounded-t-none border-primary-200 bg-white/50 dark:bg-gray-900 p-2">
+          <div class="rounded-t-none border-primary-200 bg-gray-900/80 dark:bg-gray-900 p-2">
             <Modal.Title class="pt-3 pb-2 pl-2.5">
               <a href="/" class="focus:outline-none">
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
                                     {/* <img src="/images/sticker.webp" alt="Logo" /> */}
 
-                                  <h1 class="text-xl text-teal-800 ml-1 pt-2"> KASLANDS</h1>
+                                  <h1 class="text-xl neon-text text-teal-800 ml-1 pt-2"> KASLANDS</h1>
 
                 </div>
               </a>
@@ -189,28 +188,28 @@ export default component$(() => {
             </Modal.Description> */}
           </div>
 
-          <nav class="mt-0 space-y-4 bg-white/50 dark:bg-gray-800">
+          <nav class="mt-0 space-y-4 bg-gray-900/80 dark:bg-gray-800">
             <CustomAccordion items={menuItems} show={show} />
           </nav>
 
-          <div class="rounded-b-2xl border-t border-primary-200 bg-white/50 dark:bg-gray-900 pb-5">
+          <div class="rounded-b-2xl border-t border-black/50 border-primary-200 bg-gray-900/80 dark:bg-gray-900 pb-5">
             <div class="sm:max-w-md px-5 pt-4 flex flex-row items-center justify-between gap-4 lg:justify-start lg:max-w-7xl">
               <div class="flex-shrink-0">
                 <a
     href="#"
-    class="w-full sm:w-auto bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+    class="w-full sm:w-auto bg-pink-600/50 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-gray-900/80fore:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
     role="button"
     aria-label="Book a workshop"
   >
     <span class="relative z-10 flex items-center gap-1">
-      Mint $LANDS
+      Mint
       <img
         src="/images/sticker.webp"
         alt="Jar Icon"
         class="w-6 h-6 -ml-1 transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
       />
     </span>
-    <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
+    <div class="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent opacity-0 group-hover:opacity-90 transform group-hover:translate-x-full transition-all duration-500"></div>
   </a>
               </div>
@@ -219,7 +218,7 @@ export default component$(() => {
                   href="#"
                   // target="_blank"
                   // rel="noopener noreferrer"
-                  class="text-gray-600 dark:text-gray-200 hover:text-primary-800 dark:hover:text-primary-400 transition-colors"
+                  class="fill-white/90 dark:text-gray-200 hover:text-pink-600/50 dark:hover:text-primary-400 transition-colors"
                 >
 <svg width="30px" height="30px" viewBox="0 0 24 24" fill="#" class="" xmlns="http://www.w3.org/2000/svg">
   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -232,7 +231,7 @@ export default component$(() => {
                   href="#"
                   // target="_blank"
                   // rel="noopener noreferrer"
-                  class="text-gray-600 dark:text-gray-200 hover:text-primary-800 dark:hover:text-primary-400 transition-colors"
+                  class="fill-white/90 dark:text-gray-200 hover:text-pink-600/50 dark:hover:text-primary-400 transition-colors"
                 >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#" class="bi bi-twitter-x" viewBox="0 0 16 16" id="Twitter-X--Streamline-Bootstrap" height="28" width="28">
                b3cce4
@@ -246,7 +245,7 @@ export default component$(() => {
             {/* Banner with Added Border */}
             {/* Dynamic Open House Banner */}
         {banners.value && (
-          <div class="mt-4 pt-5 px-5 border-t border-primary-200">
+          <div class="mt-4 pt-5 px-5 border-t border-black/50 ">
             <div class="w-full px-5 py-4 text-sm font-medium text-gray-800 dark:text-gray-200 bg-gradient-to-r from-white/40 via-tertiary-100/40 to-white/40 dark:from-gray-900/40 dark:via-tertiary-900/40 dark:to-gray-900/40 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col gap-2">
               <div class="text-center">
                 <h3 class="text-base font-bold text-gray-800 dark:text-gray-200">
@@ -267,7 +266,7 @@ export default component$(() => {
           <Modal.Close
             class={cn(
               buttonVariants({ size: "icon", look: "link" }),
-              "absolute right-8 top-5 text-primary-300 hover:text-primary-800 dark:text-white dark:hover:bg-gray-900"
+              "absolute right-8 top-5 text-pink-600/50 hover:text-pink-600/50 dark:text-white dark:hover:bg-gray-900"
             )}
             type="submit"
           >

@@ -40,6 +40,7 @@ export default component$(() => {
     isScrolling: false,
     isMobile: false,
     showBanner: true,
+    scrolledPast25: false,
   });
 
     useStylesScoped$(`
@@ -190,13 +191,12 @@ export default component$(() => {
 
   const menu: { items: MenuItem[] } = {
     items: [
-            { text: "Collections", href: "#" },
+            { text: "Collections", href: "/" },
 
       { text: "About", href: "/about" },
-      { text: "Media", href: "#" },
-            { text: "Merch", href: "#" },
+            { text: "Merch", href: "/merch" },
 
-      // { text: "FAQ", href: "#" },
+      { text: "FAQ", href: "/faq" },
     ],
   };
 
@@ -349,12 +349,14 @@ export default component$(() => {
           sticky top-0 z-40 mt-3 md:mt-0 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md 
           transition-all duration-300 ease-in-out
           ${store.isScrolling
-            ? "bg-black/40 dark:bg-primary-900/80 md:backdrop-blur-sm"
-            : "bg-black/40 md:backdrop-blur-none"
+            ? "bg-gray-900/40 dark:bg-primary-900/80 md:backdrop-blur-sm"
+            : "bg-gray-900/40 md:backdrop-blur-none"
           }
         `}
         window:onScroll$={() => {
           const scrollY = window.scrollY;
+          const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercent = (scrollY / pageHeight) * 100;
 
           if (!store.isScrolling && scrollY >= 10) {
             store.isScrolling = true;
@@ -363,6 +365,9 @@ export default component$(() => {
             store.isScrolling = false;
             store.showBanner = true;
           }
+
+          // Show h1 on desktop after 25% scroll
+          store.scrolledPast25 = scrollPercent >= 10;
         }}
       >
         <div class="absolute inset-0" aria-hidden="true"></div>
@@ -372,7 +377,7 @@ export default component$(() => {
             <a class="flex items-center pb-1 -mt-2" href="/">
               <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                 {/* CLAUDE LOOK HERE!*/}
-                <h1 class="neon-text md:hidden text-3xl py-2 px-1.5">Kaslands</h1>
+                <h1 class={`neon-text text-2xl py-3 md:py-5 px-1.5 transition-opacity duration-300 ${store.scrolledPast25 ? 'md:block' : 'md:hidden'}`}>Kaslands</h1>
               </div>
             </a>
 
@@ -399,14 +404,15 @@ export default component$(() => {
             {menu && menu.items ? (
               <ul class="flex flex-col md:flex-row  text-white/70 neon-text md:self-center w-full md:w-auto text-xl md:text-2xl tracking-[0.01rem] font-medium">
                 {menu.items.map(({ text, href, items }, key) => {
-                  const isActive = location.url.pathname === href;
+                  const isActive = location.url.pathname === href || 
+                                  (href !== '/' && location.url.pathname.startsWith(href));
                   return (
                     <li key={key} class={items?.length ? "dropdown" : ""}>
                       {items?.length ? (
                         <>
                           <button
                             class={`
-                              hover:text-purple-600
+                              hover:text-pink-600
                               px-4 py-3
                               flex items-center
                               transition-all duration-200
@@ -417,7 +423,7 @@ export default component$(() => {
                               after:bottom-[6px]
                               after:left-1/2
                               after:h-[2px]
-                              after:bg-purple-600
+                              after:bg-pink-600
                               after:transition-all
                               after:duration-200
                               ${isActive
@@ -464,7 +470,7 @@ export default component$(() => {
                                   <a
                                     class={`
                                       hover:bg-muted
-                                      hover:text-purple-600
+                                      hover:text-pink-600
                                       py-2 px-5
                                       block
                                       whitespace-no-wrap
@@ -475,7 +481,7 @@ export default component$(() => {
                                       after:bottom-[4px]
                                       after:left-1/2
                                       after:h-[2px]
-                                      after:bg--purple-600
+                                      after:bg-pink-600
                                       after:transition-all
                                       after:duration-200
                                       ${isDropdownActive
@@ -512,7 +518,7 @@ export default component$(() => {
                         <a
                           class={`
                             hover:bg-muted
-                            hover:text-purple-600
+                            hover:text-pink-600
                             px-4 py-3
                             flex items-center
                             relative
@@ -522,12 +528,12 @@ export default component$(() => {
                             after:bottom-[6px]
                             after:left-1/2
                             after:h-[2px]
-                            after:bg-purple-600
+                            after:bg-pink-600
                             after:transition-all
                             after:duration-200
                             rounded-base
                             ${isActive
-                              ? "text-purple-600 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2"
+                              ? "text-pink-600 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2"
                               : "after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
                             }
                           `}

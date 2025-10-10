@@ -9,9 +9,9 @@ export default component$(() => {
   return (
     <>
     
-     <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl text-white/80 text-md rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/50">
+     <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl text-white/80 rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/50">
  
-    <h1>A few faq's could re-establish key message points like kas bounties, future collections, etc</h1>
+    <h1>2026</h1>
 </Card.Root>
     
      
