@@ -209,7 +209,7 @@ export default component$(() => {
           >
             <div class="flex items-center gap-3">
               <Icon class="w-5 h-5 text-pink-500" />
-              <h3 class="!text-xl neon-text font-semibold text-white/80 dark:text-secondary-100">
+              <h3 class="!text-xl md:neon-text font-semibold text-white/80 dark:text-secondary-100">
                 {item.question}
               </h3>
             </div>
@@ -260,7 +260,7 @@ export default component$(() => {
     <section class="faq-section relative overflow-hidden py-12 md:py-16">
       <div class="relative max-w-5xl mx-auto px-5 sm:px-6">
 
-            <h1 class="block text-2xl -mt-4 md:hidden pb-6 neon-text ">FAQs </h1>
+            <h1 class="block text-2xl -mt-4 md:hidden pb-6 text-center md:neon-text ">FAQs </h1>
 
         <div class="flex flex-col md:flex-row md:gap-8">
           <div class="flex-1 flex flex-col gap-4">
