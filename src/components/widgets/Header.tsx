@@ -1,9 +1,10 @@
-import { component$, useStore, useVisibleTask$, useSignal, $, useStylesScoped$ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
+import { component$, useStore, useVisibleTask$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
+import { useLocation, Link } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
 import IconPlay from "../IconPlay";
 import IconPause from "../IconPause";
+import { useAudioContext } from "~/contexts/AudioContext";
 
 interface CryptoPrice {
   usd: number;
@@ -89,33 +90,8 @@ export default component$(() => {
   const cryptoPrice = useSignal<CryptoPrice | null>(null);
   const currentMessageIndex = useSignal(0);
 
-  const audioRef = useSignal<HTMLAudioElement>();
-  const isPlaying = useSignal(false);
-
-  const toggleAudio = $(async () => {
-    const audio = audioRef.value;
-    if (audio) {
-      if (isPlaying.value) {
-        audio.pause();
-        isPlaying.value = false;
-        console.log("Audio paused");
-      } else {
-        try {
-          await audio.play();
-          isPlaying.value = true;
-          console.log("Audio playing");
-        } catch (error) {
-          console.error("Failed to play audio:", error);
-        }
-      }
-    } else {
-      console.error("Audio element not available");
-    }
-  });
-
-  const handleAudioEnded = $(() => {
-    isPlaying.value = false;
-  });
+  // Use global audio context
+  const { isPlaying, toggleAudio } = useAudioContext();
 
   // Fetch BMT price data
   useVisibleTask$(async () => {
@@ -123,17 +99,6 @@ export default component$(() => {
     store.isMobile = mediaQuery.matches;
     isInitialized.value = true;
 
-    const audio = audioRef.value;
-    if (audio && !isPlaying.value) {
-      try {
-        await audio.play();
-        isPlaying.value = true;
-        console.log("Audio auto-started on visibility");
-      } catch (error) {
-        console.error("Failed to auto-play audio:", error);
-      }
-    }
-    
     const handler = (e: MediaQueryListEvent) => {
       store.isMobile = e.matches;
     };
@@ -374,12 +339,12 @@ export default component$(() => {
         <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:items-center max-w-7xl">
           {/* Logo Section */}
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between items-center">
-            <a class="flex items-center pb-1 -mt-2" href="/">
+            <Link class="flex items-center pb-1 -mt-2" href="/">
               <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                 {/* CLAUDE LOOK HERE!*/}
                 <h1 class={`neon-text text-2xl py-3 md:py-5 px-1.5 transition-opacity duration-300 ${store.scrolledPast25 ? 'md:block' : 'md:hidden'}`}>Kaslands</h1>
               </div>
-            </a>
+            </Link>
 
             {/* Mobile buttons (MenuModal only for mobile) */}
             <div class="flex items-center md:hidden gap-2">
@@ -467,7 +432,7 @@ export default component$(() => {
                               const isLast = key2 === items.length - 1;
                               return (
                                 <li key={key2}>
-                                  <a
+                                  <Link
                                     class={`
                                       hover:bg-muted
                                       hover:text-pink-600
@@ -496,26 +461,22 @@ export default component$(() => {
                                     onClick$={(e) => {
                                       if (text2 === "Clay" && href2 === "/about#clay") {
                                         e.preventDefault();
-                                        if (location.url.pathname !== "/about") {
-                                          window.location.href = "/about#clay";
-                                        } else {
-                                          const claySection = document.getElementById("clay");
-                                          if (claySection) {
-                                            claySection.scrollIntoView({ behavior: "smooth" });
-                                          }
+                                        const claySection = document.getElementById("clay");
+                                        if (claySection) {
+                                          claySection.scrollIntoView({ behavior: "smooth" });
                                         }
                                       }
                                     }}
                                   >
                                     {text2}
-                                  </a>
+                                  </Link>
                                 </li>
                               );
                             })}
                           </ul>
                         </>
                       ) : (
-                        <a
+                        <Link
                           class={`
                             hover:bg-muted
                             hover:text-pink-600
@@ -540,7 +501,7 @@ export default component$(() => {
                           href={href}
                         >
                           {text}
-                        </a>
+                        </Link>
                       )}
                     </li>
                   );
@@ -552,6 +513,31 @@ export default component$(() => {
           {/* Right-side buttons: Audio + MINT */}
           <div class="hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0">
             <div class="items-center flex mr-2 justify-between w-full md:w-auto gap-2">
+              {/* Social Icons */}
+              <a
+                href="#"
+                class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-black/30 transition-all"
+                aria-label="X (Twitter)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-twitter-x" viewBox="0 0 16 16" height="20" width="20">
+                  <path d="M12.6 0.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867 -5.07 -4.425 5.07H0.316l5.733 -6.57L0 0.75h5.063l3.495 4.633L12.601 0.75Zm-0.86 13.028h1.36L4.323 2.145H2.865z" stroke-width="1"></path>
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-black/30 transition-all"
+                aria-label="Telegram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z" fill="white"></path>
+                </svg>
+              </a>
+
               {/* Audio Play/Pause Button */}
               <a
                 class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md"
@@ -560,31 +546,24 @@ export default component$(() => {
               >
                 {isPlaying.value ? <IconPause /> : <IconPlay />}
               </a>
-              <audio
-                ref={audioRef}
-                src="/images/hero1.mp3"
-                preload="auto"
-                onEnded$={handleAudioEnded}
-              />
-              
+
               {/* MINT Button */}
-              {/* <a
+              <a
                 href="#"
-                class="w-full sm:w-auto bg-white/30 group relative inline-flex items-center justify-center px-3 pl-5 py-2.5 text-xl font-semibold text-white rounded-xl shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-secondary-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500 hover:scale-102 hover:bg-gradient-to-r hover:from-primary-400 hover:via-primary-400 hover:to-primary-300"
+                class="w-full sm:w-auto bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-3 pl-4 py-2 text-lg font-semibold text-white rounded-md shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                 role="button"
-                aria-label="Book a workshop"
+                aria-label="Mint NFT"
               >
                 <span class="relative z-10 flex items-center gap-1">
                   MINT
                   <img
                     src="/images/sticker.webp"
-                    alt="Jar Icon"
-                    class="w-8 h-8 transform transition-transform duration-300 -ml-1 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    alt="Mint Icon"
+                    class="w-6 h-6 transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
                 </span>
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent opacity-0 group-hover:opacity-90 transform group-hover:translate-x-full transition-all duration-500"></div>
-              </a> */}
+              </a>
             </div>
           </div>
         </div>

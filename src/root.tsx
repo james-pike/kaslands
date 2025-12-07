@@ -1,10 +1,15 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
 import { RouterHead } from "~/components/common/RouterHead";
+import { useAudioProvider } from "~/contexts/AudioContext";
 import styles from "~/assets/styles/global.css?inline";
 
 export default component$(() => {
   useStyles$(styles);
+
+  // Provide audio context at the root level
+  // Audio element is created imperatively in the context to persist across navigation
+  useAudioProvider();
 
   return (
     <QwikCityProvider>

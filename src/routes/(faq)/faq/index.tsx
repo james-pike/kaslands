@@ -200,7 +200,7 @@ export default component$(() => {
     const Icon = item.icon;
     return (
       <div key={item.id} class="group">
-        <div class="bg-black/40 dark:from-gray-800/90 rounded-md border-2 border-black/50 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div class="bg-black/80 dark:from-gray-800/90 rounded-md border-2 border-black/50 shadow-lg hover:shadow-xl transition-all duration-300">
           <button
             onClick$={() => toggleItem(item.id)}
             class="w-full px-6 py-5 flex items-center justify-between text-left transition-all"
@@ -209,7 +209,7 @@ export default component$(() => {
           >
             <div class="flex items-center gap-3">
               <Icon class="w-5 h-5 text-pink-500" />
-              <h3 class="!text-xl md:neon-text font-semibold text-white/80 dark:text-secondary-100">
+              <h3 class="!text-xl md:neon-text font-semibold text-white dark:text-secondary-100">
                 {item.question}
               </h3>
             </div>

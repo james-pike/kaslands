@@ -1,7 +1,7 @@
 import { component$, useSignal, $, Signal, useVisibleTask$ } from "@builder.io/qwik";
 import { LuX, LuChevronDown } from "@qwikest/icons/lucide";
 import { cn } from "@qwik-ui/utils";
-import { useLocation } from "@builder.io/qwik-city";
+import { useLocation, Link } from "@builder.io/qwik-city";
 import { Modal } from "../ui/Modal";
 import IconHamburger from "../icons/IconHamburger";
 import { buttonVariants } from "../ui/Button";
@@ -76,7 +76,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                       return (
                         <li key={subitem.title} class="flex items-center">
                           <span class="text-primary-300 !text-2xs mr-3">✦</span>
-                          <a
+                          <Link
                             href={subitem.href}
                             class={cn(
                               "block text-white/90 dark:text-gray-200 !text-xl p-3 pl-1 font-medium transition-all duration-200",
@@ -87,7 +87,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                             onClick$={closeModal}
                           >
                             {subitem.title}
-                          </a>
+                          </Link>
                         </li>
                       );
                     })}
@@ -95,7 +95,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                 </div>
               </>
             ) : (
-              <a
+              <Link
                 href={item.href}
                 class={cn(
                   "block lg text-white/90 !text-xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200",
@@ -107,7 +107,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
               >
                 <span>{item.title}</span>
                 {item.badge}
-              </a>
+              </Link>
             )}
           </div>
         );
@@ -172,14 +172,14 @@ export default component$(() => {
         >
           <div class="rounded-t-none border-primary-200 bg-gray-900/80 dark:bg-gray-900 p-2">
             <Modal.Title class="pt-3 pb-2 pl-2.5">
-              <a href="/" class="focus:outline-none">
+              <Link href="/" class="focus:outline-none">
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
                                     {/* <img src="/images/sticker.webp" alt="Logo" /> */}
 
                                   <h1 class="text-xl neon-text text-teal-800 ml-1 pt-2"> KASLANDS</h1>
 
                 </div>
-              </a>
+              </Link>
             </Modal.Title>
             {/* <Modal.Description class="!text-md !font-bold px-2.5 py-1 pb-2 dark:text-gray-200">
               <span class="bg-gradient-to-r from-primary-600 via-tertiary-600 to-primary-600 bg-clip-text text-transparent">
