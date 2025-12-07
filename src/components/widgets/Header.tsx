@@ -156,7 +156,7 @@ export default component$(() => {
 
   const menu: { items: MenuItem[] } = {
     items: [
-            { text: "Collections", href: "/" },
+            { text: "Collection", href: "/" },
 
       { text: "About", href: "/about" },
             { text: "Merch", href: "/merch" },

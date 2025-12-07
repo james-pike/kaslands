@@ -55,37 +55,37 @@ export default component$(() => {
   ]);
 
   return (
-    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 mb-12">
+    <div class="max-w-6xl mx-3 md:mx-auto px-3 md:px-0 py-4 mb-4">
       {/* Hero Section */}
-      <div class="bg-black/80 rounded-xl p-8 md:p-12 mb-12 border-2 border-pink-500/30 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold text-white md:neon-text mb-4">
+      <div class="bg-black/80 rounded-xl p-5 md:p-8 mb-4 border-2 border-pink-500/30 text-center">
+        <h1 class="text-3xl md:text-5xl font-bold text-white md:neon-text mb-3">
           Kaslands Merch
         </h1>
-        <p class="text-xl text-white/90 max-w-3xl mx-auto">
+        <p class="text-lg text-white/90 max-w-3xl mx-auto">
           Represent the Kaslands community with exclusive merchandise. All items are limited edition.
         </p>
-        <div class="mt-6 inline-block bg-pink-600/20 border-2 border-pink-500/50 rounded-lg px-6 py-3">
-          <p class="text-white/90">
+        <div class="mt-4 inline-block bg-pink-600/20 border-2 border-pink-500/50 rounded-lg px-4 py-2">
+          <p class="text-white/90 text-sm">
             🚀 <span class="font-semibold">Coming 2026</span> - Pre-orders opening soon!
           </p>
         </div>
       </div>
 
       {/* Featured Product Banner */}
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
         <div class="bg-gradient-to-br from-pink-600/30 to-purple-600/30 rounded-xl p-2 border-2 border-pink-500/40">
-          <div class="bg-black/70 rounded-lg h-full flex items-center justify-center p-12">
+          <div class="bg-black/70 rounded-lg h-full flex items-center justify-center p-8">
             <div class="text-center">
               <div class="text-8xl mb-4">👕</div>
               <p class="text-2xl font-bold text-white md:neon-text">Featured Item</p>
             </div>
           </div>
         </div>
-        <div class="bg-black/80 rounded-xl p-8 border-2 border-pink-500/30 flex flex-col justify-center">
-          <span class="inline-block bg-pink-600/40 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 w-fit">
+        <div class="bg-black/80 rounded-xl p-5 md:p-6 border-2 border-pink-500/30 flex flex-col justify-center">
+          <span class="inline-block bg-pink-600/40 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 w-fit">
             Best Seller
           </span>
-          <h2 class="text-3xl font-bold text-white md:neon-text mb-4">
+          <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
             Kaslands Hoodie
           </h2>
           <p class="text-white/90 mb-4 text-lg">
@@ -103,17 +103,17 @@ export default component$(() => {
       </div>
 
       {/* Product Grid */}
-      <h2 class="text-3xl font-bold text-white md:neon-text mb-8 text-center">
+      <h2 class="text-2xl font-bold text-white md:neon-text mb-4 text-center">
         All Products
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
         {products.value.map((product) => (
           <div
             key={product.id}
             class="bg-black/80 rounded-xl border-2 border-pink-500/20 overflow-hidden hover:border-pink-500/50 transition-all duration-300 group"
           >
             {/* Product Image Placeholder */}
-            <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 h-64 flex items-center justify-center relative">
+            <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 h-48 flex items-center justify-center relative">
               <div class="text-7xl opacity-80 group-hover:scale-110 transition-transform duration-300">
                 {product.id === 1 && "👕"}
                 {product.id === 2 && "👔"}
@@ -130,9 +130,9 @@ export default component$(() => {
             </div>
 
             {/* Product Info */}
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">{product.name}</h3>
-              <p class="text-white/80 mb-4 text-sm">{product.description}</p>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-white mb-2">{product.name}</h3>
+              <p class="text-white/80 mb-3 text-sm">{product.description}</p>
               <div class="flex items-center justify-between mb-4">
                 <span class="text-2xl font-bold text-pink-500">{product.price}</span>
               </div>
@@ -145,11 +145,11 @@ export default component$(() => {
       </div>
 
       {/* Newsletter Section */}
-      <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 rounded-xl p-8 md:p-12 border-2 border-pink-500/30 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+      <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 rounded-xl p-5 md:p-8 border-2 border-pink-500/30 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
           Stay Updated
         </h2>
-        <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
+        <p class="text-white/90 mb-4 text-base max-w-2xl mx-auto">
           Be the first to know when our merch drops. Join our community and get exclusive early access.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">

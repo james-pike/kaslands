@@ -4,20 +4,20 @@ import { SITE } from "~/config.mjs";
 
 export default component$(() => {
   return (
-    <div class="max-w-6xl mx-auto px-4 md:px-6 py-8 mb-12">
+    <div class="max-w-6xl mx-3 md:mx-auto px-3 md:px-0 py-4 mb-4">
       {/* Hero Section */}
-      <div class="bg-black/80 rounded-xl p-8 md:p-12 mb-8 border-2 border-pink-500/30">
-        <h1 class="text-4xl md:text-6xl font-bold text-white md:neon-text mb-4 text-center">
+      <div class="bg-black/80 rounded-xl p-5 md:p-8 mb-4 border-2 border-pink-500/30">
+        <h1 class="text-3xl md:text-5xl font-bold text-white md:neon-text mb-3 text-center">
           Welcome to Kaslands
         </h1>
-        <p class="text-xl text-white/90 text-center max-w-3xl mx-auto">
+        <p class="text-lg text-white/90 text-center max-w-3xl mx-auto">
           A vibrant NFT ecosystem built on Kaspa, where art meets innovation and community drives creativity.
         </p>
       </div>
 
       {/* Section 1 - Text Left, Image Right */}
-      <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
-        <div class="bg-black/80 rounded-xl p-6 md:p-8 border-2 border-pink-500/20">
+      <div class="grid md:grid-cols-2 gap-4 mb-4 items-center">
+        <div class="bg-black/80 rounded-xl p-5 md:p-6 border-2 border-pink-500/20">
           <h2 class="text-3xl font-bold text-white md:neon-text mb-4">
             The Vision
           </h2>
@@ -43,17 +43,17 @@ export default component$(() => {
       </div>
 
       {/* Section 2 - Image Left, Text Right */}
-      <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
+      <div class="grid md:grid-cols-2 gap-4 mb-4 items-center">
         <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-2 border-2 border-pink-500/30 order-2 md:order-1">
-          <div class="bg-black/60 rounded-lg h-64 md:h-80 flex items-center justify-center">
+          <div class="bg-black/60 rounded-lg h-48 md:h-64 flex items-center justify-center">
             <div class="text-center p-8">
               <div class="text-6xl mb-4">🎨</div>
               <p class="text-white/80 text-lg">Art & Creativity</p>
             </div>
           </div>
         </div>
-        <div class="bg-black/80 rounded-xl p-6 md:p-8 border-2 border-pink-500/20 order-1 md:order-2">
-          <h2 class="text-3xl font-bold text-white md:neon-text mb-4">
+        <div class="bg-black/80 rounded-xl p-5 md:p-6 border-2 border-pink-500/20 order-1 md:order-2">
+          <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
             The Art
           </h2>
           <p class="text-white/90 mb-4 leading-relaxed">
@@ -69,9 +69,9 @@ export default component$(() => {
       </div>
 
       {/* Section 3 - Text Left, Image Right */}
-      <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
-        <div class="bg-black/80 rounded-xl p-6 md:p-8 border-2 border-pink-500/20">
-          <h2 class="text-3xl font-bold text-white md:neon-text mb-4">
+      <div class="grid md:grid-cols-2 gap-4 mb-4 items-center">
+        <div class="bg-black/80 rounded-xl p-5 md:p-6 border-2 border-pink-500/20">
+          <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
             The Community
           </h2>
           <p class="text-white/90 mb-4 leading-relaxed">
@@ -85,7 +85,7 @@ export default component$(() => {
           </p>
         </div>
         <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-xl p-2 border-2 border-pink-500/30">
-          <div class="bg-black/60 rounded-lg h-64 md:h-80 flex items-center justify-center">
+          <div class="bg-black/60 rounded-lg h-48 md:h-64 flex items-center justify-center">
             <div class="text-center p-8">
               <div class="text-6xl mb-4">🤝</div>
               <p class="text-white/80 text-lg">Building Together</p>
@@ -95,8 +95,8 @@ export default component$(() => {
       </div>
 
       {/* Bottom CTA Section */}
-      <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 rounded-xl p-8 md:p-12 border-2 border-pink-500/30 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+      <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 rounded-xl p-5 md:p-8 border-2 border-pink-500/30 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
           Ready to Join Kaslands?
         </h2>
         <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">

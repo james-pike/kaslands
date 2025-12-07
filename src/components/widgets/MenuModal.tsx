@@ -148,7 +148,7 @@ export default component$(() => {
     //     { title: "Gift Cards", href: "https://bookeo.com/earthenvessels/buyvoucher" },
     //   ],
     // },
-            { title: "Collections", href: "/collections", badge: null },
+            { title: "Collection", href: "/", badge: null },
     { title: "Merch", href: "/merch", badge: null },
     { title: "FAQ", href: "/faq", badge: null },
 

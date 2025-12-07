@@ -203,13 +203,13 @@ export default component$(() => {
         <div class="bg-black/80 dark:from-gray-800/90 rounded-md border-2 border-black/50 shadow-lg hover:shadow-xl transition-all duration-300">
           <button
             onClick$={() => toggleItem(item.id)}
-            class="w-full px-6 py-5 flex items-center justify-between text-left transition-all"
+            class="w-full px-4 py-3 flex items-center justify-between text-left transition-all"
             aria-expanded={openItems.value === item.id}
             aria-controls={`faq-answer-${item.id}`}
           >
-            <div class="flex items-center gap-3">
-              <Icon class="w-5 h-5 text-pink-500" />
-              <h3 class="!text-xl md:neon-text font-semibold text-white dark:text-secondary-100">
+            <div class="flex items-center gap-2">
+              <Icon class="w-4 h-4 text-pink-500" />
+              <h3 class="!text-lg md:neon-text font-semibold text-white dark:text-secondary-100">
                 {item.question}
               </h3>
             </div>
@@ -243,7 +243,7 @@ export default component$(() => {
               openItems.value === item.id ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <div class="px-6 pb-5 text-white dark:text-secondary-300">
+            <div class="px-4 pb-3 text-white dark:text-secondary-300">
               {item.isHtml ? (
                 <div dangerouslySetInnerHTML={item.answer} />
               ) : (
@@ -257,16 +257,24 @@ export default component$(() => {
   };
 
   return (
-    <section class="faq-section relative overflow-hidden py-12 md:py-16">
-      <div class="relative max-w-5xl mx-auto px-5 sm:px-6">
+    <section class="faq-section relative overflow-hidden py-4 md:py-8">
+      <div class="relative max-w-6xl mx-3 md:mx-auto px-3 md:px-0">
 
-            <h1 class="block text-2xl -mt-4 md:hidden pb-6 text-center md:neon-text ">FAQs </h1>
+        {/* Hero Section */}
+        <div class="bg-black/80 rounded-xl p-5 md:p-8 mb-4 border-2 border-pink-500/30 text-center">
+          <h1 class="text-3xl md:text-5xl font-bold text-white md:neon-text mb-3">
+            Frequently Asked Questions
+          </h1>
+          <p class="text-lg text-white/90 max-w-3xl mx-auto">
+            Get to know the creator behind Kaslands and learn about our vision, art, and community.
+          </p>
+        </div>
 
-        <div class="flex flex-col md:flex-row md:gap-8">
-          <div class="flex-1 flex flex-col gap-4">
+        <div class="flex flex-col md:flex-row md:gap-4">
+          <div class="flex-1 flex flex-col gap-3">
             {leftColumn.map(renderFaqItem)}
           </div>
-          <div class="flex-1 flex flex-col gap-4 mt-4 md:mt-0">
+          <div class="flex-1 flex flex-col gap-3 mt-3 md:mt-0">
             {rightColumn.map(renderFaqItem)}
           </div>
         </div>

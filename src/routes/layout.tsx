@@ -1,6 +1,7 @@
 import { component$, Slot, useVisibleTask$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { inject } from "@vercel/analytics";
+import Footer from "~/components/widgets/Footer";
 import Header from "~/components/widgets/Header";
 import Hero from "~/components/widgets/Hero";
 
@@ -52,8 +53,9 @@ export default component$(() => {
         <div class="relative  mx-auto max-w-7xl  overflow-x-hidden">
           <Slot />
         </div>
+              <Footer />
+
       </main>
-      {/* <Footer /> */}
     </div>
   );
 });
