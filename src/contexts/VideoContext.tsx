@@ -1,8 +1,11 @@
 import { useVisibleTask$ } from "@builder.io/qwik";
 
-// Global video element stored outside of Qwik's reactivity
+// Global video element and state stored outside of Qwik's reactivity
 let globalVideo: HTMLVideoElement | null = null;
 let videoContainer: HTMLDivElement | null = null;
+const videoState = {
+  isInitialized: false
+};
 
 const getOrCreateVideo = (): HTMLVideoElement => {
   if (!globalVideo) {
@@ -12,19 +15,22 @@ const getOrCreateVideo = (): HTMLVideoElement => {
     videoContainer.style.height = '100svh';
     videoContainer.setAttribute('aria-hidden', 'true');
 
-    // Create video element
+    // Create video element with all necessary attributes for autoplay
     globalVideo = document.createElement('video');
+    globalVideo.setAttribute('autoplay', '');
+    globalVideo.setAttribute('loop', '');
+    globalVideo.setAttribute('muted', '');
+    globalVideo.setAttribute('playsinline', '');
     globalVideo.autoplay = true;
     globalVideo.loop = true;
     globalVideo.muted = true;
     globalVideo.playsInline = true;
+    globalVideo.defaultMuted = true; // Important for autoplay
     globalVideo.className = 'w-full h-full object-cover';
 
-    // Create source element
-    const source = document.createElement('source');
-    source.src = '/images/hero4.mp4';
-    source.type = 'video/mp4';
-    globalVideo.appendChild(source);
+    // Set source directly on video element
+    globalVideo.src = '/images/hero4.mp4';
+    globalVideo.load(); // Explicitly load the video
 
     // Append video to container
     videoContainer.appendChild(globalVideo);
@@ -38,10 +44,31 @@ const getOrCreateVideo = (): HTMLVideoElement => {
 
     console.log('Created new global video element');
 
-    // Try to play
-    globalVideo.play().catch(err => {
-      console.log('Auto-play prevented:', err);
-    });
+    // Try to play immediately
+    const playPromise = globalVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(err => {
+        console.log('Video auto-play prevented, will retry on user interaction:', err);
+
+        // Retry on any user interaction
+        const startVideo = () => {
+          if (globalVideo && globalVideo.paused) {
+            globalVideo.play().then(() => {
+              console.log('Video started after user interaction');
+              document.removeEventListener('click', startVideo);
+              document.removeEventListener('touchstart', startVideo);
+              document.removeEventListener('keydown', startVideo);
+            }).catch(e => console.log('Video play failed:', e));
+          }
+        };
+
+        document.addEventListener('click', startVideo, { once: true });
+        document.addEventListener('touchstart', startVideo, { once: true });
+        document.addEventListener('keydown', startVideo, { once: true });
+      });
+    }
+
+    videoState.isInitialized = true;
   }
   return globalVideo;
 };
