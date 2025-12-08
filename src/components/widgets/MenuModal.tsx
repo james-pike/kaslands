@@ -1,15 +1,17 @@
 import { component$, useSignal, $, Signal, useVisibleTask$ } from "@builder.io/qwik";
 import { LuX, LuChevronDown } from "@qwikest/icons/lucide";
 import { cn } from "@qwik-ui/utils";
-import { useLocation, Link } from "@builder.io/qwik-city";
+import { useLocation } from "@builder.io/qwik-city";
 import { Modal } from "../ui/Modal";
 import IconHamburger from "../icons/IconHamburger";
 import { buttonVariants } from "../ui/Button";
 import { useBannerLoader } from "~/routes/layout";
+import { useTabContext, type TabId } from "~/contexts/TabContext";
 
 const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signal<boolean> }) => {
   const openIndex = useSignal<number | null>(null);
   const location = useLocation();
+  const { activeTab } = useTabContext();
 
   useVisibleTask$(({ track }) => {
     track(() => show.value);
@@ -20,20 +22,19 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
 
   const closeModal = $(() => (show.value = false));
 
+  const switchTab = $((tab: TabId) => {
+    activeTab.value = tab;
+    closeModal();
+  });
+
   // Normalize paths to handle trailing slashes
   const normalizePath = (path: string) => path.replace(/\/$/, "");
 
   return (
     <div class="border-t border-black/50">
       {items.map((item, index) => {
-        // Check if the current route matches the item or any subitem
-        const currentPath = normalizePath(location.url.pathname);
-        const isActive =
-          normalizePath(item.href) === currentPath ||
-          (item.hasSubmenu &&
-            item.subitems?.some((subitem: any) =>
-              normalizePath(subitem.href.split("#")[0]) === currentPath
-            ));
+        // Check if the current tab matches the item
+        const isActive = activeTab.value === item.href;
         return (
           <div
             key={index}
@@ -69,25 +70,21 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                 >
                   <ul class="flex flex-col gap-0 pl-5">
                     {item.subitems!.map((subitem: any) => {
-                      // Updated logic: Compare full href (including hash) with current pathname + hash
-                      const isSubitemActive =
-                        normalizePath(subitem.href) ===
-                        normalizePath(location.url.pathname + (location.url.hash || ""));
+                      const isSubitemActive = activeTab.value === subitem.href;
                       return (
                         <li key={subitem.title} class="flex items-center">
                           <span class="text-primary-300 !text-2xs mr-3">✦</span>
-                          <Link
-                            href={subitem.href}
+                          <button
                             class={cn(
-                              "block text-white/90 dark:text-gray-200 !text-xl p-3 pl-1 font-medium transition-all duration-200",
+                              "block text-white/90 dark:text-gray-200 !text-xl p-3 pl-1 font-medium transition-all duration-200 text-left w-full",
                               isSubitemActive &&
                                 "bg-primary-100 dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
                               "hover:bg-primary-100 dark:hover:bg-primary-100/80"
                             )}
-                            onClick$={closeModal}
+                            onClick$={() => switchTab(subitem.href as TabId)}
                           >
                             {subitem.title}
-                          </Link>
+                          </button>
                         </li>
                       );
                     })}
@@ -95,19 +92,18 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                 </div>
               </>
             ) : (
-              <Link
-                href={item.href}
+              <button
                 class={cn(
-                  "block lg text-white/90 !text-xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200",
+                  "block lg text-white/90 !text-xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200 text-left w-full",
                   isActive &&
                     " dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
                   "hover:bg-primary-100 dark:hover:bg-primary-100/80"
                 )}
-                onClick$={closeModal}
+                onClick$={() => switchTab(item.href as TabId)}
               >
                 <span>{item.title}</span>
                 {item.badge}
-              </Link>
+              </button>
             )}
           </div>
         );
@@ -123,35 +119,18 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
 export default component$(() => {
   const show = useSignal(false);
   const banners = useBannerLoader(); // Ensure the banner loader is invoked
+  const { activeTab } = useTabContext();
+
+  const switchTab = $((tab: TabId) => {
+    activeTab.value = tab;
+    show.value = false;
+  });
 
   const menuItems = [
-    { title: "About", href: "/about", hasSubmenu: false },
-    // {
-    //   title: "About",
-    //   href: "/about/",
-    //   hasSubmenu: true,
-    //   subitems: [
-    //     { title: "Our Space", href: "/about" },
-    //     { title: "What To Expect", href: "/about#what-to-expect" },
-    //     { title: "Newsletter", href: "/newsletter" },
-    //         { title: "Gallery", href: "/gallery/", badge: null },
-
-    //     { title: "FAQ", href: "/faq" },
-    //   ],
-    // },
-    // {
-    //   title: "Classes",
-    //   href: "/classes/",
-    //   hasSubmenu: true,
-    //   subitems: [
-    //     { title: "Our Offerings", href: "/classes" },
-    //     { title: "Gift Cards", href: "https://bookeo.com/earthenvessels/buyvoucher" },
-    //   ],
-    // },
-            { title: "Collection", href: "/", badge: null },
-    { title: "Merch", href: "/merch", badge: null },
-    { title: "FAQ", href: "/faq", badge: null },
-
+    { title: "About", href: "about", hasSubmenu: false },
+    { title: "Collection", href: "collection", badge: null },
+    { title: "Merch", href: "merch", badge: null },
+    { title: "FAQ", href: "faq", badge: null },
   ];
 
   return (
@@ -172,14 +151,14 @@ export default component$(() => {
         >
           <div class="rounded-t-none border-primary-200 bg-gray-900/80 dark:bg-gray-900 p-2">
             <Modal.Title class="pt-3 pb-2 pl-2.5">
-              <Link href="/" class="focus:outline-none">
+              <button onClick$={() => switchTab('collection')} class="focus:outline-none">
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
                                     {/* <img src="/images/sticker.webp" alt="Logo" /> */}
 
                                   <h1 class="text-xl neon-text text-teal-800 ml-1 pt-2"> KASLANDS</h1>
 
                 </div>
-              </Link>
+              </button>
             </Modal.Title>
             {/* <Modal.Description class="!text-md !font-bold px-2.5 py-1 pb-2 dark:text-gray-200">
               <span class="bg-gradient-to-r from-primary-600 via-tertiary-600 to-primary-600 bg-clip-text text-transparent">

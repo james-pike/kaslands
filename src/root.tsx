@@ -3,6 +3,7 @@ import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.
 import { RouterHead } from "~/components/common/RouterHead";
 import { useAudioProvider } from "~/contexts/AudioContext";
 import { useVideoProvider } from "~/contexts/VideoContext";
+import { useTabProvider } from "~/contexts/TabContext";
 import styles from "~/assets/styles/global.css?inline";
 
 export default component$(() => {
@@ -15,6 +16,9 @@ export default component$(() => {
   // Provide video context at the root level
   // Video element is created imperatively in the context to persist across navigation
   useVideoProvider();
+
+  // Provide tab context for tab-based navigation
+  useTabProvider();
 
   return (
     <QwikCityProvider>

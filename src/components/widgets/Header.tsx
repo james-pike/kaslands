@@ -1,10 +1,11 @@
-import { component$, useStore, useVisibleTask$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
-import { useLocation, Link } from "@builder.io/qwik-city";
+import { component$, useStore, useVisibleTask$, useSignal, useStylesScoped$, $ } from "@builder.io/qwik";
+import { useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
 import IconPlay from "../IconPlay";
 import IconPause from "../IconPause";
 import { useAudioContext } from "~/contexts/AudioContext";
+import { useTabContext, type TabId } from "~/contexts/TabContext";
 import { GunIcon } from "~/components/icons/GunIcon";
 
 interface CryptoPrice {
@@ -94,6 +95,14 @@ export default component$(() => {
   // Use global audio context
   const { isPlaying, toggleAudio } = useAudioContext();
 
+  // Use tab context for tab navigation
+  const { activeTab } = useTabContext();
+
+  // Handle tab switching
+  const switchTab = $((tab: TabId) => {
+    activeTab.value = tab;
+  });
+
   // Fetch BMT price data
   useVisibleTask$(async () => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
@@ -157,12 +166,12 @@ export default component$(() => {
 
   const menu: { items: MenuItem[] } = {
     items: [
-            { text: "Collection", href: "/" },
+            { text: "Collection", href: "collection" },
 
-      { text: "About", href: "/about" },
-            { text: "Merch", href: "/merch" },
+      { text: "About", href: "about" },
+            { text: "Merch", href: "merch" },
 
-      { text: "FAQ", href: "/faq" },
+      { text: "FAQ", href: "faq" },
     ],
   };
 
@@ -340,12 +349,12 @@ export default component$(() => {
         <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:items-center max-w-7xl">
           {/* Logo Section */}
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between items-center">
-            <Link class="flex items-center pb-1 -mt-2" href="/">
+            <button class="flex items-center pb-1 -mt-2" onClick$={() => switchTab('collection')}>
               <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                 {/* CLAUDE LOOK HERE!*/}
                 <h1 class={`neon-text text-2xl py-3 md:py-5 px-1.5 transition-opacity duration-300 ${store.scrolledPast25 ? 'md:block' : 'md:hidden'}`}>Kaslands</h1>
               </div>
-            </Link>
+            </button>
 
             {/* Mobile buttons (MenuModal only for mobile) */}
             <div class="flex items-center md:hidden gap-2">
@@ -370,8 +379,7 @@ export default component$(() => {
             {menu && menu.items ? (
               <ul class="flex flex-col md:flex-row  text-white/70 neon-text md:self-center w-full md:w-auto text-xl md:text-2xl tracking-[0.01rem] font-medium">
                 {menu.items.map(({ text, href, items }, key) => {
-                  const isActive = location.url.pathname === href || 
-                                  (href !== '/' && location.url.pathname.startsWith(href));
+                  const isActive = activeTab.value === href;
                   return (
                     <li key={key} class={items?.length ? "dropdown" : ""}>
                       {items?.length ? (
@@ -398,14 +406,7 @@ export default component$(() => {
                               }
                             `}
                             onClick$={() => {
-                              if (location.url.pathname !== "/") {
-                                window.location.href = "/classes";
-                              } else {
-                                const servicesSection = document.getElementById("services");
-                                if (servicesSection) {
-                                  servicesSection.scrollIntoView({ behavior: "smooth" });
-                                }
-                              }
+                              switchTab(href as TabId);
                             }}
                           >
                             {text}
@@ -428,12 +429,12 @@ export default component$(() => {
                             `}
                           >
                             {items.map(({ text: text2, href: href2 }: SubMenuItem, key2: number) => {
-                              const isDropdownActive = location.url.pathname === href2;
+                              const isDropdownActive = activeTab.value === href2;
                               const isFirst = key2 === 0;
                               const isLast = key2 === items.length - 1;
                               return (
                                 <li key={key2}>
-                                  <Link
+                                  <button
                                     class={`
                                       hover:bg-muted
                                       hover:text-pink-600
@@ -458,26 +459,17 @@ export default component$(() => {
                                       ${isLast ? "hover:rounded-b-base" : ""}
                                       ${!isFirst && !isLast ? "hover:rounded-none" : ""}
                                     `}
-                                    href={href2}
-                                    onClick$={(e) => {
-                                      if (text2 === "Clay" && href2 === "/about#clay") {
-                                        e.preventDefault();
-                                        const claySection = document.getElementById("clay");
-                                        if (claySection) {
-                                          claySection.scrollIntoView({ behavior: "smooth" });
-                                        }
-                                      }
-                                    }}
+                                    onClick$={() => switchTab(href2 as TabId)}
                                   >
                                     {text2}
-                                  </Link>
+                                  </button>
                                 </li>
                               );
                             })}
                           </ul>
                         </>
                       ) : (
-                        <Link
+                        <button
                           class={`
                             hover:bg-muted
                             hover:text-pink-600
@@ -499,10 +491,10 @@ export default component$(() => {
                               : "after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
                             }
                           `}
-                          href={href}
+                          onClick$={() => switchTab(href as TabId)}
                         >
                           {text}
-                        </Link>
+                        </button>
                       )}
                     </li>
                   );
