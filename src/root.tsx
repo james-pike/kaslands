@@ -2,6 +2,7 @@ import { component$, useStyles$ } from "@builder.io/qwik";
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
 import { RouterHead } from "~/components/common/RouterHead";
 import { useAudioProvider } from "~/contexts/AudioContext";
+import { useVideoProvider } from "~/contexts/VideoContext";
 import styles from "~/assets/styles/global.css?inline";
 
 export default component$(() => {
@@ -10,6 +11,10 @@ export default component$(() => {
   // Provide audio context at the root level
   // Audio element is created imperatively in the context to persist across navigation
   useAudioProvider();
+
+  // Provide video context at the root level
+  // Video element is created imperatively in the context to persist across navigation
+  useVideoProvider();
 
   return (
     <QwikCityProvider>
@@ -53,19 +58,7 @@ export default component$(() => {
 
       </head>
   <body class="antialiased overflow-x-hidden">
-  {/* Background video layer - fixed with 100svh to prevent zoom */}
-  <div class="fixed inset-0 opacity-80 h-screen" style="height: 100svh;" aria-hidden="true">
-    <video
-      autoplay
-      loop
-      muted
-      playsInline
-      class="w-full h-full object-cover"
-    >
-      <source src="/images/hero4.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
+  {/* Background video is created imperatively via VideoContext and persists across navigation */}
 
   {/* Content layer */}
   <div class="relative z-10">
