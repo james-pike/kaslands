@@ -5,6 +5,7 @@ import MenuModal from "./MenuModal";
 import IconPlay from "../IconPlay";
 import IconPause from "../IconPause";
 import { useAudioContext } from "~/contexts/AudioContext";
+import { GunIcon } from "~/components/icons/GunIcon";
 
 interface CryptoPrice {
   usd: number;
@@ -550,17 +551,15 @@ export default component$(() => {
               {/* MINT Button */}
               <a
                 href="#"
-                class="w-full sm:w-auto bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-3 pl-4 py-2 text-lg font-semibold text-white rounded-md shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
+                class="w-full sm:w-auto bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-3 pl-4 py-2 rounded-md shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                 role="button"
                 aria-label="Mint NFT"
               >
-                <span class="relative z-10 flex items-center gap-1">
+                <span class="relative z-10 flex items-center gap-1 neon-text text-xl md:text-2xl tracking-[0.01rem] font-medium text-white/70">
                   MINT
-                  <img
-                    src="/images/sticker.webp"
-                    alt="Mint Icon"
-                    class="w-6 h-6 transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  />
+                  <div class="transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                    <GunIcon />
+                  </div>
                 </span>
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
               </a>

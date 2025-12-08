@@ -1,5 +1,6 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { Card } from "~/components/ui/Card";
 import { SITE } from "~/config.mjs";
 
 interface Product {
@@ -55,12 +56,12 @@ export default component$(() => {
   ]);
 
   return (
-    <div class="max-w-6xl mx-3 md:mx-auto px-3 md:px-0 py-4 mb-4">
+    <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/50">
       {/* Hero Section */}
-      <div class="bg-black/80 rounded-xl p-5 md:p-8 mb-4 border-2 border-pink-500/30 text-center">
-        <h1 class="text-3xl md:text-5xl font-bold text-white md:neon-text mb-3">
+      <div class="mb-4 text-center">
+        {/* <h1 class="text-3xl md:text-5xl font-bold text-white md:neon-text mb-3">
           Kaslands Merch
-        </h1>
+        </h1> */}
         <p class="text-lg text-white/90 max-w-3xl mx-auto">
           Represent the Kaslands community with exclusive merchandise. All items are limited edition.
         </p>
@@ -163,7 +164,7 @@ export default component$(() => {
           </button>
         </div>
       </div>
-    </div>
+    </Card.Root>
   );
 });
 
