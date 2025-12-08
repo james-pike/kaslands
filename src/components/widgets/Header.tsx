@@ -1,5 +1,4 @@
 import { component$, useStore, useVisibleTask$, useSignal, useStylesScoped$, $ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
 import IconPlay from "../IconPlay";
@@ -87,7 +86,6 @@ export default component$(() => {
     `);
 
   const isInitialized = useSignal(false);
-  const location = useLocation();
 
   const cryptoPrice = useSignal<CryptoPrice | null>(null);
   const currentMessageIndex = useSignal(0);

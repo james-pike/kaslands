@@ -1,7 +1,6 @@
 import { component$, useSignal, $, Signal, useVisibleTask$ } from "@builder.io/qwik";
 import { LuX, LuChevronDown } from "@qwikest/icons/lucide";
 import { cn } from "@qwik-ui/utils";
-import { useLocation } from "@builder.io/qwik-city";
 import { Modal } from "../ui/Modal";
 import IconHamburger from "../icons/IconHamburger";
 import { buttonVariants } from "../ui/Button";
@@ -10,7 +9,6 @@ import { useTabContext, type TabId } from "~/contexts/TabContext";
 
 const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signal<boolean> }) => {
   const openIndex = useSignal<number | null>(null);
-  const location = useLocation();
   const { activeTab } = useTabContext();
 
   useVisibleTask$(({ track }) => {
@@ -28,7 +26,6 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
   });
 
   // Normalize paths to handle trailing slashes
-  const normalizePath = (path: string) => path.replace(/\/$/, "");
 
   return (
     <div class="border-t border-black/50">
