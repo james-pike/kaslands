@@ -238,65 +238,66 @@ export default component$(() => {
             {activeTab.value === 'about' && (
               <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/50">
                 {/* Hero Section */}
-                <div class="mb-4">
-                  <h1 class="text-3xl md:text-5xl font-bold text-white md:neon-text mb-3 text-center">
+                <div class="mb-0">
+                  {/* <h1 class="text-3xl md:text-5xl font-bold text-white md:neon-text mb-3 text-center">
                     Welcome to Kaslands
                   </h1>
                   <p class="text-lg text-white/90 text-center max-w-3xl mx-auto">
                     A vibrant NFT ecosystem built on Kaspa, where art meets innovation and community drives creativity.
-                  </p>
+                  </p> */}
                 </div>
 
-                {/* Section 1 - Text Left, Image Right */}
-                <div class="grid md:grid-cols-2 gap-4 mb-4 items-center">
-                  <div class="bg-black/80 rounded-xl p-5 md:p-6 border-2 border-pink-500/20">
-                    <h2 class="text-3xl font-bold text-white md:neon-text mb-4">
-                      The Vision
-                    </h2>
-                    <p class="text-white/90 mb-4 leading-relaxed">
-                      Kaslands is more than just an NFT collection—it's a creative vision brought to life on the Kaspa blockchain.
-                      Founded by Jules, an artist and entrepreneur passionate about 80s culture, family, and adventure, Kaslands
-                      represents the fusion of retro aesthetics with cutting-edge web3 technology.
-                    </p>
-                    <p class="text-white/90 leading-relaxed">
-                      Our mission is to create a lasting legacy in the Kaspa ecosystem, bringing excitement, art, and
-                      community together in unique and innovative ways.
-                    </p>
-                  </div>
-                  <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-xl p-2 border-2 border-pink-500/30">
-                    <div class="bg-black/60 rounded-lg h-64 md:h-80 flex items-center justify-center">
+                {/* Section 1 - The Vision */}
+                <div class="bg-black/80 rounded-xl border-2 border-pink-500/20 mb-4 overflow-hidden">
+                  <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 pl-3 md:p-4 flex items-center justify-start md:justify-center">
                       <img
-                        src="/images/sticker.webp"
+                        src="/images/vision.jpg"
                         alt="Kaslands Vision"
-                        class="w-48 h-48 object-contain opacity-80"
+                        class="w-48 h-48 md:w-full md:h-auto object-contain"
                       />
                     </div>
+                    <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
+                      <h2 class="text-3xl font-bold text-white md:neon-text mb-4">
+                        The Vision
+                      </h2>
+                      <p class="text-white/90 mb-4 leading-relaxed">
+                        Kaslands is more than just an NFT collection—it's a creative vision brought to life on the Kaspa blockchain.
+                        Founded by Jules, an artist and entrepreneur passionate about 80s culture, family, and adventure, Kaslands
+                        represents the fusion of retro aesthetics with cutting-edge web3 technology.
+                      </p>
+                      <p class="text-white/90 leading-relaxed">
+                        Our mission is to create a lasting legacy in the Kaspa ecosystem, bringing excitement, art, and
+                        community together in unique and innovative ways.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Section 2 - Image Left, Text Right */}
-                <div class="grid md:grid-cols-2 gap-4 mb-4 items-center">
-                  <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-2 border-2 border-pink-500/30 order-2 md:order-1">
-                    <div class="bg-black/60 rounded-lg h-48 md:h-64 flex items-center justify-center">
-                      <div class="text-center p-8">
-                        <div class="text-6xl mb-4">🎨</div>
-                        <p class="text-white/80 text-lg">Art & Creativity</p>
-                      </div>
+                {/* Section 2 - The Art */}
+                <div class="bg-black/80 rounded-xl border-2 border-pink-500/20 mb-4 overflow-hidden">
+                  <div class="flex flex-col md:flex-row-reverse">
+                    <div class="md:w-1/3 bg-gradient-to-br from-purple-500/20 to-pink-500/20 md:p-4 flex items-center justify-center">
+                      <img
+                        src="/images/art.jpg"
+                        alt="Kaslands Art"
+                        class="w-48 h-48 md:w-full md:h-auto object-contain"
+                      />
                     </div>
-                  </div>
-                  <div class="bg-black/80 rounded-xl p-5 md:p-6 border-2 border-pink-500/20 order-1 md:order-2">
-                    <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
-                      The Art
-                    </h2>
-                    <p class="text-white/90 mb-4 leading-relaxed">
-                      Each Kaslands collection is carefully curated and created by hiring talented artists and skilled
-                      professionals who bring unique visions to life. From photography-based pieces to hand-drawn sketches,
-                      every piece tells a story.
-                    </p>
-                    <p class="text-white/90 leading-relaxed">
-                      We believe in fair launches and community-first approach, ensuring that everyone has an equal
-                      opportunity to be part of the Kaslands journey.
-                    </p>
+                    <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
+                      <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
+                        The Art
+                      </h2>
+                      <p class="text-white/90 mb-4 leading-relaxed">
+                        Each Kaslands collection is carefully curated and created by hiring talented artists and skilled
+                        professionals who bring unique visions to life. From photography-based pieces to hand-drawn sketches,
+                        every piece tells a story.
+                      </p>
+                      <p class="text-white/90 leading-relaxed">
+                        We believe in fair launches and community-first approach, ensuring that everyone has an equal
+                        opportunity to be part of the Kaslands journey.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
