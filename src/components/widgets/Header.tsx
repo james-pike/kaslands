@@ -45,46 +45,79 @@ export default component$(() => {
     scrolledPast25: false,
   });
 
-    useStylesScoped$(`
-      @keyframes neon-flicker {
-        0%, 100% {
-          text-shadow: 
-            0 0 10px rgba(255, 255, 255, 0.8),
-            0 0 20px rgba(255, 255, 255, 0.6),
-            0 0 30px rgba(255, 182, 193, 0.8),
-            0 0 40px rgba(255, 182, 193, 0.6),
-            0 0 50px rgba(255, 182, 193, 0.4),
-            0 0 75px rgba(255, 182, 193, 0.3);
-        }
-        50% {
-          text-shadow: 
-            0 0 12px rgba(255, 255, 255, 0.85),
-            0 0 22px rgba(255, 255, 255, 0.65),
-            0 0 32px rgba(255, 182, 193, 0.85),
-            0 0 42px rgba(255, 182, 193, 0.65),
-            0 0 55px rgba(255, 182, 193, 0.45),
-            0 0 80px rgba(255, 182, 193, 0.35);
-        }
-      }
-  
-      .neon-text {
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 900;
-        letter-spacing: 0.1em;
-        color: transparent;
-        -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
-        text-stroke: 2px rgba(255, 255, 255, 0.8);
-        text-shadow: 
-          0 0 10px rgba(255, 255, 255, 0.8),
-          0 0 20px rgba(255, 255, 255, 0.6),
-          0 0 30px rgba(255, 182, 193, 0.8),
-          0 0 40px rgba(255, 182, 193, 0.6),
-          0 0 50px rgba(255, 182, 193, 0.4),
-          0 0 75px rgba(255, 182, 193, 0.3);
-        animation: neon-flicker 2s infinite alternate;
-      }
-    `);
+ useStylesScoped$(`
+  @keyframes neon-flicker {
+    0%, 100% {
+      text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 182, 193, 0.8),
+        0 0 40px rgba(255, 182, 193, 0.6),
+        0 0 50px rgba(255, 182, 193, 0.4),
+        0 0 75px rgba(255, 182, 193, 0.3);
+    }
+    50% {
+      text-shadow: 
+        0 0 12px rgba(255, 255, 255, 0.85),
+        0 0 22px rgba(255, 255, 255, 0.65),
+        0 0 32px rgba(255, 182, 193, 0.85),
+        0 0 42px rgba(255, 182, 193, 0.65),
+        0 0 55px rgba(255, 182, 193, 0.45),
+        0 0 80px rgba(255, 182, 193, 0.35);
+    }
+  }
 
+  .neon-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
+    text-stroke: 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.6),
+      0 0 30px rgba(255, 182, 193, 0.8),
+      0 0 40px rgba(255, 182, 193, 0.6),
+      0 0 50px rgba(255, 182, 193, 0.4),
+      0 0 75px rgba(255, 182, 193, 0.3);
+    animation: neon-flicker 2s infinite alternate;
+  }
+
+  /* Reduced brightness on mobile */
+  @media (max-width: 768px) {
+    @keyframes neon-flicker {
+      0%, 100% {
+        text-shadow: 
+          0 0 6px rgba(255, 255, 255, 0.5),
+          0 0 12px rgba(255, 255, 255, 0.4),
+          0 0 20px rgba(255, 182, 193, 0.5),
+          0 0 30px rgba(255, 182, 193, 0.4),
+          0 0 40px rgba(255, 182, 193, 0.3);
+      }
+      50% {
+        text-shadow: 
+          0 0 8px rgba(255, 255, 255, 0.55),
+          0 0 14px rgba(255, 255, 255, 0.45),
+          0 0 22px rgba(255, 182, 193, 0.55),
+          0 0 32px rgba(255, 182, 193, 0.45),
+          0 0 45px rgba(255, 182, 193, 0.35);
+      }
+    }
+
+    .neon-text {
+      -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
+      text-stroke: 2px rgba(255, 255, 255, 0.6);
+      text-shadow: 
+        0 0 6px rgba(255, 255, 255, 0.5),
+        0 0 12px rgba(255, 255, 255, 0.4),
+        0 0 20px rgba(255, 182, 193, 0.5),
+        0 0 30px rgba(255, 182, 193, 0.4),
+        0 0 40px rgba(255, 182, 193, 0.3);
+      animation: neon-flicker 3s infinite alternate; /* Slightly slower flicker for subtlety */
+    }
+  }
+`);
   const isInitialized = useSignal(false);
 
   const cryptoPrice = useSignal<CryptoPrice | null>(null);
@@ -164,11 +197,9 @@ export default component$(() => {
 
   const menu: { items: MenuItem[] } = {
     items: [
-            { text: "Collection", href: "collection" },
-
       { text: "About", href: "about" },
-            { text: "Merch", href: "merch" },
-
+      { text: "Collection", href: "collection" },
+      { text: "Merch", href: "merch" },
       { text: "FAQ", href: "faq" },
     ],
   };
@@ -347,7 +378,7 @@ export default component$(() => {
         <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:items-center max-w-7xl">
           {/* Logo Section */}
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between items-center">
-            <button class="flex items-center pb-1 -mt-2" onClick$={() => switchTab('collection')}>
+            <button class="flex items-center pb-1 -mt-2" onClick$={() => switchTab('about')}>
               <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                 {/* CLAUDE LOOK HERE!*/}
                 <h1 class={`neon-text text-2xl py-3 md:py-5 px-1.5 transition-opacity duration-300 ${store.scrolledPast25 ? 'md:block' : 'md:hidden'}`}>Kaslands</h1>

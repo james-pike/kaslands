@@ -13,7 +13,7 @@ export const useTabContext = () => {
 };
 
 export const useTabProvider = () => {
-  const activeTab = useSignal<TabId>('collection');
+  const activeTab = useSignal<TabId>('about');
 
   const contextValue: TabContextState = {
     activeTab,

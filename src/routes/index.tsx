@@ -50,6 +50,12 @@ interface Faq {
 export default component$(() => {
   const { activeTab } = useTabContext();
 
+  // Scroll to top when tab changes
+  useVisibleTask$(({ track }) => {
+    track(() => activeTab.value);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
   // Merch products
   const products = useSignal<Product[]>([
     {
