@@ -45,7 +45,7 @@ export default component$(() => {
     scrolledPast25: false,
   });
 
- useStylesScoped$(`
+useStylesScoped$(`
   @keyframes neon-flicker {
     0%, 100% {
       text-shadow: 
@@ -84,40 +84,48 @@ export default component$(() => {
     animation: neon-flicker 2s infinite alternate;
   }
 
-  /* Reduced brightness on mobile */
+  /* Further reduced brightness on mobile */
   @media (max-width: 768px) {
-    @keyframes neon-flicker {
+    @keyframes neon-flicker-mobile {
       0%, 100% {
         text-shadow: 
-          0 0 6px rgba(255, 255, 255, 0.5),
-          0 0 12px rgba(255, 255, 255, 0.4),
-          0 0 20px rgba(255, 182, 193, 0.5),
-          0 0 30px rgba(255, 182, 193, 0.4),
-          0 0 40px rgba(255, 182, 193, 0.3);
+          0 0 5px rgba(255, 255, 255, 0.4),
+          0 0 10px rgba(255, 255, 255, 0.3),
+          0 0 15px rgba(255, 182, 193, 0.4),
+          0 0 25px rgba(255, 182, 193, 0.3);
       }
       50% {
         text-shadow: 
-          0 0 8px rgba(255, 255, 255, 0.55),
-          0 0 14px rgba(255, 255, 255, 0.45),
-          0 0 22px rgba(255, 182, 193, 0.55),
-          0 0 32px rgba(255, 182, 193, 0.45),
-          0 0 45px rgba(255, 182, 193, 0.35);
+          0 0 6px rgba(255, 255, 255, 0.45),
+          0 0 12px rgba(255, 255, 255, 0.35),
+          0 0 18px rgba(255, 182, 193, 0.45),
+          0 0 28px rgba(255, 182, 193, 0.35);
       }
     }
 
     .neon-text {
-      -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
-      text-stroke: 2px rgba(255, 255, 255, 0.6);
+      -webkit-text-stroke: 2px rgba(255, 255, 255, 0.5);
+      text-stroke: 2px rgba(255, 255, 255, 0.5);
       text-shadow: 
-        0 0 6px rgba(255, 255, 255, 0.5),
-        0 0 12px rgba(255, 255, 255, 0.4),
-        0 0 20px rgba(255, 182, 193, 0.5),
-        0 0 30px rgba(255, 182, 193, 0.4),
-        0 0 40px rgba(255, 182, 193, 0.3);
-      animation: neon-flicker 3s infinite alternate; /* Slightly slower flicker for subtlety */
+        0 0 5px rgba(255, 255, 255, 0.4),
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 15px rgba(255, 182, 193, 0.4),
+        0 0 25px rgba(255, 182, 193, 0.3);
+      animation: neon-flicker-mobile 3.5s infinite alternate; /* Slower, calmer flicker */
+    }
+  }
+
+  /* Optional: Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .neon-text {
+      animation: none;
+      text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.3),
+        0 0 12px rgba(255, 182, 193, 0.3);
     }
   }
 `);
+
   const isInitialized = useSignal(false);
 
   const cryptoPrice = useSignal<CryptoPrice | null>(null);

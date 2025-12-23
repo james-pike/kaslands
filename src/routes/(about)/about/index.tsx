@@ -35,7 +35,7 @@ export default component$(() => {
         <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-xl p-2 border-2 border-pink-500/30">
           <div class="bg-black/60 rounded-lg h-64 md:h-80 flex items-center justify-center">
             <img
-              src="/images/art.jpg"
+              src="images/art.jpg"
               alt="Kaslands Vision"
               class="w-48 h-48 object-contain opacity-80"
             />
