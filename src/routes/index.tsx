@@ -258,9 +258,7 @@ export default component$(() => {
                       />
                     </div>
                     <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
-                      <h2 class="text-3xl font-bold text-white md:neon-text mb-4">
-                        The Vision
-                      </h2>
+                  
                       <p class="text-white/90 mb-4 leading-relaxed">
                         Kaslands is more than just an NFT collection—it's a creative vision brought to life on the Kaspa blockchain.
                         Founded by Jules, an artist and entrepreneur passionate about 80s culture, family, and adventure, Kaslands
@@ -285,9 +283,7 @@ export default component$(() => {
                       />
                     </div>
                     <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
-                      <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
-                        The Art
-                      </h2>
+                   
                       <p class="text-white/90 mb-4 leading-relaxed">
                         Each Kaslands collection is carefully curated and created by hiring talented artists and skilled
                         professionals who bring unique visions to life. From photography-based pieces to hand-drawn sketches,
@@ -301,28 +297,25 @@ export default component$(() => {
                   </div>
                 </div>
 
-                {/* Section 3 - Text Left, Image Right */}
-                <div class="grid md:grid-cols-2 gap-4 mb-4 items-center">
-                  <div class="bg-black/80 rounded-xl p-5 md:p-6 border-2 border-pink-500/20">
-                    <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
-                      The Community
-                    </h2>
-                    <p class="text-white/90 mb-4 leading-relaxed">
-                      Kaslands is built on the belief that we're in the early stages of Kaspa's growth—similar to
-                      Ethereum's early days. This presents an incredible opportunity for collectors, artists, and
-                      enthusiasts to be part of something special from the ground up.
-                    </p>
-                    <p class="text-white/90 leading-relaxed">
-                      Join us in building a vibrant community where creativity thrives, collaboration is encouraged,
-                      and lasting connections are made. Together, we're shaping the future of NFTs on Kaspa.
-                    </p>
-                  </div>
-                  <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-xl p-2 border-2 border-pink-500/30">
-                    <div class="bg-black/60 rounded-lg h-48 md:h-64 flex items-center justify-center">
-                      <div class="text-center p-8">
-                        <div class="text-6xl mb-4">🤝</div>
+                {/* Section 3 - The Community */}
+                <div class="bg-black/80 rounded-xl border-2 border-pink-500/20 mb-4 overflow-hidden">
+                  <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 md:p-4 flex items-center justify-center">
+                      <div class="text-center p-6">
+                        <div class="text-6xl mb-2">🤝</div>
                         <p class="text-white/80 text-lg">Building Together</p>
                       </div>
+                    </div>
+                    <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
+                      <p class="text-white/90 mb-4 leading-relaxed">
+                        Kaslands is built on the belief that we're in the early stages of Kaspa's growth—similar to
+                        Ethereum's early days. This presents an incredible opportunity for collectors, artists, and
+                        enthusiasts to be part of something special from the ground up.
+                      </p>
+                      <p class="text-white/90 leading-relaxed">
+                        Join us in building a vibrant community where creativity thrives, collaboration is encouraged,
+                        and lasting connections are made. Together, we're shaping the future of NFTs on Kaspa.
+                      </p>
                     </div>
                   </div>
                 </div>
