@@ -137,9 +137,6 @@ useStylesScoped$(`
   const { activeTab } = useTabContext();
 
   // Handle tab switching
-  const switchTab = $((tab: TabId) => {
-    activeTab.value = tab;
-  });
 
   // Fetch BMT price data
   useVisibleTask$(async () => {
