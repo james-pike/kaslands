@@ -62,7 +62,7 @@ export default component$(() => {
         <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet"/>
 
       </head>
-  <body class="antialiased overflow-x-hidden" style="font-family: 'Tilt Neon', sans-serif;">
+  <body class="antialiased overflow-x-hidden text-lg" style="font-family: 'Tilt Neon', sans-serif;">
   {/* Background video is created imperatively via VideoContext and persists across navigation */}
 
   {/* Content layer */}
