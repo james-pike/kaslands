@@ -181,6 +181,18 @@ export default component$(() => {
           </div>
         </main>
       </div>
+
+      {/* Bottom CTA Section */}
+      <div class="mt-6">
+        <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+            Start Your Collection
+          </h2>
+          <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
+            Discover unique NFTs and become part of the Kaslands legacy. Mint now and join our growing community.
+          </p>
+        </div>
+      </div>
     </Card.Root>
   );
 });

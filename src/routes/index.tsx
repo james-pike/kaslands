@@ -332,7 +332,7 @@ export default component$(() => {
                 </div>
 
                 {/* Bottom CTA Section */}
-                <div class="max-w-6xl mx-auto mb-4 px-3 md:px-0">
+                <div class="max-w-6xl mx-auto mb-6 px-3 md:px-0">
                   <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                       Ready to Join Kaslands?

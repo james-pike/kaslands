@@ -360,8 +360,8 @@ useStylesScoped$(`
           sticky top-0 z-40 mt-0 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md
           transition-all duration-300 ease-in-out
           ${store.isScrolling
-            ? "bg-gray-900/80 dark:bg-primary-900/80 md:backdrop-blur-sm"
-            : "bg-gray-900/40 md:backdrop-blur-none"
+            ? "bg-gray-900/85 dark:bg-primary-900/85 md:backdrop-blur-sm"
+            : "bg-gray-900/60 md:backdrop-blur-none"
           }
         `}
         window:onScroll$={() => {
