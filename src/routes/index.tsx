@@ -66,9 +66,9 @@ export default component$(() => {
         const heroHeight = heroSection.getBoundingClientRect().height;
         const header = document.querySelector('#header');
         const headerHeight = header ? header.getBoundingClientRect().height : 0;
-        window.scrollTo({ top: heroHeight + headerHeight - 20, behavior: 'smooth' });
+        window.scrollTo({ top: heroHeight + headerHeight - 80, behavior: 'smooth' });
       } else {
-        window.scrollTo({ top: 400, behavior: 'smooth' });
+        window.scrollTo({ top: 350, behavior: 'smooth' });
       }
     } else {
       // On desktop, scroll to top
@@ -253,7 +253,7 @@ export default component$(() => {
               {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-8 md:mb-12 tracking-wider brightness-75 md:brightness-100 px-4 md:px-0">
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-8 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0">
                   Kaslands
                 </h1>
 
