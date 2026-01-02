@@ -281,7 +281,7 @@ export default component$(() => {
                     role="button"
                     aria-label="Explore collections"
                   >
-                    <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-50 md:brightness-100">
+                    <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-75 md:brightness-100">
                       EXPLORE
                     </span>
                     <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
