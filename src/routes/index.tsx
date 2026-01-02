@@ -50,10 +50,17 @@ interface Faq {
 
 export default component$(() => {
   const { activeTab } = useTabContext();
+  const hasScrolledOnTabChange = useSignal(false);
 
   // Scroll to top when tab changes (skip hero on mobile)
   useVisibleTask$(({ track }) => {
-    track(() => activeTab.value);
+    const currentTab = track(() => activeTab.value);
+
+    // Skip scrolling on initial page load
+    if (!hasScrolledOnTabChange.value) {
+      hasScrolledOnTabChange.value = true;
+      return;
+    }
 
     // Check if mobile
     const isMobile = window.innerWidth < 768;
@@ -253,7 +260,7 @@ export default component$(() => {
               {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-5xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0">
+                <h1 class="neon-text text-7xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0">
                   Kaslands
                 </h1>
 
