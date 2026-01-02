@@ -386,7 +386,10 @@ useStylesScoped$(`
           {/* Logo Section */}
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex flex-col md:flex-row justify-between items-start md:items-center w-full md:w-auto">
             <div class="flex justify-between items-center w-full md:w-auto">
-              <button class="flex items-center pb-1 -mt-2" onClick$={() => switchTab('about')}>
+              <button class="flex items-center pb-1 -mt-2" onClick$={(e) => {
+                e.preventDefault();
+                activeTab.value = 'about';
+              }}>
                 <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                   {/* Logo - Hidden on mobile until scroll, shown on desktop after 25% scroll */}
                   <h1 class={`neon-text text-2xl py-3 md:py-5 px-1.5 transition-opacity duration-300 ${store.isScrolling ? 'block' : 'hidden'} ${store.scrolledPast25 ? 'md:block' : 'md:hidden'}`}>Kaslands</h1>
@@ -441,7 +444,10 @@ useStylesScoped$(`
                     class={`neon-text text-xl transition-all duration-200 whitespace-nowrap ${
                       isActive ? 'text-pink-600' : 'text-white/70 hover:text-pink-600'
                     }`}
-                    onClick$={() => switchTab(href as TabId)}
+                    onClick$={(e) => {
+                      e.preventDefault();
+                      activeTab.value = href as TabId;
+                    }}
                   >
                     {text}
                   </button>
@@ -486,8 +492,9 @@ useStylesScoped$(`
                                 : "after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
                               }
                             `}
-                            onClick$={() => {
-                              switchTab(href as TabId);
+                            onClick$={(e) => {
+                              e.preventDefault();
+                              activeTab.value = href as TabId;
                             }}
                           >
                             {text}
@@ -540,7 +547,10 @@ useStylesScoped$(`
                                       ${isLast ? "hover:rounded-b-base" : ""}
                                       ${!isFirst && !isLast ? "hover:rounded-none" : ""}
                                     `}
-                                    onClick$={() => switchTab(href2 as TabId)}
+                                    onClick$={(e) => {
+                                      e.preventDefault();
+                                      activeTab.value = href2 as TabId;
+                                    }}
                                   >
                                     {text2}
                                   </button>
@@ -572,7 +582,10 @@ useStylesScoped$(`
                               : "after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
                             }
                           `}
-                          onClick$={() => switchTab(href as TabId)}
+                          onClick$={(e) => {
+                            e.preventDefault();
+                            activeTab.value = href as TabId;
+                          }}
                         >
                           {text}
                         </button>
