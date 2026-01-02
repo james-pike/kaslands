@@ -258,7 +258,7 @@ export default component$(() => {
                 </h1>
 
                 {/* Subtitle */}
-                <p class="text-white/80 text-lg md:text-xl mb-2 px-6 max-w-2xl">
+                <p class="text-white/80 text-xl md:text-xl mb-8 mt-2 px-6 max-w-2xl">
                   Premium NFT Collection on the Kaspa BlockDag, add final text here
                 </p>
             
