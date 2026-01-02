@@ -431,14 +431,14 @@ useStylesScoped$(`
 
             {/* Mobile Tabs - Show when scrolling */}
             <div class={`md:hidden flex gap-3 overflow-hidden transition-all duration-300 ${
-              store.isScrolling ? 'max-h-8 opacity-100 -mt-1 mb-1' : 'max-h-0 opacity-0'
+              store.isScrolling ? 'max-h-10 opacity-100 -mt-1 mb-1' : 'max-h-0 opacity-0'
             }`}>
               {menu.items.map(({ text, href }) => {
                 const isActive = activeTab.value === href;
                 return (
                   <button
                     key={href}
-                    class={`neon-text text-sm transition-all duration-200 whitespace-nowrap ${
+                    class={`neon-text text-lg transition-all duration-200 whitespace-nowrap ${
                       isActive ? 'text-pink-600' : 'text-white/70 hover:text-pink-600'
                     }`}
                     onClick$={() => switchTab(href as TabId)}

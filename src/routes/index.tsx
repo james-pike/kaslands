@@ -51,10 +51,29 @@ interface Faq {
 export default component$(() => {
   const { activeTab } = useTabContext();
 
-  // Scroll to top when tab changes
+  // Scroll to top when tab changes (skip hero on mobile)
   useVisibleTask$(({ track }) => {
     track(() => activeTab.value);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Check if mobile
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      // On mobile, scroll past the hero section to the content
+      // The hero section + header is approximately 400-450px on mobile
+      const heroSection = document.querySelector('section.md\\:hidden');
+      if (heroSection) {
+        const heroHeight = heroSection.getBoundingClientRect().height;
+        const header = document.querySelector('#header');
+        const headerHeight = header ? header.getBoundingClientRect().height : 0;
+        window.scrollTo({ top: heroHeight + headerHeight - 20, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 400, behavior: 'smooth' });
+      }
+    } else {
+      // On desktop, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
 
   // Merch products
@@ -234,7 +253,7 @@ export default component$(() => {
               {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-8 md:mb-12 tracking-wider brightness-50 md:brightness-100 px-4 md:px-0">
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-8 md:mb-12 tracking-wider brightness-75 md:brightness-100 px-4 md:px-0">
                   Kaslands
                 </h1>
 
@@ -246,7 +265,7 @@ export default component$(() => {
                     role="button"
                     aria-label="Mint NFT"
                   >
-                    <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-50 md:brightness-100">
+                    <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-75 md:brightness-100">
                       MINT
                     </span>
                     <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
@@ -257,7 +276,6 @@ export default component$(() => {
                     onClick$={(e) => {
                       e.preventDefault();
                       activeTab.value = 'collection';
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
                     class="flex-1 bg-purple-600/40 hover:bg-purple-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-purple-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                     role="button"
