@@ -290,7 +290,7 @@ export default component$(() => {
 
                 {/* Community Section */}
                 <div class="max-w-6xl mx-auto mb-6 px-3 md:px-0">
-                  <div class="bg-black/80 rounded-xl border-2 border-pink-500/20 overflow-hidden">
+                  <div class="bg-gray-900/50 border-none overflow-hidden">
                     <div class="flex flex-col md:flex-row">
                       <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 md:p-4 flex items-center justify-center">
                         <div class="text-center p-6">

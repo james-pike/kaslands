@@ -48,7 +48,7 @@ export default component$(() => {
       {/* Stacked Sections - All Devices */}
       <div class="space-y-4">
         {slides.map((slide) => (
-          <div key={slide.id} class="bg-black/80 rounded-xl border-2 border-pink-500/20 overflow-hidden">
+          <div key={slide.id} class="bg-gray-900/50 border-none overflow-hidden">
             <div class={`flex flex-col ${slide.reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
               {/* Image Section */}
               <div class={`md:w-1/3 bg-gradient-to-br ${slide.gradient} md:p-4 flex items-center justify-center`}>
