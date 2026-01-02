@@ -260,7 +260,7 @@ export default component$(() => {
               {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-7xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0">
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0">
                   Kaslands
                 </h1>
 
