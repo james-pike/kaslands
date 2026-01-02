@@ -431,7 +431,7 @@ useStylesScoped$(`
 
             {/* Mobile Tabs - Show when scrolling */}
             <div class={`md:hidden flex gap-3 overflow-hidden transition-all duration-300 ${
-              store.isScrolling ? 'max-h-12 opacity-100 -mt-1 mb-1' : 'max-h-0 opacity-0'
+              store.isScrolling ? 'max-h-12 opacity-100 mt-1 mb-1' : 'max-h-0 opacity-0'
             }`}>
               {menu.items.map(({ text, href }) => {
                 const isActive = activeTab.value === href;
