@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$, useSignal, useStylesScoped$, $ } from "@builder.io/qwik";
+import { component$, useStore, useVisibleTask$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
 import IconChevronDown from "../icons/IconChevronDown";
 import IconPlay from "../IconPlay";
 import IconPause from "../IconPause";
