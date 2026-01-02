@@ -187,7 +187,7 @@ export default component$(() => {
     const Icon = item.icon;
     return (
       <div key={item.id} class="group">
-        <div class="bg-gray-900/30 rounded-md border-2 border-pink-500/20 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div class="bg-gray-900/60 rounded-md border-2 border-pink-500/20 shadow-lg hover:shadow-xl transition-all duration-300">
           <button
             onClick$={() => toggleItem(item.id)}
             class="w-full px-4 py-3 flex items-center justify-between text-left transition-all"
@@ -248,7 +248,7 @@ export default component$(() => {
       <div class="flex flex-col">
         {/* Hero Landing Section - Mobile Only */}
         <section class="relative mx-auto -mb-2 max-w-7xl w-full md:hidden">
-          <div class="p-5 mb-4 pt-8 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/50">
+          <div class="p-5 mb-4 pt-8 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/70">
             <div class="relative py-12 md:py-20 px-4 md:px-8">
               {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
@@ -308,7 +308,7 @@ export default component$(() => {
 
                 {/* Community Section */}
                 <div class="max-w-6xl mx-auto mb-6 px-3 md:px-0">
-                  <div class="bg-gray-900/50 border-none overflow-hidden">
+                  <div class="bg-gray-900/70 border-none overflow-hidden">
                     <div class="flex flex-col md:flex-row">
                       <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 md:p-4 flex items-center justify-center">
                         <div class="text-center p-6">
@@ -347,7 +347,7 @@ export default component$(() => {
 
             {/* Merch Tab */}
             {activeTab.value === 'merch' && (
-              <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/50">
+              <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/70">
                 {/* Hero Section */}
                 <div class="mb-4 text-center">
                   <p class="text-lg text-white/90 max-w-3xl mx-auto">
@@ -457,7 +457,7 @@ export default component$(() => {
 
             {/* FAQ Tab */}
             {activeTab.value === 'faq' && (
-              <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/50">
+              <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/70">
                 {/* Hero Section */}
                 <div class="mb-4 text-center">
                   <p class="text-lg text-white/90 max-w-3xl mx-auto">
