@@ -253,10 +253,15 @@ export default component$(() => {
               {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-8 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0">
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0">
                   Kaslands
                 </h1>
 
+                {/* Subtitle */}
+                <p class="text-white/80 text-lg md:text-xl mb-2 px-6 max-w-2xl">
+                  Premium NFT Collection on the Kaspa BlockDag, add final text here
+                </p>
+            
                 {/* Action Buttons */}
                 <div class="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-md">
                   <a
