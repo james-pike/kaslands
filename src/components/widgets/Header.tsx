@@ -1,6 +1,5 @@
 import { component$, useStore, useVisibleTask$, useSignal, useStylesScoped$, $ } from "@builder.io/qwik";
 import IconChevronDown from "../icons/IconChevronDown";
-import MenuModal from "./MenuModal";
 import IconPlay from "../IconPlay";
 import IconPause from "../IconPause";
 import { useAudioContext } from "~/contexts/AudioContext";
@@ -358,7 +357,7 @@ useStylesScoped$(`
       <header
         id="header"
         class={`
-          sticky top-0 z-40 mt-3 md:mt-0 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md 
+          sticky top-0 z-40 mt-0 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md
           transition-all duration-300 ease-in-out
           ${store.isScrolling
             ? "bg-gray-900/40 dark:bg-primary-900/80 md:backdrop-blur-sm"
@@ -385,27 +384,72 @@ useStylesScoped$(`
         <div class="absolute inset-0" aria-hidden="true"></div>
         <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:items-center max-w-7xl">
           {/* Logo Section */}
-          <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between items-center">
-            <button class="flex items-center pb-1 -mt-2" onClick$={() => switchTab('about')}>
-              <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
-                {/* CLAUDE LOOK HERE!*/}
-                <h1 class={`neon-text text-2xl py-3 md:py-5 px-1.5 transition-opacity duration-300 ${store.scrolledPast25 ? 'md:block' : 'md:hidden'}`}>Kaslands</h1>
-              </div>
-            </button>
+          <div class="mr-auto rtl:mr-0 rtl:ml-auto flex flex-col md:flex-row justify-between items-start md:items-center w-full md:w-auto">
+            <div class="flex justify-between items-center w-full md:w-auto">
+              <button class="flex items-center pb-1 -mt-2" onClick$={() => switchTab('about')}>
+                <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
+                  {/* Logo - Hidden on mobile until scroll, shown on desktop after 25% scroll */}
+                  <h1 class={`neon-text text-2xl py-3 md:py-5 px-1.5 transition-opacity duration-300 ${store.isScrolling ? 'block' : 'hidden'} ${store.scrolledPast25 ? 'md:block' : 'md:hidden'}`}>Kaslands</h1>
+                </div>
+              </button>
 
-            {/* Mobile buttons (MenuModal only for mobile) */}
-            <div class="flex items-center md:hidden gap-2">
+              {/* Mobile buttons - Play, Twitter, Telegram */}
+              <div class="flex items-center md:hidden gap-2">
               <a
-                class="btn bg-white/30 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md"
+                class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
                 onClick$={toggleAudio}
               >
                 {isPlaying.value ? <IconPause /> : <IconPlay />}
               </a>
-              <MenuModal />
+
+              <a
+                href="#"
+                class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
+                aria-label="X (Twitter)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-twitter-x" viewBox="0 0 16 16" height="20" width="20">
+                  <path d="M12.6 0.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867 -5.07 -4.425 5.07H0.316l5.733 -6.57L0 0.75h5.063l3.495 4.633L12.601 0.75Zm-0.86 13.028h1.36L4.323 2.145H2.865z" stroke-width="1"></path>
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
+                aria-label="Telegram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z" fill="white"></path>
+                </svg>
+              </a>
+              </div>
+            </div>
+
+            {/* Mobile Tabs - Show when scrolling */}
+            <div class={`md:hidden flex gap-3 overflow-hidden transition-all duration-300 ${
+              store.isScrolling ? 'max-h-8 opacity-100 -mt-1 mb-1' : 'max-h-0 opacity-0'
+            }`}>
+              {menu.items.map(({ text, href }) => {
+                const isActive = activeTab.value === href;
+                return (
+                  <button
+                    key={href}
+                    class={`neon-text text-sm transition-all duration-200 whitespace-nowrap ${
+                      isActive ? 'text-pink-600' : 'text-white/70 hover:text-pink-600'
+                    }`}
+                    onClick$={() => switchTab(href as TabId)}
+                  >
+                    {text}
+                  </button>
+                );
+              })}
             </div>
           </div>
-          
+
           {/* Navigation: Centered on desktop */}
           <nav
             class={`

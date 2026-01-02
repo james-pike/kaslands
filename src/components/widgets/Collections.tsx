@@ -72,7 +72,7 @@ export default component$(() => {
       <div class="md:hidden flex justify-between items-center mb-4">
         <Heading />
         <select
-          class="p-2 rounded bg-gray-900/50 text-white text-sm"
+          class="p-2 rounded bg-gray-900/50 border-none text-white text-sm"
           value={selectedCollection.value}
           onChange$={(e) =>
             (selectedCollection.value = (e.target as HTMLSelectElement).value)

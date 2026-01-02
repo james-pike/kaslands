@@ -4,6 +4,7 @@ import { FileQuestionIcon, MountainIcon } from "lucide-qwik";
 import { Card } from "~/components/ui/Card";
 import { SITE } from "~/config.mjs";
 import Collections from "~/components/widgets/Collections";
+import AboutCarousel from "~/components/widgets/AboutCarousel";
 import { useTabContext } from "~/contexts/TabContext";
 
 // Gun Icon component for FAQ
@@ -167,7 +168,7 @@ export default component$(() => {
     const Icon = item.icon;
     return (
       <div key={item.id} class="group">
-        <div class="bg-black/80 rounded-md border-2 border-black/50 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div class="bg-gray-900/30 rounded-md border-2 border-pink-500/20 shadow-lg hover:shadow-xl transition-all duration-300">
           <button
             onClick$={() => toggleItem(item.id)}
             class="w-full px-4 py-3 flex items-center justify-between text-left transition-all"
@@ -226,6 +227,53 @@ export default component$(() => {
   return (
     <>
       <div class="flex flex-col">
+        {/* Hero Landing Section - Mobile Only */}
+        <section class="relative mx-auto -mb-2 max-w-7xl w-full md:hidden">
+          <div class="p-5 mb-4 pt-8 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/50">
+            <div class="relative py-12 md:py-20 px-4 md:px-8">
+              {/* Content */}
+              <div class="relative z-10 flex flex-col items-center justify-center text-center">
+                {/* Large Kaslands Logo */}
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-8 md:mb-12 tracking-wider">
+                  Kaslands
+                </h1>
+
+                {/* Action Buttons */}
+                <div class="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-md">
+                  <a
+                    href="#"
+                    class="flex-1 bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,105,180,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
+                    role="button"
+                    aria-label="Mint NFT"
+                  >
+                    <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70">
+                      MINT
+                    </span>
+                    <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
+                  </a>
+
+                  <a
+                    href="#"
+                    onClick$={(e) => {
+                      e.preventDefault();
+                      activeTab.value = 'collection';
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    class="flex-1 bg-purple-600/40 hover:bg-purple-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-purple-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
+                    role="button"
+                    aria-label="Explore collections"
+                  >
+                    <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70">
+                      EXPLORE
+                    </span>
+                    <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <main class="mt-0 order-3">
           <div class="relative mx-auto max-w-7xl overflow-x-hidden">
 
@@ -236,100 +284,47 @@ export default component$(() => {
 
             {/* About Tab */}
             {activeTab.value === 'about' && (
-              <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/50">
-                {/* Hero Section */}
-                <div class="mb-0">
-                  {/* <h1 class="text-3xl md:text-5xl font-bold text-white md:neon-text mb-3 text-center">
-                    Welcome to Kaslands
-                  </h1>
-                  <p class="text-lg text-white/90 text-center max-w-3xl mx-auto">
-                    A vibrant NFT ecosystem built on Kaspa, where art meets innovation and community drives creativity.
-                  </p> */}
-                </div>
+              <>
+                {/* About Carousel */}
+                <AboutCarousel />
 
-                {/* Section 1 - The Vision */}
-                <div class="bg-black/80 rounded-xl border-2 border-pink-500/20 mb-4 overflow-hidden">
-                  <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 pl-3 md:p-4 flex items-center justify-start md:justify-center">
-                      <img
-                        src="/images/vision.jpg"
-                        alt="Kaslands Vision"
-                        class="w-48 h-48 md:w-full md:h-auto object-contain"
-                      />
-                    </div>
-                    <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
-                  
-                      <p class="text-white/90 mb-4 leading-relaxed">
-                        Kaslands is more than just an NFT collection—it's a creative vision brought to life on the Kaspa blockchain.
-                        Founded by Jules, an artist and entrepreneur passionate about 80s culture, family, and adventure, Kaslands
-                        represents the fusion of retro aesthetics with cutting-edge web3 technology.
-                      </p>
-                      <p class="text-white/90 leading-relaxed">
-                        Our mission is to create a lasting legacy in the Kaspa ecosystem, bringing excitement, art, and
-                        community together in unique and innovative ways.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Section 2 - The Art */}
-                <div class="bg-black/80 rounded-xl border-2 border-pink-500/20 mb-4 overflow-hidden">
-                  <div class="flex flex-col md:flex-row-reverse">
-                    <div class="md:w-1/3 bg-gradient-to-br from-purple-500/20 to-pink-500/20 md:p-4 flex items-center justify-center">
-                      <img
-                        src="/images/art.jpg"
-                        alt="Kaslands Art"
-                        class="w-48 h-48 md:w-full md:h-auto object-contain"
-                      />
-                    </div>
-                    <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
-                   
-                      <p class="text-white/90 mb-4 leading-relaxed">
-                        Each Kaslands collection is carefully curated and created by hiring talented artists and skilled
-                        professionals who bring unique visions to life. From photography-based pieces to hand-drawn sketches,
-                        every piece tells a story.
-                      </p>
-                      <p class="text-white/90 leading-relaxed">
-                        We believe in fair launches and community-first approach, ensuring that everyone has an equal
-                        opportunity to be part of the Kaslands journey.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Section 3 - The Community */}
-                <div class="bg-black/80 rounded-xl border-2 border-pink-500/20 mb-4 overflow-hidden">
-                  <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 md:p-4 flex items-center justify-center">
-                      <div class="text-center p-6">
-                        <div class="text-6xl mb-2">🤝</div>
-                        <p class="text-white/80 text-lg">Building Together</p>
+                {/* Community Section */}
+                <div class="max-w-6xl mx-auto mb-6 px-3 md:px-0">
+                  <div class="bg-black/80 rounded-xl border-2 border-pink-500/20 overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                      <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 md:p-4 flex items-center justify-center">
+                        <div class="text-center p-6">
+                          <div class="text-6xl mb-2">🤝</div>
+                          <p class="text-white/80 text-lg">Building Together</p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
-                      <p class="text-white/90 mb-4 leading-relaxed">
-                        Kaslands is built on the belief that we're in the early stages of Kaspa's growth—similar to
-                        Ethereum's early days. This presents an incredible opportunity for collectors, artists, and
-                        enthusiasts to be part of something special from the ground up.
-                      </p>
-                      <p class="text-white/90 leading-relaxed">
-                        Join us in building a vibrant community where creativity thrives, collaboration is encouraged,
-                        and lasting connections are made. Together, we're shaping the future of NFTs on Kaspa.
-                      </p>
+                      <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
+                        <p class="text-white/90 mb-4 leading-relaxed text-base md:text-lg">
+                          Kaslands is built on the belief that we're in the early stages of Kaspa's growth—similar to
+                          Ethereum's early days. This presents an incredible opportunity for collectors, artists, and
+                          enthusiasts to be part of something special from the ground up.
+                        </p>
+                        <p class="text-white/90 leading-relaxed text-base md:text-lg">
+                          Join us in building a vibrant community where creativity thrives, collaboration is encouraged,
+                          and lasting connections are made. Together, we're shaping the future of NFTs on Kaspa.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom CTA Section */}
-                <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 rounded-xl p-5 md:p-8 border-2 border-pink-500/30 text-center">
-                  <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-                    Ready to Join Kaslands?
-                  </h2>
-                  <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
-                    Explore our collections, connect with the community, and be part of the legacy we're building on Kaspa.
-                  </p>
+                <div class="max-w-6xl mx-auto mb-4 px-3 md:px-0">
+                  <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 rounded-xl p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+                      Ready to Join Kaslands?
+                    </h2>
+                    <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
+                      Explore our collections, connect with the community, and be part of the legacy we're building on Kaspa.
+                    </p>
+                  </div>
                 </div>
-              </Card.Root>
+              </>
             )}
 
             {/* Merch Tab */}
