@@ -12,7 +12,7 @@ export const useLoginAction = routeAction$(
         path: '/',
         httpOnly: true,
         sameSite: 'strict',
-        maxAge: 60 * 60 * 24 * 7, // 7 days
+        maxAge: 60 * 60 * 24 * 7, // 7 dayss
       });
 
       throw redirect(303, '/');
