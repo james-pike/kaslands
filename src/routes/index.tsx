@@ -259,7 +259,7 @@ export default component$(() => {
 
                 {/* Subtitle */}
                 <p class="text-white/80 text-xl md:text-xl mb-8 mt-2 px-6 max-w-2xl">
-                  Premium NFT Collection on the Kaspa BlockDag, add final text here
+                  Premium NFT Collection on the Kaspa BlockDag, revise final text here
                 </p>
             
                 {/* Action Buttons */}

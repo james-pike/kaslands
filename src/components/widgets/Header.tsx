@@ -355,7 +355,7 @@ useStylesScoped$(`
         id="header"
         class={`
           sticky top-0 z-40 mt-0 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md
-          transition-all duration-300 ease-in-out
+          transition-all duration-150 ease-in-out
           ${store.isScrolling
             ? "bg-gray-900/85 dark:bg-primary-900/85 md:backdrop-blur-sm"
             : "bg-gray-900/60 md:backdrop-blur-none"
@@ -430,7 +430,7 @@ useStylesScoped$(`
             </div>
 
             {/* Mobile Tabs - Show when scrolling */}
-            <div class={`md:hidden flex gap-3 overflow-hidden transition-all duration-300 ${
+            <div class={`md:hidden flex gap-3 overflow-hidden transition-all duration-150 ${
               store.isScrolling ? 'max-h-12 opacity-100 mt-1 mb-1' : 'max-h-0 opacity-0'
             }`}>
               {menu.items.map(({ text, href }) => {
