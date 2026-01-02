@@ -6,6 +6,7 @@ export default component$(() => {
       id: 1,
       title: 'The Vision',
       image: '/images/vision.jpg',
+      imageText: undefined,
       content: (
         <>
           <p class="text-white/90 mb-4 leading-relaxed text-base md:text-lg">
@@ -25,6 +26,7 @@ export default component$(() => {
       id: 2,
       title: 'The Art',
       image: '/images/art.jpg',
+      imageText: undefined,
       content: (
         <>
           <p class="text-white/90 mb-4 leading-relaxed text-base md:text-lg">
@@ -61,7 +63,7 @@ export default component$(() => {
                 ) : (
                   <div class="text-center p-6">
                     <div class="text-6xl mb-2">{slide.image}</div>
-                    <p class="text-white/80 text-lg">{slide.imageText}</p>
+                    {slide.imageText && <p class="text-white/80 text-lg">{slide.imageText}</p>}
                   </div>
                 )}
               </div>
