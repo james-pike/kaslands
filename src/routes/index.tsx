@@ -204,7 +204,7 @@ export default component$(() => {
               class={`w-8 h-8 rounded-full border-pink-500/80 border flex items-center justify-center transition-all ${
                 openItems.value === item.id
                   ? "bg-pink-500/80 text-white"
-                  : "bg-white/80"
+                  : "bg-white/20"
               }`}
             >
               <svg
@@ -333,7 +333,7 @@ export default component$(() => {
 
                 {/* Bottom CTA Section */}
                 <div class="max-w-6xl mx-auto mb-4 px-3 md:px-0">
-                  <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 rounded-xl p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                  <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                       Ready to Join Kaslands?
                     </h2>
@@ -434,7 +434,7 @@ export default component$(() => {
                 </div>
 
                 {/* Newsletter Section */}
-                <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 rounded-xl p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                   <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                     Stay Updated
                   </h2>
@@ -471,6 +471,18 @@ export default component$(() => {
                   </div>
                   <div class="flex-1 flex flex-col gap-3 mt-3 md:mt-0">
                     {rightColumn.map(renderFaqItem)}
+                  </div>
+                </div>
+
+                {/* Bottom CTA Section */}
+                <div class="mt-6">
+                  <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+                      Join the Kaslands Community
+                    </h2>
+                    <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
+                      Connect with fellow collectors and stay updated on new drops, events, and exclusive content.
+                    </p>
                   </div>
                 </div>
               </Card.Root>
