@@ -53,7 +53,7 @@ export default component$(() => {
   const hasScrolledOnTabChange = useSignal(false);
 
   // Scroll to top when tab changes (skip hero on mobile)
-  useVisibleTask$(({ track }) => {
+  useVisibleTask$(() => {
 
     // Skip scrolling on initial page load
     if (!hasScrolledOnTabChange.value) {
