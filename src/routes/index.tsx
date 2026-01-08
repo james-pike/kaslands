@@ -241,7 +241,7 @@ export default component$(() => {
               {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-75 md:brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-50 md:brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
                   Kaslands
                 </h1>
 
@@ -258,7 +258,7 @@ export default component$(() => {
                     role="button"
                     aria-label="Mint NFT"
                   >
-                    <span class="relative z-10 flex items-center gap-1 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-75 md:brightness-100">
+                    <span class="relative z-10 flex items-center gap-1 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-50 md:brightness-100">
                       MINT
                       <div class="transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                         <GunIcon />
@@ -277,7 +277,7 @@ export default component$(() => {
                     role="button"
                     aria-label="Explore collections"
                   >
-                    <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-75 md:brightness-100">
+                    <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-50 md:brightness-100">
                       EXPLORE
                     </span>
                     <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
