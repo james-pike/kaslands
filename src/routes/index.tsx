@@ -99,29 +99,9 @@ export default component$(() => {
     },
     {
       id: 3,
-      name: "Collector's Pin Set",
-      price: "0.008 KAS",
-      description: "Limited edition enamel pin collection. Set of 5 unique designs.",
-      badge: "Limited",
-    },
-    {
-      id: 4,
       name: "Kaslands Cap",
       price: "0.012 KAS",
       description: "Adjustable snapback cap with embroidered logo. One size fits all.",
-    },
-    {
-      id: 5,
-      name: "Art Print Bundle",
-      price: "0.020 KAS",
-      description: "High-quality prints of our top NFT collections. Set of 3 prints.",
-      badge: "New",
-    },
-    {
-      id: 6,
-      name: "Sticker Pack",
-      price: "0.005 KAS",
-      description: "Waterproof vinyl stickers featuring Kaslands art and logos.",
     },
   ]);
 
@@ -130,20 +110,20 @@ export default component$(() => {
     {
       id: 1,
       question: "Who I am?",
-      answer: `I'm Jules, I love 80s music, I enjoy being with family & friends. Health enthusiast. I love traveling, nature, gardening, hiking, shooting guns, white water rafting, good games & good food.`,
+      answer: `I'm Jules, I enjoy being with family & friends. Having celiac & a form of asthma, I'm an avid health enthusiast. I like 80s music & that retro vibe. I also really enjoy cooking, baking, gardening, photography, spending time in the outdoors, & games that bring people together.`,
       icon: MountainIcon,
     },
     {
       id: 2,
       question: "What I do?",
-      answer: `I have & will continue to hire various artists & skilled professionals to bring my visions to web3. I fair launch NFT projects that I've been working on, some created from photography, some from sketches. In the works include more art collections & brand merch. More to be discussed.`,
+      answer: `The photography you see was all shot by yours truly. I have & will continue to hire various artists & skilled professionals to bring my visions to web3. I want all my projects that are applicable to be fair launched. Some of the NFT collections are created from photography, some from sketches. In the works include more art collections & kaslands merch. More to be discussed.`,
       icon: GunIcon,
       isHtml: true,
     },
     {
       id: 3,
       question: "Why?",
-      answer: `I do this to bring excitement and fun to the ecosystem and build a legacy. I believe we are in the early stages of kaspa still, similarly to ethereum. I hope you enjoy the vibe.`,
+      answer: `I'm honing my brand as an early entrepreneur and investor within Kaspa. I am creating an ecosystem that brings excitement, creativity, and a place to connect & engage with others. I believe we are in the early stages of kaspa still, similarly to other cryptocurrencies that became a top 10.`,
       icon: FileQuestionIcon,
     },
     {
@@ -325,10 +305,11 @@ export default component$(() => {
                   <div class="bg-gray-900/70 border-none overflow-hidden">
                     <div class="flex flex-col md:flex-row">
                       <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 md:p-4 flex items-center justify-center">
-                        <div class="text-center p-6">
-                          <div class="text-6xl mb-2">🤝</div>
-                          <p class="text-white/80 text-lg">Building Together</p>
-                        </div>
+                        <img
+                          src="/images/k2.jpg"
+                          alt="Building Together"
+                          class="w-48 h-48 md:w-full md:h-auto object-contain"
+                        />
                       </div>
                       <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
                         <p class="text-white/90 mb-4 leading-relaxed text-base md:text-lg">
@@ -362,42 +343,27 @@ export default component$(() => {
             {/* Merch Tab */}
             {activeTab.value === 'merch' && (
               <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/70">
-                {/* Hero Section */}
-                <div class="mb-4 text-center">
-                  <p class="text-lg text-white/90 max-w-3xl mx-auto">
-                    Represent the Kaslands community with exclusive merchandise. All items are limited edition.
-                  </p>
-                  <div class="mt-4 inline-block bg-pink-600/20 border-2 border-pink-500/50 rounded-lg px-4 py-2">
-                    <p class="text-white/90 text-sm">
-                      🚀 <span class="font-semibold">Coming 2026</span> - Pre-orders opening soon!
-                    </p>
-                  </div>
-                </div>
-
                 {/* Featured Product Banner */}
                 <div class="grid md:grid-cols-2 gap-4 mb-4">
-                  <div class="bg-gradient-to-br from-pink-600/30 to-purple-600/30 rounded-xl p-2 border-2 border-pink-500/40">
-                    <div class="bg-black/70 rounded-lg h-full flex items-center justify-center p-8">
-                      <div class="text-center">
-                        <div class="text-8xl mb-4">👕</div>
-                        <p class="text-2xl font-bold text-white md:neon-text">Featured Item</p>
-                      </div>
-                    </div>
+                  <div class="bg-gradient-to-br from-pink-600/30 to-purple-600/30 rounded-xl p-2 border-2 border-pink-500/40 overflow-hidden">
+                    <img
+                      src="/images/k1.jpg"
+                      alt="Art Print Bundle"
+                      class="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <div class="bg-black/80 rounded-xl p-5 md:p-6 border-2 border-pink-500/30 flex flex-col justify-center">
                     <span class="inline-block bg-pink-600/40 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 w-fit">
-                      Best Seller
+                      New
                     </span>
                     <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
-                      Kaslands Hoodie
+                      Art Print Bundle
                     </h2>
                     <p class="text-white/90 mb-4 text-lg">
-                      Our signature hoodie featuring the iconic neon Kaslands logo. Made from premium cotton blend
-                      for ultimate comfort and style.
+                      High-quality prints of our top NFT collections. Set of 3 prints featuring stunning Kaslands artwork.
                     </p>
                     <div class="flex items-center gap-4 mb-6">
-                      <span class="text-3xl font-bold text-pink-500">0.025 KAS</span>
-                      <span class="text-white/60 line-through text-lg">0.035 KAS</span>
+                      <span class="text-3xl font-bold text-pink-500">0.020 KAS</span>
                     </div>
                     <button class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg w-full md:w-auto">
                       Notify When Available
@@ -416,14 +382,11 @@ export default component$(() => {
                       class="bg-black/80 rounded-xl border-2 border-pink-500/20 overflow-hidden hover:border-pink-500/50 transition-all duration-300 group"
                     >
                       {/* Product Image Placeholder */}
-                      <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 h-48 flex items-center justify-center relative">
+                      <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 h-48 flex items-center justify-center relative overflow-hidden">
                         <div class="text-7xl opacity-80 group-hover:scale-110 transition-transform duration-300">
                           {product.id === 1 && "👕"}
                           {product.id === 2 && "👔"}
-                          {product.id === 3 && "📍"}
-                          {product.id === 4 && "🧢"}
-                          {product.id === 5 && "🖼️"}
-                          {product.id === 6 && "✨"}
+                          {product.id === 3 && "🧢"}
                         </div>
                         {product.badge && (
                           <span class="absolute top-4 right-4 bg-pink-600/80 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -472,13 +435,6 @@ export default component$(() => {
             {/* FAQ Tab */}
             {activeTab.value === 'faq' && (
               <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/70">
-                {/* Hero Section */}
-                <div class="mb-4 text-center">
-                  <p class="text-lg text-white/90 max-w-3xl mx-auto">
-                    Get to know the creator behind Kaslands and learn about our vision, art, and community.
-                  </p>
-                </div>
-
                 <div class="flex flex-col md:flex-row md:gap-4">
                   <div class="flex-1 flex flex-col gap-3">
                     {leftColumn.map(renderFaqItem)}
