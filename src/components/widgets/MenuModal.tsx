@@ -152,7 +152,7 @@ export default component$(() => {
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
                                     {/* <img src="/images/sticker.webp" alt="Logo" /> */}
 
-                                  <h1 class="text-xl neon-text text-teal-800 ml-1 pt-2"> KASLANDS</h1>
+                                  <h1 class="text-xl neon-text text-teal-800 ml-1 pt-2 brightness-75"> KASLANDS</h1>
 
                 </div>
               </button>
@@ -177,7 +177,7 @@ export default component$(() => {
                   role="button"
                   aria-label="Mint NFT"
                 >
-                  <span class="relative z-10 flex items-center gap-1 neon-text text-xl tracking-[0.01rem] font-medium text-white/70">
+                  <span class="relative z-10 flex items-center gap-1 neon-text text-xl tracking-[0.01rem] font-medium text-white/70 brightness-75">
                     MINT
                     <div class="transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                       <GunIcon />

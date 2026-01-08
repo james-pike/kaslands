@@ -233,13 +233,13 @@ export default component$(() => {
     <>
       <div class="flex flex-col">
         {/* Hero Landing Section - Mobile Only */}
-        <section class="relative mx-auto -mb-2 max-w-7xl w-full md:hidden">
+        <section class="relative mx-auto -mb-2 max-w-7xl w-full md:hidden transform-gpu backface-hidden" style="will-change: transform; contain: layout style paint;">
           <div class="p-5 mb-4 pt-8 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/70">
-            <div class="relative py-12 md:py-20 px-4 md:px-8 mx-2">
+            <div class="relative py-12 md:py-20 px-4 md:px-8 mx-2 transform-gpu">
               {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0">
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
                   Kaslands
                 </h1>
 
