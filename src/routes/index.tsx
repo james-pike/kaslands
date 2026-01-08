@@ -70,7 +70,7 @@ export default component$(() => {
       // Small delay to ensure DOM is updated after tab change
       setTimeout(() => {
         // On mobile, scroll so content starts right under the header
-        const heroSection = document.querySelector('section.md\\:hidden');
+        const heroSection = document.querySelector('section.md\\:hidden') as HTMLElement | null;
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
           window.scrollTo({ top: heroHeight, behavior: 'instant' });
