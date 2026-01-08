@@ -52,8 +52,10 @@ export default component$(() => {
   const { activeTab } = useTabContext();
   const hasScrolledOnTabChange = useSignal(false);
 
-  // Scroll to top when tab changes (skip hero on mobile)
-  useVisibleTask$(() => {
+  // Scroll to content when tab changes (skip hero on mobile)
+  useVisibleTask$(({ track }) => {
+    // Track activeTab changes
+    const currentTab = track(() => activeTab.value);
 
     // Skip scrolling on initial page load
     if (!hasScrolledOnTabChange.value) {
@@ -65,17 +67,17 @@ export default component$(() => {
     const isMobile = window.innerWidth < 768;
 
     if (isMobile) {
-      // On mobile, scroll past the hero section to the content
-      // The hero section + header is approximately 400-450px on mobile
-      const heroSection = document.querySelector('section.md\\:hidden');
-      if (heroSection) {
-        const heroHeight = heroSection.getBoundingClientRect().height;
-        const header = document.querySelector('#header');
-        const headerHeight = header ? header.getBoundingClientRect().height : 0;
-        window.scrollTo({ top: heroHeight + headerHeight - 80, behavior: 'smooth' });
-      } else {
-        window.scrollTo({ top: 350, behavior: 'smooth' });
-      }
+      // Small delay to ensure DOM is updated after tab change
+      setTimeout(() => {
+        // On mobile, scroll so content starts right under the header
+        const heroSection = document.querySelector('section.md\\:hidden');
+        if (heroSection) {
+          const heroHeight = heroSection.offsetHeight;
+          window.scrollTo({ top: heroHeight, behavior: 'instant' });
+        } else {
+          window.scrollTo({ top: 400, behavior: 'instant' });
+        }
+      }, 50);
     } else {
       // On desktop, scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -239,7 +241,7 @@ export default component$(() => {
               {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-90 md:brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-75 md:brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
                   Kaslands
                 </h1>
 
