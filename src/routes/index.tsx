@@ -55,7 +55,7 @@ export default component$(() => {
   // Scroll to content when tab changes (skip hero on mobile)
   useVisibleTask$(({ track }) => {
     // Track activeTab changes
-    const currentTab = track(() => activeTab.value);
+    track(() => activeTab.value);
 
     // Skip scrolling on initial page load
     if (!hasScrolledOnTabChange.value) {
