@@ -91,7 +91,7 @@ export default component$(() => {
         const heroSection = document.querySelector('section.md\\:hidden') as HTMLElement | null;
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
-          window.scrollTo({ top: heroHeight - 2, behavior: 'instant' });
+          window.scrollTo({ top: heroHeight, behavior: 'instant' });
         } else {
           window.scrollTo({ top: 360, behavior: 'instant' });
         }
