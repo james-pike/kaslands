@@ -355,7 +355,7 @@ useStylesScoped$(`
       <header
         id="header"
         class={`
-          sticky top-0 z-40 mt-0 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md
+          sticky top-0 z-40 mt-0 flex-none mx-2.5 md:mx-auto max-w-6xl rounded-t-xl
           transition-all duration-150 ease-in-out
           ${store.isScrolling
             ? "bg-gray-900/85 dark:bg-primary-900/85 md:backdrop-blur-sm"
@@ -395,7 +395,7 @@ useStylesScoped$(`
               </button>
 
               {/* Mobile buttons - Play, Twitter, Telegram, Menu */}
-              <div class="flex items-center md:hidden gap-2">
+              <div class="flex items-center md:hidden gap-2 pt-1.5 pr-1.5">
               <a
                 class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
