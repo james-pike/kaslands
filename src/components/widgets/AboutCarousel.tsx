@@ -46,7 +46,7 @@ export default component$(() => {
   ];
 
   return (
-    <div class="max-w-6xl mx-auto mb-1.5 px-2.5 md:px-0">
+    <div class="max-w-6xl mx-auto mb-1.5 px-2 md:px-0">
       {/* Stacked Sections - All Devices */}
       <div class="space-y-1.5">
         {slides.map((slide) => (
