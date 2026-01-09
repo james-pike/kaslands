@@ -236,54 +236,56 @@ export default component$(() => {
       <div class="flex flex-col">
         {/* Hero Landing Section - Mobile Only */}
         <section class="relative mx-auto -mb-2 max-w-7xl w-full md:hidden transform-gpu backface-hidden" style="will-change: transform; contain: layout style paint;">
-          <div class="p-5 mb-4 pt-8 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/85">
+          {/* Hero Content Container */}
+          <div class="p-5 pt-8 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/85">
             <div class="relative py-12 md:py-20 px-4 md:px-8 mx-2 transform-gpu">
-              {/* Content */}
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-[0.65] md:brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-[0.85] md:brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
                   Kaslands
                 </h1>
 
                 {/* Subtitle */}
-                <p class="text-white/80 text-2xl md:text-2xl mb-8 mt-2 px-2 max-w-2xl">
+                <p class="text-white/80 text-2xl md:text-2xl mt-2 px-2 max-w-2xl">
                   Join the NFT Ecosystem on the Kaspa BlockDag, revise final text here
                 </p>
-            
-                {/* Action Buttons */}
-                <div class="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-md">
-                  <a
-                    href="#"
-                    class="flex-1 bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,105,180,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
-                    role="button"
-                    aria-label="Mint NFT"
-                  >
-                    <span class="relative z-10 flex items-center gap-1 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-[0.65] md:brightness-100">
-                      MINT
-                      <div class="transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                        <GunIcon />
-                      </div>
-                    </span>
-                    <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
-                  </a>
-
-                  <a
-                    href="#"
-                    onClick$={(e) => {
-                      e.preventDefault();
-                      activeTab.value = 'collection';
-                    }}
-                    class="flex-1 bg-purple-600/40 hover:bg-purple-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-purple-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
-                    role="button"
-                    aria-label="Explore collections"
-                  >
-                    <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-[0.65] md:brightness-100">
-                      EXPLORE
-                    </span>
-                    <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
-                  </a>
-                </div>
               </div>
+            </div>
+          </div>
+
+          {/* Action Buttons Container */}
+          <div class="p-5 py-6 mb-4 max-w-6xl border-none mx-3 bg-gray-900/85">
+            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-md mx-auto">
+              <a
+                href="#"
+                class="flex-1 bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,105,180,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
+                role="button"
+                aria-label="Mint NFT"
+              >
+                <span class="relative z-10 flex items-center gap-1 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-[0.65] md:brightness-100">
+                  MINT
+                  <div class="transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                    <GunIcon />
+                  </div>
+                </span>
+                <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
+              </a>
+
+              <a
+                href="#"
+                onClick$={(e) => {
+                  e.preventDefault();
+                  activeTab.value = 'collection';
+                }}
+                class="flex-1 bg-purple-600/40 hover:bg-purple-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-purple-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
+                role="button"
+                aria-label="Explore collections"
+              >
+                <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-[0.65] md:brightness-100">
+                  EXPLORE
+                </span>
+                <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
+              </a>
             </div>
           </div>
         </section>
@@ -374,9 +376,6 @@ export default component$(() => {
                 </div>
 
                 {/* Product Grid */}
-                <h2 class="text-2xl font-bold text-white md:neon-text mb-4 text-center">
-                  All Products
-                </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
                   {products.value.map((product) => (
                     <div

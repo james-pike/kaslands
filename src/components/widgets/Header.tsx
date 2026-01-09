@@ -359,7 +359,7 @@ useStylesScoped$(`
           transition-all duration-150 ease-in-out
           ${store.isScrolling
             ? "bg-gray-900/85 dark:bg-primary-900/85 md:backdrop-blur-sm"
-            : "bg-gray-900/60 md:backdrop-blur-none"
+            : "bg-gray-900/85 md:backdrop-blur-sm"
           }
         `}
         window:onScroll$={() => {
