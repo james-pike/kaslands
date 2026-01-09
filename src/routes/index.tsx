@@ -255,7 +255,7 @@ export default component$(() => {
         {/* Hero Landing Section - Mobile Only */}
         <section class="relative mx-auto max-w-7xl w-full md:hidden transform-gpu backface-hidden" style="will-change: transform; contain: layout style paint;">
           {/* Hero Content Container */}
-          <div class="p-5 pt-8 pb-2 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/75">
+          <div class="p-5 pt-8 pb-2 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/70">
             <div class="relative py-8 md:py-20 px-0 md:px-8 mx-2 transform-gpu">
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
@@ -272,7 +272,7 @@ export default component$(() => {
           </div>
 
           {/* Action Buttons Container */}
-          <div class="px-5 py-0 mb-2.5 pb-7 max-w-6xl border-none mx-3 bg-gray-900/75">
+          <div class="px-5 py-0 mb-2.5 pb-7 max-w-6xl border-none mx-3 bg-gray-900/70">
             <div class="flex flex-row gap-4 w-full max-w-md mx-auto">
               <a
                 href="#"
@@ -324,7 +324,7 @@ export default component$(() => {
 
                 {/* Community Section */}
                 <div class="max-w-6xl mx-auto mb-2.5 px-3 md:px-0">
-                  <div class="bg-gray-900/75 border-none overflow-hidden">
+                  <div class="bg-gray-900/70 border-none overflow-hidden">
                     <div class="flex flex-col md:flex-row">
                       <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 md:p-4 flex items-center justify-center">
                         <img
@@ -365,7 +365,7 @@ export default component$(() => {
             {/* Merch Tab */}
             {activeTab.value === 'merch' && (
               <>
-                <Card.Root class="p-5 md:p-8 mb-2.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/75">
+                <Card.Root class="p-5 md:p-8 mb-2.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/70">
                   {/* Featured Product Banner */}
                   <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div class="bg-gradient-to-br from-pink-600/30 to-purple-600/30 rounded-xs p-1 border-2 border-pink-500/40 overflow-hidden">
@@ -458,7 +458,7 @@ export default component$(() => {
             {/* FAQ Tab */}
             {activeTab.value === 'faq' && (
               <>
-                <Card.Root class="p-5 md:p-8 mb-2.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/75">
+                <Card.Root class="p-5 md:p-8 mb-2.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/70">
                   <div class="flex flex-col md:flex-row md:gap-4">
                     <div class="flex-1 flex flex-col gap-3">
                       {leftColumn.map(renderFaqItem)}

@@ -45,7 +45,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
               <>
                 <button
                   class={cn(
-                    "!text-xl font-medium text-white/90 dark:text-gray-200 flex items-center justify-between w-full p-2.5 px-5",
+                    "!text-2xl font-medium text-white/90 dark:text-gray-200 flex items-center justify-between w-full p-2.5 px-5",
                     isActive &&
                       "bg-primary-100 dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
                     "hover:bg-primary-100 dark:hover:bg-primary-100/80 transition-all duration-200"
@@ -55,14 +55,14 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                   <span>{item.title}</span>
                   <LuChevronDown
                     class={cn(
-                      "h-6 w-6 text-gray-500 transition-transform duration-200",
+                      "h-7 w-7 text-gray-500 transition-transform duration-200",
                       openIndex.value === index && "rotate-180"
                     )}
                   />
                 </button>
                 <div
                   class={cn(
-                    "text-xl text-muted-foreground transition-all duration-500 ease-in-out max-h-0 overflow-hidden",
+                    "text-2xl text-muted-foreground transition-all duration-500 ease-in-out max-h-0 overflow-hidden",
                     openIndex.value === index && "max-h-96"
                   )}
                 >
@@ -74,7 +74,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                           <span class="text-primary-300 !text-2xs mr-3">✦</span>
                           <button
                             class={cn(
-                              "block text-white/90 dark:text-gray-200 !text-xl p-3 pl-1 font-medium transition-all duration-200 text-left w-full",
+                              "block text-white/90 dark:text-gray-200 !text-2xl p-3 pl-1 font-medium transition-all duration-200 text-left w-full",
                               isSubitemActive &&
                                 "bg-primary-100 dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
                               "hover:bg-primary-100 dark:hover:bg-primary-100/80"
@@ -92,7 +92,7 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
             ) : (
               <button
                 class={cn(
-                  "block lg text-white/90 !text-xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200 text-left w-full",
+                  "block lg text-white/90 !text-2xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200 text-left w-full",
                   isActive &&
                     " dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
                   "hover:bg-primary-100 dark:hover:bg-primary-100/80"
@@ -139,7 +139,7 @@ export default component$(() => {
             "btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
           )}
         >
-          <IconHamburger class="w-5 h-5 text-white/90" />
+          <IconHamburger class="w-6 h-6 text-white/90" />
         </Modal.Trigger>
 
         <Modal.Panel
@@ -152,7 +152,7 @@ export default component$(() => {
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
                                     {/* <img src="/images/sticker.webp" alt="Logo" /> */}
 
-                                  <h1 class="text-xl neon-text text-teal-800 ml-1 pt-2 brightness-75"> KASLANDS</h1>
+                                  <h1 class="text-2xl neon-text text-teal-800 ml-1 pt-2 brightness-75"> KASLANDS</h1>
 
                 </div>
               </button>
@@ -177,7 +177,7 @@ export default component$(() => {
                   role="button"
                   aria-label="Mint NFT"
                 >
-                  <span class="relative z-10 flex items-center gap-1 neon-text text-xl tracking-[0.01rem] font-medium text-white/70 brightness-75">
+                  <span class="relative z-10 flex items-center gap-1 neon-text text-2xl tracking-[0.01rem] font-medium text-white/70 brightness-75">
                     MINT
                     <div class="transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                       <GunIcon />
@@ -192,7 +192,7 @@ export default component$(() => {
                   class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-black/30 transition-all"
                   aria-label="Telegram"
                 >
-                  <svg width="20px" height="20px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="24px" height="24px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z" fill="white"></path>
                   </svg>
                 </a>
@@ -201,7 +201,7 @@ export default component$(() => {
                   class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-black/30 transition-all"
                   aria-label="X (Twitter)"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-twitter-x" viewBox="0 0 16 16" height="20" width="20">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-twitter-x" viewBox="0 0 16 16" height="24" width="24">
                     <path d="M12.6 0.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867 -5.07 -4.425 5.07H0.316l5.733 -6.57L0 0.75h5.063l3.495 4.633L12.601 0.75Zm-0.86 13.028h1.36L4.323 2.145H2.865z" stroke-width="1"></path>
                   </svg>
                 </a>
@@ -231,11 +231,11 @@ export default component$(() => {
           <Modal.Close
             class={cn(
               buttonVariants({ size: "icon", look: "link" }),
-              "absolute right-8 top-5 text-pink-600/50 hover:text-pink-600/50 dark:text-white dark:hover:bg-gray-900"
+              "absolute right-8 top-5 text-white hover:text-white/70 dark:text-white dark:hover:bg-gray-900"
             )}
             type="submit"
           >
-            <LuX class="h-5 w-5" />
+            <LuX class="h-6 w-6" />
           </Modal.Close>
         </Modal.Panel>
       </Modal.Root>

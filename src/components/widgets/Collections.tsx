@@ -68,12 +68,12 @@ export default component$(() => {
 
   return (
     <>
-    <Card.Root class="p-5 md:p-8 mb-2.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/75">
+    <Card.Root class="p-5 md:p-8 mb-2.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/70">
       {/* Mobile: Heading and Collection Selector on same line */}
       <div class="md:hidden flex justify-between items-center mb-4">
         <Heading />
         <select
-          class="p-2 rounded bg-gray-900/75 border-none text-white text-sm"
+          class="p-2 rounded bg-gray-900/70 border-none text-white text-sm"
           value={selectedCollection.value}
           onChange$={(e) =>
             (selectedCollection.value = (e.target as HTMLSelectElement).value)
@@ -119,7 +119,7 @@ export default component$(() => {
             <div class="flex items-center gap-2">
               <label class="text-gray-300 text-sm whitespace-nowrap hidden sm:inline">Filter:</label>
               <select
-                class="p-2 rounded bg-gray-900/75 border-none text-white text-sm"
+                class="p-2 rounded bg-gray-900/70 border-none text-white text-sm"
                 value={filterRarity.value}
                 onChange$={(e) =>
                   (filterRarity.value = (e.target as HTMLSelectElement)
@@ -137,7 +137,7 @@ export default component$(() => {
             <div class="flex items-center gap-2">
               <label class="text-gray-300 text-sm whitespace-nowrap hidden sm:inline">Sort:</label>
               <select
-                class="p-2 rounded bg-gray-900/75 border-none text-white text-sm"
+                class="p-2 rounded bg-gray-900/70 border-none text-white text-sm"
                 value={sortBy.value}
                 onChange$={(e) =>
                   (sortBy.value = (e.target as HTMLSelectElement).value as 'id' | 'rarity')
