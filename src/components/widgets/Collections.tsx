@@ -182,9 +182,11 @@ export default component$(() => {
         </main>
       </div>
 
+    </Card.Root>
+
       {/* Bottom CTA Section */}
-      <div class="mt-6">
-        <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+      <div class="max-w-6xl md:mx-auto mx-3 mb-4">
+        <div class="bg-gray-900/90 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
           <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
             Start Your Collection
           </h2>
@@ -193,6 +195,6 @@ export default component$(() => {
           </p>
         </div>
       </div>
-    </Card.Root>
+
   );
 });

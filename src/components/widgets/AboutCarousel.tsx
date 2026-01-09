@@ -48,7 +48,7 @@ export default component$(() => {
   return (
     <div class="max-w-6xl mx-auto mb-6 px-3 md:px-0">
       {/* Stacked Sections - All Devices */}
-      <div class="space-y-4">
+      <div class="space-y-1">
         {slides.map((slide) => (
           <div key={slide.id} class="bg-gray-900/85 border-none overflow-hidden">
             <div class={`flex flex-col ${slide.reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>

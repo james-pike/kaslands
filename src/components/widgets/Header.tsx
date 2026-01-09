@@ -358,7 +358,7 @@ useStylesScoped$(`
           sticky top-0 z-40 mt-0 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md
           transition-all duration-150 ease-in-out
           ${store.isScrolling
-            ? "bg-gray-900/85 dark:bg-primary-900/85 md:backdrop-blur-sm"
+            ? "bg-gray-900/95 dark:bg-primary-900/95 md:backdrop-blur-sm"
             : "bg-gray-900/85 md:backdrop-blur-sm"
           }
         `}

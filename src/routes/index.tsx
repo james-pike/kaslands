@@ -73,9 +73,9 @@ export default component$(() => {
         const heroSection = document.querySelector('section.md\\:hidden') as HTMLElement | null;
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
-          window.scrollTo({ top: heroHeight, behavior: 'instant' });
+          window.scrollTo({ top: heroHeight - 5, behavior: 'instant' });
         } else {
-          window.scrollTo({ top: 400, behavior: 'instant' });
+          window.scrollTo({ top: 360, behavior: 'instant' });
         }
       }, 50);
     } else {
@@ -254,7 +254,7 @@ export default component$(() => {
           </div>
 
           {/* Action Buttons Container */}
-          <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 pb-8 mb-4 max-w-6xl border-2 border-pink-500/30 mx-3">
+          <div class="px-5 py-0 mb-4 pb-7 max-w-6xl border-none mx-3 bg-gray-900/85">
             <div class="flex flex-row gap-4 w-full max-w-md mx-auto">
               <a
                 href="#"
@@ -332,7 +332,7 @@ export default component$(() => {
 
                 {/* Bottom CTA Section */}
                 <div class="max-w-6xl mx-auto mb-6 px-3 md:px-0">
-                  <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                  <div class="bg-gray-900/90 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                       Ready to Join Kaslands?
                     </h2>
@@ -346,108 +346,114 @@ export default component$(() => {
 
             {/* Merch Tab */}
             {activeTab.value === 'merch' && (
-              <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/85">
-                {/* Featured Product Banner */}
-                <div class="grid md:grid-cols-2 gap-4 mb-4">
-                  <div class="bg-gradient-to-br from-pink-600/30 to-purple-600/30 rounded-xl p-2 border-2 border-pink-500/40 overflow-hidden">
-                    <img
-                      src="/images/k1.jpg"
-                      alt="Art Print Bundle"
-                      class="w-full h-full object-cover rounded-lg"
-                    />
-                  </div>
-                  <div class="bg-black/80 rounded-xl p-5 md:p-6 border-2 border-pink-500/30 flex flex-col justify-center">
-                    <span class="inline-block bg-pink-600/40 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 w-fit">
-                      New
-                    </span>
-                    <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
-                      Art Print Bundle
-                    </h2>
-                    <p class="text-white/90 mb-4 text-lg">
-                      High-quality prints of our top NFT collections. Set of 3 prints featuring stunning Kaslands artwork.
-                    </p>
-                    <div class="flex items-center gap-4 mb-6">
-                      <span class="text-3xl font-bold text-pink-500">0.020 KAS</span>
+              <>
+                <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/85">
+                  {/* Featured Product Banner */}
+                  <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div class="bg-gradient-to-br from-pink-600/30 to-purple-600/30 rounded-xs p-2 border-2 border-pink-500/40 overflow-hidden">
+                      <img
+                        src="/images/k1.jpg"
+                        alt="Art Print Bundle"
+                        class="w-full h-full object-cover rounded-xs"
+                      />
                     </div>
-                    <button class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg w-full md:w-auto">
-                      Notify When Available
-                    </button>
-                  </div>
-                </div>
-
-                {/* Product Grid */}
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-                  {products.value.map((product) => (
-                    <div
-                      key={product.id}
-                      class="bg-black/80 rounded-xl border-2 border-pink-500/20 overflow-hidden hover:border-pink-500/50 transition-all duration-300 group"
-                    >
-                      {/* Product Image Placeholder */}
-                      <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 h-48 flex items-center justify-center relative overflow-hidden">
-                        <div class="text-7xl opacity-80 group-hover:scale-110 transition-transform duration-300">
-                          {product.id === 1 && "👕"}
-                          {product.id === 2 && "👔"}
-                          {product.id === 3 && "🧢"}
-                        </div>
-                        {product.badge && (
-                          <span class="absolute top-4 right-4 bg-pink-600/80 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            {product.badge}
-                          </span>
-                        )}
+                    <div class="bg-black/80 rounded-xs p-5 md:p-6 border-2 border-pink-500/30 flex flex-col justify-center">
+                      <span class="inline-block bg-pink-600/40 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 w-fit">
+                        New
+                      </span>
+                      <h2 class="text-2xl font-bold text-white md:neon-text mb-3">
+                        Art Print Bundle
+                      </h2>
+                      <p class="text-white/90 mb-4 text-lg">
+                        High-quality prints of our top NFT collections. Set of 3 prints featuring stunning Kaslands artwork.
+                      </p>
+                      <div class="flex items-center gap-4 mb-6">
+                        <span class="text-3xl font-bold text-pink-500">0.020 KAS</span>
                       </div>
-
-                      {/* Product Info */}
-                      <div class="p-4">
-                        <h3 class="text-lg font-bold text-white mb-2">{product.name}</h3>
-                        <p class="text-white/80 mb-3 text-sm">{product.description}</p>
-                        <div class="flex items-center justify-between mb-4">
-                          <span class="text-2xl font-bold text-pink-500">{product.price}</span>
-                        </div>
-                        <button class="w-full bg-pink-600/40 hover:bg-pink-600/60 px-6 py-2 rounded-lg font-semibold text-white transition-all duration-300 border-2 border-pink-500/30">
-                          Coming Soon
-                        </button>
-                      </div>
+                      <button class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-xs font-semibold text-white transition-all duration-300 hover:shadow-lg w-full md:w-auto">
+                        Notify When Available
+                      </button>
                     </div>
-                  ))}
-                </div>
+                  </div>
+
+                  {/* Product Grid */}
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {products.value.map((product) => (
+                      <div
+                        key={product.id}
+                        class="bg-black/80 rounded-xs border-2 border-pink-500/20 overflow-hidden hover:border-pink-500/50 transition-all duration-300 group"
+                      >
+                        {/* Product Image Placeholder */}
+                        <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 h-48 flex items-center justify-center relative overflow-hidden">
+                          <div class="text-7xl opacity-80 group-hover:scale-110 transition-transform duration-300">
+                            {product.id === 1 && "👕"}
+                            {product.id === 2 && "👔"}
+                            {product.id === 3 && "🧢"}
+                          </div>
+                          {product.badge && (
+                            <span class="absolute top-4 right-4 bg-pink-600/80 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                              {product.badge}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Product Info */}
+                        <div class="p-4">
+                          <h3 class="text-lg font-bold text-white mb-2">{product.name}</h3>
+                          <p class="text-white/80 mb-3 text-sm">{product.description}</p>
+                          <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-pink-500">{product.price}</span>
+                          </div>
+                          <button class="w-full bg-pink-600/40 hover:bg-pink-600/60 px-6 py-2 rounded-xs font-semibold text-white transition-all duration-300 border-2 border-pink-500/30">
+                            Coming Soon
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Card.Root>
 
                 {/* Newsletter Section */}
-                <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
-                  <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-                    Stay Updated
-                  </h2>
-                  <p class="text-white/90 mb-4 text-base max-w-2xl mx-auto">
-                    Be the first to know when our merch drops. Join our community and get exclusive early access.
-                  </p>
-                  <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      class="flex-1 px-4 py-3 rounded-lg bg-black/60 border-2 border-pink-500/30 text-white placeholder-white/50 focus:outline-none focus:border-pink-500/60"
-                    />
-                    <button class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg">
-                      Subscribe
-                    </button>
+                <div class="max-w-6xl md:mx-auto mx-3 mb-4">
+                  <div class="bg-gray-900/90 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+                      Stay Updated
+                    </h2>
+                    <p class="text-white/90 mb-4 text-base max-w-2xl mx-auto">
+                      Be the first to know when our merch drops. Join our community and get exclusive early access.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        class="flex-1 px-4 py-3 rounded-xs bg-black/60 border-2 border-pink-500/30 text-white placeholder-white/50 focus:outline-none focus:border-pink-500/60"
+                      />
+                      <button class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-xs font-semibold text-white transition-all duration-300 hover:shadow-lg">
+                        Subscribe
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </Card.Root>
+              </>
             )}
 
             {/* FAQ Tab */}
             {activeTab.value === 'faq' && (
-              <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/85">
-                <div class="flex flex-col md:flex-row md:gap-4">
-                  <div class="flex-1 flex flex-col gap-3">
-                    {leftColumn.map(renderFaqItem)}
+              <>
+                <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/85">
+                  <div class="flex flex-col md:flex-row md:gap-4">
+                    <div class="flex-1 flex flex-col gap-3">
+                      {leftColumn.map(renderFaqItem)}
+                    </div>
+                    <div class="flex-1 flex flex-col gap-3 mt-3 md:mt-0">
+                      {rightColumn.map(renderFaqItem)}
+                    </div>
                   </div>
-                  <div class="flex-1 flex flex-col gap-3 mt-3 md:mt-0">
-                    {rightColumn.map(renderFaqItem)}
-                  </div>
-                </div>
+                </Card.Root>
 
                 {/* Bottom CTA Section */}
-                <div class="mt-6">
-                  <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                <div class="max-w-6xl md:mx-auto mx-3 mb-4">
+                  <div class="bg-gray-900/90 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                       Join the Kaslands Community
                     </h2>
@@ -456,7 +462,7 @@ export default component$(() => {
                     </p>
                   </div>
                 </div>
-              </Card.Root>
+              </>
             )}
 
           </div>
