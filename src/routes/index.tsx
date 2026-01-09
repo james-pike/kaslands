@@ -237,16 +237,16 @@ export default component$(() => {
         {/* Hero Landing Section - Mobile Only */}
         <section class="relative mx-auto -mb-2 max-w-7xl w-full md:hidden transform-gpu backface-hidden" style="will-change: transform; contain: layout style paint;">
           {/* Hero Content Container */}
-          <div class="p-5 pt-8 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/85">
-            <div class="relative py-12 md:py-20 px-4 md:px-8 mx-2 transform-gpu">
+          <div class="p-5 pt-8 pb-2 max-w-6xl rounded-t-none border-none mx-3 bg-gray-900/85">
+            <div class="relative py-8 md:py-20 px-0 md:px-8 mx-2 transform-gpu">
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wider brightness-[0.85] md:brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
+                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wide brightness-[0.85] md:brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
                   Kaslands
                 </h1>
 
                 {/* Subtitle */}
-                <p class="text-white/80 text-2xl md:text-2xl mt-2 px-2 max-w-2xl">
+                <p class="text-white/80 text-2xl md:text-2xl mt-2 max-w-lg px-0">
                   Join the NFT Ecosystem on the Kaspa BlockDag, revise final text here
                 </p>
               </div>
@@ -254,11 +254,11 @@ export default component$(() => {
           </div>
 
           {/* Action Buttons Container */}
-          <div class="px-5 py-6 mb-4 max-w-6xl border-none mx-3 bg-gray-900/85">
-            <div class="flex flex-row gap-4 w-full max-w-sm mx-auto px-4">
+          <div class="px-5 py-0 mb-4 pb-7 max-w-6xl border-none mx-3 bg-gray-900/85">
+            <div class="flex flex-row gap-4 w-full max-w-md mx-auto">
               <a
                 href="#"
-                class="flex-1 bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,105,180,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
+                class="flex-1 bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center pl-4 pr-2 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,105,180,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                 role="button"
                 aria-label="Mint NFT"
               >
