@@ -40,7 +40,7 @@ export default component$(() => {
 
       <Hero/>
       {/* Header: order-1 on mobile, order-2 on desktop - STICKY */}
-      <div class="order-1 md:order-1 sticky top-0 z-20 mt-1.5 md:mt-0">
+      <div class="order-1 md:order-1 sticky top-0 z-20 mt-1 md:mt-0">
         <Header />
       </div>
       

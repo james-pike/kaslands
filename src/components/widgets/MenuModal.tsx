@@ -45,10 +45,10 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
               <>
                 <button
                   class={cn(
-                    "!text-2xl font-medium text-white/90 dark:text-gray-200 flex items-center justify-between w-full p-2.5 px-5",
+                    "!text-2xl font-medium neon-text text-white/90 dark:text-gray-200 flex items-center justify-between w-full p-2 px-5 relative",
                     isActive &&
-                      "text-pink-500 border-l-2 border-pink-500 font-bold",
-                    "hover:text-pink-400 transition-all duration-200"
+                      "!text-pink-600 brightness-125 font-bold before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-5 before:w-0.5 before:bg-pink-500 before:shadow-[0_0_8px_rgba(236,72,153,0.8)]",
+                    "hover:!text-pink-600 transition-all duration-200"
                   )}
                   onClick$={() => (openIndex.value = openIndex.value === index ? null : index)}
                 >
@@ -74,10 +74,10 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                           <span class="text-primary-300 !text-2xs mr-3">✦</span>
                           <button
                             class={cn(
-                              "block text-white/90 dark:text-gray-200 !text-2xl p-3 pl-1 font-medium transition-all duration-200 text-left w-full",
+                              "block neon-text text-white/90 dark:text-gray-200 !text-2xl p-2 pl-1 font-medium transition-all duration-200 text-left w-full",
                               isSubitemActive &&
-                                "text-pink-500 font-bold",
-                              "hover:text-pink-400"
+                                "!text-pink-600 brightness-125 font-bold",
+                              "hover:!text-pink-600"
                             )}
                             onClick$={() => switchTab(subitem.href as TabId)}
                           >
@@ -92,10 +92,10 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
             ) : (
               <button
                 class={cn(
-                  "block lg text-white/90 !text-2xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200 text-left w-full",
+                  "block lg neon-text text-white/90 !text-2xl dark:text-gray-200 p-2 px-5 font-medium transition-all duration-200 text-left w-full relative",
                   isActive &&
-                    "text-pink-500 border-l-2 border-pink-500 font-bold",
-                  "hover:text-pink-400"
+                    "!text-pink-600 brightness-125 font-bold before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-5 before:w-0.5 before:bg-pink-500 before:shadow-[0_0_8px_rgba(236,72,153,0.8)]",
+                  "hover:!text-pink-600"
                 )}
                 onClick$={() => switchTab(item.href as TabId)}
               >
@@ -148,11 +148,11 @@ export default component$(() => {
         >
           <div class="rounded-t-none border-primary-200 bg-gray-900/80 dark:bg-gray-900 p-2">
             <Modal.Title class="pt-3 pb-2 pl-2.5">
-              <button onClick$={() => switchTab('about')} class="focus:outline-none">
+              <button onClick$={() => switchTab('collection')} class="focus:outline-none">
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
                                     {/* <img src="/images/sticker.webp" alt="Logo" /> */}
 
-                                  <h1 class="text-2xl neon-text text-teal-800 ml-1 pt-2 brightness-75"> KASLANDS</h1>
+                                  <h1 class="text-2xl neon-text text-teal-800 ml-1 pt-2 brightness-100"> KASLANDS</h1>
 
                 </div>
               </button>
@@ -177,7 +177,7 @@ export default component$(() => {
                   role="button"
                   aria-label="Mint NFT"
                 >
-                  <span class="relative z-10 flex items-center gap-1 neon-text text-2xl tracking-[0.01rem] font-medium text-white/70 brightness-75">
+                  <span class="relative z-10 flex items-center gap-1 neon-text text-2xl tracking-[0.01rem] font-medium text-white/70 brightness-100">
                     MINT
                     <div class="transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                       <GunIcon />

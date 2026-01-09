@@ -355,7 +355,7 @@ useStylesScoped$(`
       <header
         id="header"
         class={`
-          sticky top-0 z-40 mt-0 flex-none mx-1.5 md:mx-auto max-w-6xl rounded-t-xl
+          sticky top-0 z-40 mt-0 flex-none mx-1 md:mx-auto max-w-6xl rounded-t-xl
           transition-all duration-150 ease-in-out
           ${store.isScrolling
             ? "bg-gray-900/85 dark:bg-primary-900/85 md:backdrop-blur-sm"
@@ -380,7 +380,7 @@ useStylesScoped$(`
         }}
       >
         <div class="absolute inset-0" aria-hidden="true"></div>
-        <div class="relative text-default py-1 pb-1.5 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:items-center max-w-7xl">
+        <div class="relative text-default py-1 pb-1 md:p-1 px-2 md:px-6 mx-auto w-full md:flex md:items-center max-w-7xl">
           {/* Logo Section */}
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex flex-col md:flex-row justify-between items-start md:items-center w-full md:w-auto">
             <div class="flex justify-between items-center w-full md:w-auto">
@@ -390,12 +390,12 @@ useStylesScoped$(`
               }}>
                 <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                   {/* Logo - Hidden on mobile until scroll, shown on desktop after 25% scroll */}
-                  <h1 class={`neon-text text-2xl py-3 md:py-5 px-1.5 transition-opacity duration-300 ${store.isScrolling ? 'block' : 'hidden'} ${store.scrolledPast25 ? 'md:block' : 'md:hidden'}`}>Kaslands</h1>
+                  <h1 class={`neon-text text-2xl py-3 md:py-5 px-1 transition-opacity duration-300 ${store.isScrolling ? 'block' : 'hidden'} ${store.scrolledPast25 ? 'md:block' : 'md:hidden'}`}>Kaslands</h1>
                 </div>
               </button>
 
               {/* Mobile buttons - Play, Twitter, Telegram, Menu */}
-              <div class="flex items-center md:hidden gap-2 pt-1.5 pr-1.5">
+              <div class="flex items-center md:hidden gap-2 pt-1 pr-1">
               <a
                 class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
