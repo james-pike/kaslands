@@ -254,8 +254,8 @@ export default component$(() => {
           </div>
 
           {/* Action Buttons Container */}
-          <div class="p-5 py-6 mb-4 max-w-6xl border-none mx-3 bg-gray-900/85">
-            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-md mx-auto">
+          <div class="px-5 py-6 mb-4 max-w-6xl border-none mx-3 bg-gray-900/85">
+            <div class="flex flex-row gap-4 w-full max-w-sm mx-auto px-4">
               <a
                 href="#"
                 class="flex-1 bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,105,180,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
