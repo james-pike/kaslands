@@ -47,8 +47,8 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                   class={cn(
                     "!text-2xl font-medium text-white/90 dark:text-gray-200 flex items-center justify-between w-full p-2.5 px-5",
                     isActive &&
-                      "bg-primary-100 dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
-                    "hover:bg-primary-100 dark:hover:bg-primary-100/80 transition-all duration-200"
+                      "text-pink-500 border-l-2 border-pink-500 font-bold",
+                    "hover:text-pink-400 transition-all duration-200"
                   )}
                   onClick$={() => (openIndex.value = openIndex.value === index ? null : index)}
                 >
@@ -76,8 +76,8 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                             class={cn(
                               "block text-white/90 dark:text-gray-200 !text-2xl p-3 pl-1 font-medium transition-all duration-200 text-left w-full",
                               isSubitemActive &&
-                                "bg-primary-100 dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
-                              "hover:bg-primary-100 dark:hover:bg-primary-100/80"
+                                "text-pink-500 font-bold",
+                              "hover:text-pink-400"
                             )}
                             onClick$={() => switchTab(subitem.href as TabId)}
                           >
@@ -94,8 +94,8 @@ const CustomAccordion = component$(({ items, show }: { items: any[]; show: Signa
                 class={cn(
                   "block lg text-white/90 !text-2xl dark:text-gray-200 p-3 px-5 font-medium transition-all duration-200 text-left w-full",
                   isActive &&
-                    " dark:bg-primary-100/80 !important text-pink-600/50 dark:text-secondary-800 !important font-bold !important",
-                  "hover:bg-primary-100 dark:hover:bg-primary-100/80"
+                    "text-pink-500 border-l-2 border-pink-500 font-bold",
+                  "hover:text-pink-400"
                 )}
                 onClick$={() => switchTab(item.href as TabId)}
               >

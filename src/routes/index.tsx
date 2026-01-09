@@ -91,7 +91,9 @@ export default component$(() => {
         const heroSection = document.querySelector('section.md\\:hidden') as HTMLElement | null;
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
-          window.scrollTo({ top: heroHeight - 5, behavior: 'instant' });
+          // Use less scroll for About tab to show more padding
+          const scrollOffset = activeTab.value === 'about' ? 10 : 20;
+          window.scrollTo({ top: heroHeight + scrollOffset, behavior: 'instant' });
         } else {
           window.scrollTo({ top: 360, behavior: 'instant' });
         }
