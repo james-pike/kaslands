@@ -358,8 +358,8 @@ useStylesScoped$(`
           sticky top-0 z-40 mt-0 flex-none mx-3 md:mx-auto max-w-6xl rounded-t-md
           transition-all duration-150 ease-in-out
           ${store.isScrolling
-            ? "bg-gray-900/95 dark:bg-primary-900/95 md:backdrop-blur-sm"
-            : "bg-gray-900/85 md:backdrop-blur-sm"
+            ? "bg-gray-900/85 dark:bg-primary-900/85 md:backdrop-blur-sm"
+            : "bg-gray-900/75 md:backdrop-blur-sm"
           }
         `}
         window:onScroll$={() => {
@@ -386,7 +386,7 @@ useStylesScoped$(`
             <div class="flex justify-between items-center w-full md:w-auto">
               <button class="flex items-center pb-1 -mt-2" onClick$={(e) => {
                 e.preventDefault();
-                activeTab.value = 'about';
+                activeTab.value = 'collection';
               }}>
                 <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                   {/* Logo - Hidden on mobile until scroll, shown on desktop after 25% scroll */}

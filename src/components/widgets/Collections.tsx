@@ -67,12 +67,13 @@ export default component$(() => {
   const collections = ['Gun Collection V1', 'B', 'C', 'D'];
 
   return (
-    <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xl rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/85">
+    <>
+    <Card.Root class="p-5 md:p-8 mb-4 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-3 bg-gray-900/75">
       {/* Mobile: Heading and Collection Selector on same line */}
       <div class="md:hidden flex justify-between items-center mb-4">
         <Heading />
         <select
-          class="p-2 rounded bg-gray-900/85 border-none text-white text-sm"
+          class="p-2 rounded bg-gray-900/75 border-none text-white text-sm"
           value={selectedCollection.value}
           onChange$={(e) =>
             (selectedCollection.value = (e.target as HTMLSelectElement).value)
@@ -118,7 +119,7 @@ export default component$(() => {
             <div class="flex items-center gap-2">
               <label class="text-gray-300 text-sm whitespace-nowrap hidden sm:inline">Filter:</label>
               <select
-                class="p-2 rounded bg-gray-900/85 border-none text-white text-sm"
+                class="p-2 rounded bg-gray-900/75 border-none text-white text-sm"
                 value={filterRarity.value}
                 onChange$={(e) =>
                   (filterRarity.value = (e.target as HTMLSelectElement)
@@ -136,7 +137,7 @@ export default component$(() => {
             <div class="flex items-center gap-2">
               <label class="text-gray-300 text-sm whitespace-nowrap hidden sm:inline">Sort:</label>
               <select
-                class="p-2 rounded bg-gray-900/85 border-none text-white text-sm"
+                class="p-2 rounded bg-gray-900/75 border-none text-white text-sm"
                 value={sortBy.value}
                 onChange$={(e) =>
                   (sortBy.value = (e.target as HTMLSelectElement).value as 'id' | 'rarity')
@@ -184,17 +185,17 @@ export default component$(() => {
 
     </Card.Root>
 
-      {/* Bottom CTA Section */}
-      <div class="max-w-6xl md:mx-auto mx-3 mb-4">
-        <div class="bg-gray-900/90 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-            Start Your Collection
-          </h2>
-          <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
-            Discover unique NFTs and become part of the Kaslands legacy. Mint now and join our growing community.
-          </p>
-        </div>
+    {/* Bottom CTA Section */}
+    <div class="max-w-6xl md:mx-auto mx-3 mb-4">
+      <div class="bg-gray-900/80 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+          Start Your Collection
+        </h2>
+        <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
+          Discover unique NFTs and become part of the Kaslands legacy. Mint now and join our growing community.
+        </p>
       </div>
-
+    </div>
+    </>
   );
 });
