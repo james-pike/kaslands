@@ -254,7 +254,7 @@ export default component$(() => {
           </div>
 
           {/* Action Buttons Container */}
-          <div class="px-5 py-0 mb-4 pb-7 max-w-6xl border-none mx-3 bg-gray-900/85">
+          <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 pb-8 mb-4 max-w-6xl border-2 border-pink-500/30 mx-3">
             <div class="flex flex-row gap-4 w-full max-w-md mx-auto">
               <a
                 href="#"
@@ -262,7 +262,7 @@ export default component$(() => {
                 role="button"
                 aria-label="Mint NFT"
               >
-                <span class="relative z-10 flex items-center gap-1 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-[0.65] md:brightness-100">
+                <span class="relative z-10 flex items-center gap-1 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-[0.85] md:brightness-100">
                   MINT
                   <div class="transform transition-transform duration-300 group-hover:-rotate-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                     <GunIcon />
@@ -281,7 +281,7 @@ export default component$(() => {
                 role="button"
                 aria-label="Explore collections"
               >
-                <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-[0.65] md:brightness-100">
+                <span class="relative z-10 neon-text text-2xl md:text-3xl tracking-[0.01rem] font-medium text-white/70 brightness-[0.85] md:brightness-100">
                   EXPLORE
                 </span>
                 <div class="absolute inset-0 bg-white/15 opacity-0 group-hover:opacity-25 transition-opacity duration-300"></div>
