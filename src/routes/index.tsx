@@ -215,16 +215,16 @@ export default component$(() => {
         const heroSection = document.querySelector('section.md\\:hidden') as HTMLElement | null;
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
-          // Use less scroll for About tab to show more padding
-          const scrollOffset = activeTab.value === 'about' ? 10 : 20;
+          // Use less scroll for About tab to show more padding, +1 to reveal pink strip
+          const scrollOffset = activeTab.value === 'about' ? 11 : 21;
           window.scrollTo({ top: heroHeight + scrollOffset, behavior: 'instant' });
         } else {
-          window.scrollTo({ top: 360, behavior: 'instant' });
+          window.scrollTo({ top: 361, behavior: 'instant' });
         }
       }, 50);
     } else {
-      // On desktop, scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // On desktop, scroll to 1px to reveal thin pink strip
+      window.scrollTo({ top: 1, behavior: 'smooth' });
     }
   });
 
@@ -486,7 +486,7 @@ export default component$(() => {
 
             {/* Merch Tab */}
             {activeTab.value === 'merch' && (
-              <Card.Root class="p-5 md:p-8 mb-0.5 pt-5 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[7px] bg-gray-900/60">
+              <Card.Root class="p-4 md:p-6 mb-0.5 pt-4 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[7px] bg-gray-900/60">
                   {/* Featured Product Banner */}
                   <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div class="overflow-hidden h-[300px] md:h-[400px]">
@@ -649,7 +649,7 @@ export default component$(() => {
 
             {/* FAQ Tab */}
             {activeTab.value === 'faq' && (
-              <Card.Root class="p-5 md:p-8 mb-0.5 pt-5 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[7px] bg-gray-900/60">
+              <Card.Root class="p-4 md:p-6 mb-0.5 pt-4 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[7px] bg-gray-900/60">
                 <div class="flex flex-col md:flex-row md:gap-4">
                   <div class="flex-1 flex flex-col gap-3">
                     {leftColumn.map(renderFaqItem)}

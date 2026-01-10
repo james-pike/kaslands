@@ -87,6 +87,7 @@ export default component$(() => {
             We believe in fair launches and community-first approach, ensuring that everyone has an equal
             opportunity to be part of the Kaslands journey.
           </p>
+          <p class="text-white/90 leading-relaxed text-base">&nbsp;</p>
         </>
       ),
       gradient: 'from-purple-500/20 to-pink-500/20',
