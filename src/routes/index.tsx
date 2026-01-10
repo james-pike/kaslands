@@ -403,7 +403,7 @@ export default component$(() => {
         {/* Hero Landing Section - Mobile Only */}
         <section class="relative mx-auto max-w-7xl w-full md:hidden transform-gpu backface-hidden" style="will-change: transform; contain: layout style paint;">
           {/* Hero Content Container */}
-          <div class="p-5 pt-8 pb-2 max-w-6xl rounded-t-none border-none mx-[6px] bg-gray-900/60">
+          <div class="p-5 pt-8 pb-2 max-w-6xl rounded-t-none border-none mx-[5px] bg-gray-900/60">
             <div class="relative py-8 md:py-20 px-0 md:px-8 mx-2 transform-gpu">
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
@@ -420,7 +420,7 @@ export default component$(() => {
           </div>
 
           {/* Action Buttons Container */}
-          <div class="px-5 py-0 mb-0.75 pb-7 max-w-6xl border-none mx-[6px] bg-gray-900/60">
+          <div class="px-5 py-0 mb-0.75 pb-7 max-w-6xl border-none mx-[5px] bg-gray-900/60">
             <div class="flex flex-row gap-3 justify-center">
               <a
                 href="#"
@@ -486,7 +486,7 @@ export default component$(() => {
 
             {/* Merch Tab */}
             {activeTab.value === 'merch' && (
-              <Card.Root class="p-4 md:p-6 mb-0.5 pt-4 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[6px] bg-gray-900/60">
+              <Card.Root class="p-4 md:p-6 mb-0.5 pt-4 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[5px] bg-gray-900/60">
                   {/* Featured Product Banner */}
                   <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div class="overflow-hidden h-[300px] md:h-[400px]">
@@ -649,7 +649,7 @@ export default component$(() => {
 
             {/* FAQ Tab */}
             {activeTab.value === 'faq' && (
-              <Card.Root class="p-4 md:p-6 mb-0.5 pt-4 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[6px] bg-gray-900/60">
+              <Card.Root class="p-4 md:p-6 mb-0.5 pt-4 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[5px] bg-gray-900/60">
                 <div class="flex flex-col md:flex-row md:gap-4">
                   <div class="flex-1 flex flex-col gap-3">
                     {leftColumn.map(renderFaqItem)}
