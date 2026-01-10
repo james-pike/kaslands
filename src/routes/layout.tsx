@@ -36,7 +36,7 @@ export default component$(() => {
   });
   
   return (
-    <div class="flex flex-col">
+    <div class="flex flex-col pt-1 pb-1 md:pt-0 md:pb-0">
 
       <Hero/>
       {/* Header: order-1 on mobile, order-2 on desktop - STICKY */}

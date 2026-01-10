@@ -355,11 +355,11 @@ useStylesScoped$(`
       <header
         id="header"
         class={`
-          sticky top-0 z-40 mt-0 flex-none mx-1 md:mx-auto max-w-6xl rounded-t-xl
+          sticky top-0 z-40 mt-0 flex-none mx-2 md:mx-auto max-w-6xl rounded-t-xl
           transition-all duration-150 ease-in-out
           ${store.isScrolling
-            ? "bg-gray-900/85 dark:bg-primary-900/85 md:backdrop-blur-sm"
-            : "bg-gray-900/75 md:backdrop-blur-sm"
+            ? "bg-gray-900/80 dark:bg-primary-900/85 md:backdrop-blur-sm"
+            : "bg-gray-900/60 md:backdrop-blur-sm"
           }
         `}
         window:onScroll$={() => {

@@ -1,4 +1,5 @@
-import { component$, useSignal, $, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useSignal, $, useVisibleTask$, useStyles$ } from "@builder.io/qwik";
+import { Carousel } from '@qwik-ui/headless';
 import { type DocumentHead } from "@builder.io/qwik-city";
 import { FileQuestionIcon, MountainIcon } from "lucide-qwik";
 import { Card } from "~/components/ui/Card";
@@ -69,6 +70,77 @@ interface Faq {
 export default component$(() => {
   const { activeTab } = useTabContext();
   const hasScrolledOnTabChange = useSignal(false);
+  const bundleCarouselPlaying = useSignal(false);
+
+  // Art Print Bundle images
+  const bundleImages = [
+    '/images/b1.jpg',
+    '/images/b2.jpg',
+    '/images/b3.jpg',
+    '/images/b4.jpg',
+    '/images/b5.jpg',
+    '/images/b6.jpg',
+    '/images/b7.jpg',
+    '/images/b8.jpg',
+    '/images/b9.jpg',
+  ];
+
+  useStyles$(`
+    .bundle-carousel-root {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+    .bundle-carousel-slide {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bundle-carousel-slide img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0.125rem;
+    }
+    .bundle-carousel-scroller {
+      height: 100%;
+      width: 100%;
+    }
+    .bundle-carousel-buttons {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      padding: 0 8px;
+    }
+    .bundle-carousel-button {
+      pointer-events: auto;
+      width: 36px;
+      height: 36px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+      border: 1px solid rgba(236, 72, 153, 0.5);
+    }
+    .bundle-carousel-button:hover {
+      background: rgba(236, 72, 153, 0.7);
+    }
+    .bundle-carousel-button svg {
+      width: 20px;
+      height: 20px;
+    }
+  `);
 
   // Scroll to content when tab changes (skip hero on mobile)
   useVisibleTask$(({ track }) => {
@@ -184,6 +256,11 @@ export default component$(() => {
     return () => mediaQuery.removeEventListener("change", handler);
   });
 
+  // Start bundle carousel autoplay when visible
+  useVisibleTask$(() => {
+    bundleCarouselPlaying.value = true;
+  });
+
   const toggleItem = $((id: number) => {
     openItems.value = openItems.value === id ? null : id;
   });
@@ -195,7 +272,7 @@ export default component$(() => {
     const Icon = item.icon;
     return (
       <div key={item.id} class="group">
-        <div class="bg-gray-900/60 rounded-md border-2 border-pink-500/20 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div class="bg-gray-900/50 rounded-md border-2 border-pink-500/20 shadow-lg hover:shadow-xl transition-all duration-300">
           <button
             onClick$={() => toggleItem(item.id)}
             class="w-full px-4 py-3 flex items-center justify-between text-left transition-all"
@@ -257,8 +334,8 @@ export default component$(() => {
         {/* Hero Landing Section - Mobile Only */}
         <section class="relative mx-auto max-w-7xl w-full md:hidden transform-gpu backface-hidden" style="will-change: transform; contain: layout style paint;">
           {/* Hero Content Container */}
-          <div class="p-5 pt-8 pb-2 max-w-6xl rounded-t-none border-none mx-1 bg-gray-900/70">
-            <div class="relative py-8 md:py-20 px-0 md:px-8 mx-1 transform-gpu">
+          <div class="p-5 pt-8 pb-2 max-w-6xl rounded-t-none border-none mx-2 bg-gray-900/50">
+            <div class="relative py-8 md:py-20 px-0 md:px-8 mx-2 transform-gpu">
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
                 <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 tracking-wide brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
@@ -274,11 +351,11 @@ export default component$(() => {
           </div>
 
           {/* Action Buttons Container */}
-          <div class="px-5 py-0 mb-1 pb-7 max-w-6xl border-none mx-1 bg-gray-900/70">
+          <div class="px-5 py-0 mb-1 pb-7 max-w-6xl border-none mx-2 bg-gray-900/50">
             <div class="flex flex-row gap-4 w-full max-w-md mx-auto">
               <a
                 href="#"
-                class="flex-1 bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center pl-4 pr-2 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,105,180,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
+                class="flex-1 bg-pink-600/60 hover:bg-pink-600/75 group relative inline-flex items-center justify-center pl-4 pr-2 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,105,180,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                 role="button"
                 aria-label="Mint NFT"
               >
@@ -295,9 +372,9 @@ export default component$(() => {
                 href="#"
                 onClick$={(e) => {
                   e.preventDefault();
-                  activeTab.value = 'collection';
+                  activeTab.value = 'about';
                 }}
-                class="flex-1 bg-purple-600/40 hover:bg-purple-600/60 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-purple-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
+                class="flex-1 bg-purple-600/60 hover:bg-purple-600/75 group relative inline-flex items-center justify-center px-6 py-4 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-purple-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                 role="button"
                 aria-label="Explore collections"
               >
@@ -324,35 +401,9 @@ export default component$(() => {
                 {/* About Carousel */}
                 <AboutCarousel />
 
-                {/* Community Section */}
-                <div class="max-w-6xl mx-auto mb-1 px-1 md:px-0">
-                  <div class="bg-gray-900/70 border-none overflow-hidden">
-                    <div class="flex flex-col md:flex-row">
-                      <div class="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 md:p-4 flex items-center justify-center">
-                        <img
-                          src="/images/k2.jpg"
-                          alt="Building Together"
-                          class="w-48 h-48 md:w-full md:h-auto object-contain"
-                        />
-                      </div>
-                      <div class="md:w-2/3 px-6 py-6 md:px-10 md:py-8">
-                        <p class="text-white/90 mb-4 leading-relaxed text-base md:text-lg">
-                          Kaslands is built on the belief that we're in the early stages of Kaspa's growth—similar to
-                          Ethereum's early days. This presents an incredible opportunity for collectors, artists, and
-                          enthusiasts to be part of something special from the ground up.
-                        </p>
-                        <p class="text-white/90 leading-relaxed text-base md:text-lg">
-                          Join us in building a vibrant community where creativity thrives, collaboration is encouraged,
-                          and lasting connections are made. Together, we're shaping the future of NFTs on Kaspa.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Bottom CTA Section */}
-                <div class="max-w-6xl mx-auto mb-1 px-1 md:px-0">
-                  <div class="bg-gray-900/80 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                <div class="max-w-6xl mx-auto mb-1 px-2 md:px-0">
+                  <div class="bg-gray-900/70 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                       Ready to Join Kaslands?
                     </h2>
@@ -367,15 +418,36 @@ export default component$(() => {
             {/* Merch Tab */}
             {activeTab.value === 'merch' && (
               <>
-                <Card.Root class="p-5 md:p-8 mb-1 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-1 bg-gray-900/70">
+                <Card.Root class="p-5 md:p-8 mb-1 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-2 bg-gray-900/50">
                   {/* Featured Product Banner */}
                   <div class="grid md:grid-cols-2 gap-4 mb-4">
-                    <div class="bg-gradient-to-br from-pink-600/30 to-purple-600/30 rounded-xs p-1 border-2 border-pink-500/40 overflow-hidden">
-                      <img
-                        src="/images/k1.jpg"
-                        alt="Art Print Bundle"
-                        class="w-full h-full object-cover rounded-xs"
-                      />
+                    <div class="bg-gradient-to-br from-pink-600/30 to-purple-600/30 rounded-xs p-1 border-2 border-pink-500/40 overflow-hidden h-[300px] md:h-[400px]">
+                      <Carousel.Root
+                        class="bundle-carousel-root"
+                        gap={0}
+                        autoPlayIntervalMs={3500}
+                        bind:autoplay={bundleCarouselPlaying}
+                      >
+                        <div class="bundle-carousel-buttons">
+                          <Carousel.Previous class="bundle-carousel-button">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                          </Carousel.Previous>
+                          <Carousel.Next class="bundle-carousel-button">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Carousel.Next>
+                        </div>
+                        <Carousel.Scroller class="bundle-carousel-scroller">
+                          {bundleImages.map((src, index) => (
+                            <Carousel.Slide key={index} class="bundle-carousel-slide">
+                              <img src={src} alt={`Art Print ${index + 1}`} />
+                            </Carousel.Slide>
+                          ))}
+                        </Carousel.Scroller>
+                      </Carousel.Root>
                     </div>
                     <div class="bg-black/80 rounded-xs p-5 md:p-6 border-2 border-pink-500/30 flex flex-col justify-center">
                       <span class="inline-block bg-pink-600/40 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 w-fit">
@@ -434,8 +506,8 @@ export default component$(() => {
                 </Card.Root>
 
                 {/* Newsletter Section */}
-                <div class="max-w-6xl md:mx-auto mx-1 mb-1">
-                  <div class="bg-gray-900/80 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                <div class="max-w-6xl md:mx-auto mx-2 mb-1">
+                  <div class="bg-gray-900/70 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                       Stay Updated
                     </h2>
@@ -460,7 +532,7 @@ export default component$(() => {
             {/* FAQ Tab */}
             {activeTab.value === 'faq' && (
               <>
-                <Card.Root class="p-5 md:p-8 mb-1 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-1 bg-gray-900/70">
+                <Card.Root class="p-5 md:p-8 mb-1 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-2 bg-gray-900/50">
                   <div class="flex flex-col md:flex-row md:gap-4">
                     <div class="flex-1 flex flex-col gap-3">
                       {leftColumn.map(renderFaqItem)}
@@ -472,8 +544,8 @@ export default component$(() => {
                 </Card.Root>
 
                 {/* Bottom CTA Section */}
-                <div class="max-w-6xl md:mx-auto mx-1 mb-1">
-                  <div class="bg-gray-900/80 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+                <div class="max-w-6xl md:mx-auto mx-2 mb-1">
+                  <div class="bg-gray-900/70 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                       Join the Kaslands Community
                     </h2>
