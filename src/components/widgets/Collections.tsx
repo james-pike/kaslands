@@ -67,8 +67,7 @@ export default component$(() => {
   const collections = ['Gun Collection V1', 'B', 'C', 'D'];
 
   return (
-    <>
-    <Card.Root class="p-5 md:p-8 mb-1 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-2 bg-gray-900/60">
+    <Card.Root class="p-5 md:p-8 mb-0.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[7px] bg-gray-900/60">
       {/* Mobile: Heading and Collection Selector on same line */}
       <div class="md:hidden flex justify-between items-center mb-4">
         <Heading />
@@ -183,19 +182,17 @@ export default component$(() => {
         </main>
       </div>
 
-    </Card.Root>
-
-    {/* Bottom CTA Section */}
-    <div class="max-w-6xl md:mx-auto mx-2 mb-1">
-      <div class="bg-gray-900/70 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-          Start Your Collection
-        </h2>
-        <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
-          Discover unique NFTs and become part of the Kaslands legacy. Mint now and join our growing community.
-        </p>
+      {/* Bottom CTA Section */}
+      <div class="mt-6">
+        <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+            Start Your Collection
+          </h2>
+          <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
+            Discover unique NFTs and become part of the Kaslands legacy. Mint now and join our growing community.
+          </p>
+        </div>
       </div>
-    </div>
-    </>
+    </Card.Root>
   );
 });

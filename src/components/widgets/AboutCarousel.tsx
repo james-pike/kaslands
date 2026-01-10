@@ -1,74 +1,55 @@
 import { component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
-import { Carousel } from '@qwik-ui/headless';
 
 export default component$(() => {
-  const isPlaying = useSignal(false);
   const currentSlide = useSignal(0);
+  const touchStartX = useSignal(0);
+  const touchEndX = useSignal(0);
 
   useStyles$(`
-    .about-carousel-root {
-      width: 100%;
+    .about-slide-container {
       position: relative;
+      width: 100%;
+      overflow: hidden;
+      touch-action: pan-y;
+      user-select: none;
     }
-    .about-carousel-scroller {
+    .about-carousel-track {
       display: flex;
-      gap: 0;
+      width: 300%;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .about-carousel-slide {
-      flex: 0 0 100%;
-      width: 100%;
+      width: 33.333%;
+      flex-shrink: 0;
     }
-    .about-carousel-pagination {
+    .about-slide-content {
+      min-height: 280px;
+    }
+    .about-carousel-dots {
       display: flex;
-      justify-content: center;
-      gap: 8px;
-      padding: 16px 0;
+      gap: 6px;
     }
     .about-carousel-dot {
-      width: 10px;
-      height: 10px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.3);
       border: 1px solid rgba(236, 72, 153, 0.5);
       transition: all 0.3s ease;
       cursor: pointer;
     }
-    .about-carousel-dot:hover {
-      background: rgba(236, 72, 153, 0.5);
-    }
-    .about-carousel-dot[data-active="true"] {
+    .about-carousel-dot.active {
       background: rgba(236, 72, 153, 0.8);
-      transform: scale(1.2);
-    }
-    .about-carousel-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      width: 32px;
-      height: 32px;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: background 0.3s ease;
-      border: 1px solid rgba(236, 72, 153, 0.5);
-    }
-    .about-carousel-nav:hover {
-      background: rgba(236, 72, 153, 0.7);
-    }
-    .about-carousel-prev {
-      left: 8px;
-    }
-    .about-carousel-next {
-      right: 8px;
+      transform: scale(1.3);
     }
   `);
 
-  useVisibleTask$(() => {
-    isPlaying.value = false;
+  // Auto-advance slides
+  useVisibleTask$(({ cleanup }) => {
+    const interval = setInterval(() => {
+      currentSlide.value = (currentSlide.value + 1) % 3;
+    }, 6000);
+    cleanup(() => clearInterval(interval));
   });
 
   const slides = [
@@ -78,12 +59,12 @@ export default component$(() => {
       image: '/images/vision.jpg',
       content: (
         <>
-          <p class="text-white/90 mb-4 leading-relaxed text-base md:text-lg">
+          <p class="text-white/90 mb-4 leading-relaxed text-base">
             Kaslands is more than just an NFT collection—it's a creative vision brought to life on the Kaspa blockchain.
             Founded by Jules, an artist and entrepreneur passionate about 80s culture, family, and adventure, Kaslands
             represents the fusion of retro aesthetics with cutting-edge web3 technology.
           </p>
-          <p class="text-white/90 leading-relaxed text-base md:text-lg">
+          <p class="text-white/90 leading-relaxed text-base">
             Our mission is to create a lasting legacy in the Kaspa ecosystem, bringing excitement, art, and
             community together in unique and innovative ways.
           </p>
@@ -97,19 +78,18 @@ export default component$(() => {
       image: '/images/art.jpg',
       content: (
         <>
-          <p class="text-white/90 mb-4 leading-relaxed text-base md:text-lg">
+          <p class="text-white/90 mb-4 leading-relaxed text-base">
             Each Kaslands collection is carefully curated and created by hiring talented artists and skilled
             professionals who bring unique visions to life. From photography-based pieces to hand-drawn sketches,
             every piece tells a story.
           </p>
-          <p class="text-white/90 leading-relaxed text-base md:text-lg">
+          <p class="text-white/90 leading-relaxed text-base">
             We believe in fair launches and community-first approach, ensuring that everyone has an equal
             opportunity to be part of the Kaslands journey.
           </p>
         </>
       ),
       gradient: 'from-purple-500/20 to-pink-500/20',
-      reverse: true,
     },
     {
       id: 3,
@@ -117,12 +97,12 @@ export default component$(() => {
       image: '/images/k2.jpg',
       content: (
         <>
-          <p class="text-white/90 mb-4 leading-relaxed text-base md:text-lg">
+          <p class="text-white/90 mb-4 leading-relaxed text-base">
             Kaslands is built on the belief that we're in the early stages of Kaspa's growth—similar to
             Ethereum's early days. This presents an incredible opportunity for collectors, artists, and
             enthusiasts to be part of something special from the ground up.
           </p>
-          <p class="text-white/90 leading-relaxed text-base md:text-lg">
+          <p class="text-white/90 leading-relaxed text-base">
             Join us in building a vibrant community where creativity thrives, collaboration is encouraged,
             and lasting connections are made. Together, we're shaping the future of NFTs on Kaspa.
           </p>
@@ -133,72 +113,81 @@ export default component$(() => {
   ];
 
   return (
-    <div class="max-w-6xl mx-auto mb-1 px-4 md:px-0">
-      {/* Mobile: Swipeable Carousel */}
+    <div class="max-w-6xl mx-auto mb-0.5 px-[7px] md:px-0">
+      {/* Mobile: Sliding Carousel */}
       <div class="md:hidden">
-        <Carousel.Root
-          class="about-carousel-root"
-          gap={0}
-          bind:autoplay={isPlaying}
-          bind:selectedIndex={currentSlide}
+        <div
+          class="about-slide-container"
+          onTouchStart$={(e) => {
+            touchStartX.value = e.touches[0].clientX;
+            touchEndX.value = e.touches[0].clientX;
+          }}
+          onTouchMove$={(e) => {
+            touchEndX.value = e.touches[0].clientX;
+          }}
+          onTouchEnd$={() => {
+            const swipeThreshold = 50;
+            const diff = touchStartX.value - touchEndX.value;
+
+            if (Math.abs(diff) > swipeThreshold) {
+              if (diff > 0) {
+                currentSlide.value = (currentSlide.value + 1) % slides.length;
+              } else {
+                currentSlide.value = (currentSlide.value - 1 + slides.length) % slides.length;
+              }
+            }
+
+            touchStartX.value = 0;
+            touchEndX.value = 0;
+          }}
         >
-          {/* Navigation Arrows */}
-          <Carousel.Previous class="about-carousel-nav about-carousel-prev">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-          </Carousel.Previous>
-          <Carousel.Next class="about-carousel-nav about-carousel-next">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </Carousel.Next>
-
-          <Carousel.Scroller class="about-carousel-scroller">
+          <div
+            class="about-carousel-track"
+            style={{ transform: `translateX(-${currentSlide.value * 33.333}%)` }}
+          >
             {slides.map((slide) => (
-              <Carousel.Slide key={slide.id} class="about-carousel-slide">
-                <div class="bg-gray-900/60 border-none overflow-hidden">
-                  <div class="flex flex-col">
-                    {/* Image Section */}
-                    <div class={`bg-gradient-to-br ${slide.gradient} flex items-center justify-center`}>
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        class="w-48 h-48 object-contain"
-                      />
-                    </div>
+              <div key={slide.id} class="about-carousel-slide">
+                <div class="overflow-hidden border border-pink-500/20 relative">
+                  {/* Image Section */}
+                  <div class="bg-gray-900/80 flex items-center justify-center py-0.5">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      class="w-44 h-44 object-contain"
+                    />
+                  </div>
 
-                    {/* Content Section */}
-                    <div class="px-6 py-6">
-                      <h3 class="text-xl font-bold text-white mb-4 neon-text">{slide.title}</h3>
-                      {slide.content}
+                  {/* Content Section */}
+                  <div class="px-5 py-5 bg-gray-900/70 relative about-slide-content">
+                    <div class="flex justify-between items-start">
+                      <h3 class="text-xl font-bold text-white mb-3 neon-text">{slide.title}</h3>
+                      {/* Pagination Dots - Inline with title */}
+                      <div class="flex gap-1.5">
+                        {slides.map((s, i) => (
+                          <button
+                            key={s.id}
+                            class={`about-carousel-dot ${currentSlide.value === i ? 'active' : ''}`}
+                            onClick$={() => { currentSlide.value = i; }}
+                          >
+                            <span class="sr-only">Go to slide {i + 1}</span>
+                          </button>
+                        ))}
+                      </div>
                     </div>
+                    {slide.content}
                   </div>
                 </div>
-              </Carousel.Slide>
-            ))}
-          </Carousel.Scroller>
-
-          {/* Pagination Dots */}
-          <div class="about-carousel-pagination">
-            {slides.map((slide, index) => (
-              <Carousel.Bullet
-                key={slide.id}
-                class="about-carousel-dot"
-                data-active={currentSlide.value === index}
-              >
-                <span class="sr-only">Go to slide {index + 1}</span>
-              </Carousel.Bullet>
+              </div>
             ))}
           </div>
-        </Carousel.Root>
+        </div>
       </div>
 
       {/* Desktop: Stacked Sections */}
       <div class="hidden md:block space-y-1">
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <div key={slide.id} class="bg-gray-900/60 border-none overflow-hidden">
-            <div class={`flex flex-row ${slide.reverse ? 'flex-row-reverse' : ''}`}>
+            <div class={`flex flex-row ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}>
               {/* Image Section */}
               <div class={`w-1/3 bg-gradient-to-br ${slide.gradient} p-4 flex items-center justify-center`}>
                 <img

@@ -136,7 +136,7 @@ export default component$(() => {
       <Modal.Root bind:show={show}>
         <Modal.Trigger
           class={cn(
-            "btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
+            "btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm rounded-tr-lg py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
           )}
         >
           <IconHamburger class="w-6 h-6 text-white/90" />
@@ -168,7 +168,7 @@ export default component$(() => {
             <CustomAccordion items={menuItems} show={show} />
           </nav>
 
-          <div class="rounded-b-2xl border-t border-black/50 border-primary-200 bg-gray-900/80 dark:bg-gray-900 pb-5">
+          <div class="rounded-b-2xl bg-gray-900/80 dark:bg-gray-900 pb-5">
             <div class="sm:max-w-md px-5 pt-4 flex flex-row items-center justify-between gap-4 lg:justify-start lg:max-w-7xl">
               <div class="flex-shrink-0">
                 <a
