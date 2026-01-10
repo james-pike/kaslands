@@ -216,7 +216,7 @@ export default component$(() => {
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
           // Use less scroll for About tab to show more padding
-          const scrollOffset = activeTab.value === 'about' ? 6 : 10;
+          const scrollOffset = activeTab.value === 'about' ? 6 : 9;
           window.scrollTo({ top: heroHeight + scrollOffset, behavior: 'instant' });
         } else {
           window.scrollTo({ top: 360, behavior: 'instant' });
@@ -471,7 +471,7 @@ export default component$(() => {
                 <AboutCarousel />
 
                 {/* Bottom CTA Section */}
-                <div class="max-w-6xl mx-auto mb-0.5 px-[7px] md:px-0">
+                <div class="max-w-6xl mx-auto mb-0.5 px-[5px] md:px-0">
                   <div class="bg-gray-900/80 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                       Ready to Join Kaslands?
@@ -488,7 +488,7 @@ export default component$(() => {
             {activeTab.value === 'merch' && (
               <Card.Root class="p-3 md:p-5 mb-0.5 pt-3 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[5px] bg-gray-900/60">
                   {/* Featured Product Banner */}
-                  <div class="grid md:grid-cols-2 gap-4 mb-4">
+                  <div class="grid md:grid-cols-2 gap-2 md:gap-4 mb-4">
                     <div class="overflow-hidden h-[300px] md:h-[400px]">
                       {/* Mobile: Sliding Carousel */}
                       <div
