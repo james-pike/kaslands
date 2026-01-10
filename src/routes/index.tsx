@@ -215,16 +215,16 @@ export default component$(() => {
         const heroSection = document.querySelector('section.md\\:hidden') as HTMLElement | null;
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
-          // Use less scroll for About tab to show more padding, +1 to reveal pink strip
-          const scrollOffset = activeTab.value === 'about' ? 11 : 21;
+          // Use less scroll for About tab to show more padding
+          const scrollOffset = activeTab.value === 'about' ? 9 : 19;
           window.scrollTo({ top: heroHeight + scrollOffset, behavior: 'instant' });
         } else {
-          window.scrollTo({ top: 361, behavior: 'instant' });
+          window.scrollTo({ top: 360, behavior: 'instant' });
         }
       }, 50);
     } else {
-      // On desktop, scroll to 1px to reveal thin pink strip
-      window.scrollTo({ top: 1, behavior: 'smooth' });
+      // On desktop, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
 
