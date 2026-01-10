@@ -55,7 +55,7 @@ export default component$(() => {
   const slides = [
     {
       id: 1,
-      title: 'The Vision',
+      title: 'Vision',
       image: '/images/vision.jpg',
       content: (
         <>
@@ -74,7 +74,7 @@ export default component$(() => {
     },
     {
       id: 2,
-      title: 'The Art',
+      title: 'Art',
       image: '/images/art.jpg',
       content: (
         <>
@@ -94,7 +94,7 @@ export default component$(() => {
     },
     {
       id: 3,
-      title: 'The Community',
+      title: 'Community',
       image: '/images/k2.jpg',
       content: (
         <>
