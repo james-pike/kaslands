@@ -148,7 +148,7 @@ export default component$(() => {
           >
             {slides.map((slide) => (
               <div key={slide.id} class="about-carousel-slide">
-                <div class="overflow-hidden border-2 border-pink-500/20 relative">
+                <div class="overflow-hidden relative">
                   {/* Image Section */}
                   <div class="bg-gray-900/80 flex items-center justify-center py-0.5">
                     <img

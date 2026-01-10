@@ -216,7 +216,7 @@ export default component$(() => {
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
           // Use less scroll for About tab to show more padding
-          const scrollOffset = activeTab.value === 'about' ? 6 : 9;
+          const scrollOffset = activeTab.value === 'about' ? 6 : 7;
           window.scrollTo({ top: heroHeight + scrollOffset, behavior: 'instant' });
         } else {
           window.scrollTo({ top: 360, behavior: 'instant' });
