@@ -407,7 +407,7 @@ export default component$(() => {
             <div class="relative py-8 md:py-20 px-0 md:px-8 mx-2 transform-gpu">
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-6xl md:text-8xl lg:text-9xl mb-6 md:mb-12 !tracking-tight md:!tracking-wide brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
+                <h1 class="neon-text text-[4.125rem] md:text-8xl lg:text-9xl mb-6 md:mb-12 !tracking-tight md:!tracking-wide brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
                   Kaslands
                 </h1>
 
@@ -441,7 +441,13 @@ export default component$(() => {
                 href="#"
                 onClick$={(e) => {
                   e.preventDefault();
-                  activeTab.value = 'about';
+                  if (activeTab.value === 'about') {
+                    activeTab.value = 'faq';
+                  } else if (activeTab.value === 'faq') {
+                    activeTab.value = 'collection';
+                  } else {
+                    activeTab.value = 'about';
+                  }
                 }}
                 class="bg-purple-600/60 hover:bg-purple-600/75 group relative inline-flex items-center justify-center px-10 py-3 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-purple-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                 role="button"
