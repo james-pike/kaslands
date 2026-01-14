@@ -355,7 +355,7 @@ useStylesScoped$(`
       <header
         id="header"
         class={`
-          sticky top-0 z-40 mt-0 flex-none mx-[5px] md:mx-auto max-w-6xl rounded-t-lg
+          sticky top-0 z-40 mt-0 flex-none mx-[7px] md:mx-auto max-w-6xl rounded-t-lg
           transition-all duration-150 ease-in-out
           ${store.isScrolling
             ? "bg-gray-900/80 dark:bg-primary-900/85 md:backdrop-blur-sm"
