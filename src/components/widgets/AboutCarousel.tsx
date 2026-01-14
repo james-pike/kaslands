@@ -114,7 +114,7 @@ export default component$(() => {
   ];
 
   return (
-    <div class="max-w-6xl mx-auto mb-0.5 px-[5px] md:px-0">
+    <div class="max-w-6xl md:mx-auto mb-0.5 mx-[6px] md:px-0">
       {/* Mobile: Sliding Carousel */}
       <div class="md:hidden">
         <div
