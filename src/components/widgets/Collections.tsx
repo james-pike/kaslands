@@ -67,7 +67,7 @@ export default component$(() => {
   const collections = ['Gun Collection V1', 'B', 'C', 'D'];
 
   return (
-    <Card.Root class="p-5 md:p-8 mb-0.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[7px] bg-gray-900/60">
+    <Card.Root class="p-5 md:p-8 mb-0.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[6px] bg-gray-900/60">
       {/* Mobile: Heading and Collection Selector on same line */}
       <div class="md:hidden flex justify-between items-center mb-4">
         <Heading />
