@@ -465,7 +465,7 @@ export default component$(() => {
         <main class="mt-0 order-3">
           <div class="relative mx-auto max-w-7xl overflow-x-hidden">
 
-            {/* Collection Tab */}
+            {/* Collections Tab */}
             {activeTab.value === 'collection' && (
               <Collections />
             )}
