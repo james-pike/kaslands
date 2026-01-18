@@ -413,7 +413,7 @@ export default component$(() => {
 
                 {/* Subtitle */}
                 <p class="text-white/80 text-2xl md:text-2xl mt-2 max-w-lg px-0">
-                  Join the NFT Ecosystem on the Kaspa BlockDag, revise final text here
+                  Explore collections, join our community and be a part of the legacy.
                 </p>
               </div>
             </div>
@@ -480,10 +480,10 @@ export default component$(() => {
                 <div class="max-w-6xl md:mx-auto mb-0.5 mx-[6px] md:px-0">
                   <div class="bg-gray-900/80 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-                      Ready to Join Kaslands?
+                      Join Kaslands
                     </h2>
                     <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
-                      Explore our collections, connect with the community, and be part of the legacy we're building on Kaspa.
+                      Explore collections, join our community and be a part of the legacy.
                     </p>
                   </div>
                 </div>
@@ -669,10 +669,10 @@ export default component$(() => {
                 <div class="mt-6">
                   <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-                      Join the Kaslands Community
+                      Join Kaslands
                     </h2>
                     <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
-                      Connect with fellow collectors and stay updated on new drops, events, and exclusive content.
+                      Explore collections, join our community and be a part of the legacy.
                     </p>
                   </div>
                 </div>
