@@ -146,7 +146,7 @@ export default component$(() => {
         >
           <div class="rounded-t-none border-primary-200 bg-gray-900/80 dark:bg-gray-900 p-2">
             <Modal.Title class="pt-3 pb-2 pl-2.5">
-              <button onClick$={() => switchTab('collection')} class="focus:outline-none">
+              <button onClick$={() => { switchTab('collection'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} class="focus:outline-none">
                 <div class="flex -ml-2 flex-row"  style=" height: 40px;">
                                     {/* <img src="/images/sticker.webp" alt="Logo" /> */}
 

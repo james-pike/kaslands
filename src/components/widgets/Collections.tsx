@@ -1,4 +1,4 @@
-import { component$, useSignal, useComputed$ } from '@builder.io/qwik';
+import { component$, useSignal, useComputed$, useVisibleTask$, $ } from '@builder.io/qwik';
 import { Card } from '../ui/Card';
 import Heading from '../Heading';
 
@@ -83,6 +83,20 @@ export default component$(() => {
   const selectedCollection = useSignal('Guns');
   const sortBy = useSignal<'id' | 'rarity-asc' | 'rarity-desc'>('id');
   const filterRarity = useSignal<Rarity | 'All'>('All');
+  const showBackToTop = useSignal(false);
+
+  // Track scroll position for back to top button
+  useVisibleTask$(({ cleanup }) => {
+    const handleScroll = () => {
+      showBackToTop.value = window.scrollY > 300;
+    };
+    window.addEventListener('scroll', handleScroll);
+    cleanup(() => window.removeEventListener('scroll', handleScroll));
+  });
+
+  const scrollToTop = $(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   // Define rarity order for sorting
   const rarityOrder: Record<Rarity, number> = {
@@ -110,26 +124,8 @@ export default component$(() => {
 
   return (
     <Card.Root class="p-5 md:p-8 mb-0.5 pt-8 max-w-6xl rounded-xs rounded-t-none border-none md:mx-auto mx-[6px] bg-gray-900/60">
-      {/* Mobile: Heading and Collection Selector on same line */}
-      <div class="md:hidden flex justify-between items-center mb-4">
-        <Heading />
-        <select
-          class="p-2 rounded bg-gray-900/60 border-none text-white text-sm"
-          value={selectedCollection.value}
-          onChange$={(e) =>
-            (selectedCollection.value = (e.target as HTMLSelectElement).value)
-          }
-        >
-          {collections.map((collection) => (
-            <option key={collection} value={collection}>
-              {` ${collection}`}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* Desktop: Just Heading */}
-      <div class="hidden md:block">
+      {/* Heading */}
+      <div class="mb-4 md:mb-0">
         <Heading />
       </div>
 
@@ -248,6 +244,19 @@ export default component$(() => {
           </p>
         </div>
       </div>
+
+      {/* Back to Top Button - Mobile Only */}
+      {showBackToTop.value && (
+        <button
+          onClick$={scrollToTop}
+          class="md:hidden fixed bottom-6 right-6 z-50 bg-pink-600/80 hover:bg-pink-600 text-white p-3 rounded-full shadow-lg transition-all duration-300"
+          aria-label="Back to top"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
+      )}
     </Card.Root>
   );
 });

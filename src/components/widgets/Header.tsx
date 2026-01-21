@@ -387,6 +387,7 @@ useStylesScoped$(`
               <button class="flex items-center pb-1 -mt-2" onClick$={(e) => {
                 e.preventDefault();
                 activeTab.value = 'collection';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}>
                 <div style={{ width: "100px", height: "40px", position: "relative" }} class="md:w-[200px] md:-mt-7 md:h-[80px]">
                   {/* Logo - Hidden on mobile until scroll, shown on desktop after 25% scroll */}
