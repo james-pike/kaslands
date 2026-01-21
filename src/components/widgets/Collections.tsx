@@ -81,7 +81,7 @@ const initialCollectionItems: CollectionItem[] = [
 
 export default component$(() => {
   const selectedCollection = useSignal('Guns');
-  const sortBy = useSignal<'id' | 'rarity'>('id');
+  const sortBy = useSignal<'id' | 'rarity-asc' | 'rarity-desc'>('id');
   const filterRarity = useSignal<Rarity | 'All'>('All');
 
   // Define rarity order for sorting
@@ -100,7 +100,8 @@ export default component$(() => {
       .filter((item) => filterRarity.value === 'All' || item.rarity === filterRarity.value)
       .sort((a, b) => {
         if (sortBy.value === 'id') return a.id - b.id;
-        if (sortBy.value === 'rarity') return rarityOrder[a.rarity] - rarityOrder[b.rarity];
+        if (sortBy.value === 'rarity-asc') return rarityOrder[a.rarity] - rarityOrder[b.rarity];
+        if (sortBy.value === 'rarity-desc') return rarityOrder[b.rarity] - rarityOrder[a.rarity];
         return 0;
       });
   });
@@ -167,11 +168,11 @@ export default component$(() => {
                 }
               >
                 <option value="All">All Rarities</option>
-                <option value="Common">Common</option>
-                <option value="Uncommon">Uncommon</option>
-                <option value="Rare">Rare</option>
-                <option value="Ultra Rare">Ultra Rare</option>
                 <option value="Legendary">Legendary</option>
+                <option value="Ultra Rare">Ultra Rare</option>
+                <option value="Rare">Rare</option>
+                <option value="Uncommon">Uncommon</option>
+                <option value="Common">Common</option>
               </select>
             </div>
 
@@ -181,11 +182,12 @@ export default component$(() => {
                 class="p-2 rounded bg-gray-900/60 border-none text-white text-sm"
                 value={sortBy.value}
                 onChange$={(e) =>
-                  (sortBy.value = (e.target as HTMLSelectElement).value as 'id' | 'rarity')
+                  (sortBy.value = (e.target as HTMLSelectElement).value as 'id' | 'rarity-asc' | 'rarity-desc')
                 }
               >
                 <option value="id">ID</option>
-                <option value="rarity">Rarity</option>
+                <option value="rarity-desc">Rarity ↓</option>
+                <option value="rarity-asc">Rarity ↑</option>
               </select>
             </div>
           </div>

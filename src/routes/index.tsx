@@ -286,22 +286,10 @@ export default component$(() => {
   useVisibleTask$(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
     isMobile.value = mediaQuery.matches;
-
-    if (isMobile.value) {
-      openItems.value = faqs.value[0]?.id || null;
-    } else {
-      const randomFaq = faqs.value[Math.floor(Math.random() * faqs.value.length)];
-      openItems.value = randomFaq?.id || null;
-    }
+    openItems.value = faqs.value[0]?.id || null;
 
     const handler = (e: MediaQueryListEvent) => {
       isMobile.value = e.matches;
-      if (isMobile.value) {
-        openItems.value = faqs.value[0]?.id || null;
-      } else {
-        const randomFaq = faqs.value[Math.floor(Math.random() * faqs.value.length)];
-        openItems.value = randomFaq?.id || null;
-      }
     };
 
     mediaQuery.addEventListener("change", handler);
@@ -446,6 +434,8 @@ export default component$(() => {
                   if (activeTab.value === 'about') {
                     activeTab.value = 'faq';
                   } else if (activeTab.value === 'faq') {
+                    activeTab.value = 'merch';
+                  } else if (activeTab.value === 'merch') {
                     activeTab.value = 'collection';
                   } else {
                     activeTab.value = 'about';
