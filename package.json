@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.20",
-    "@libsql/client": "latest",
     "@qwik-ui/styled": "^0.3.0",
     "@qwik-ui/utils": "^0.3.1",
     "@unpic/qwik": "^0.0.46",
