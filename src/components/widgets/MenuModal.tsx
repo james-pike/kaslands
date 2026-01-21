@@ -222,7 +222,7 @@ export default component$(() => {
                 <p class="text-sm mt-1">{banners.value.message}</p>
               </div>
               {/* Uncomment if you add a "More Info" link */}
-              {/* <a href="mailto:hello@earthenvessels.ca" ... >More Info</a> */}
+              {/* <a href="mailto:hello@kaslands.ca" ... >More Info</a> */}
             </div>
           </div>
         )}
