@@ -1,0 +1,1802 @@
+[
+  {
+    "name": "EL CHAPO",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/1.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Mount Olympus"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "This Sinaloa cartel firearm is covered in gold and contains high explosive incendiary rounds for the violent paramilitary group.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "RANGER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/2.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Siberia"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AR-15"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "A resilient 5.56 rifle with a magnified scope out in Siberia",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "DRAGON'S BREATH",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/3.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Taiga"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Dragunov"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "This Dragunov rifle scouts the forest using the PSO-1 scope along with its 7.62 Russian ammo.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "MERCENARY",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/4.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Classified Location"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Sniper"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "This Barrett .50 caliber sniper rifle comes in desert tan for operations in the sand. Fights against the Insurgent and Rebel.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "EMERALD",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/5.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Slopes"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "PTR-91"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "This ptr-91 has a parkerized finish and green furniture. It delivers lethal accuracy on the ski resort.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "BULLSEYE",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/6.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Okinawa Island"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "PTR-91"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "This precision target rifle chambered in .308 tends to have better than average accuracy for shooters.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "HAMMER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/7.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Amazon"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Saiga 12"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "This saiga 12 gauge shotgun, sometimes referred to as the Ak Shotgun, is a semi-auto to full auto weapon used by deployable special forces in the coast guard.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "RATTLESNAKE",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/8.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Wasteland"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "FN SCAR"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "This FN SCAR developed for the elite provides exceptional performance and reliability with an interchangeable upper receiver & barrel for different missions.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "SUB-ZERO",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/9.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Permafrost"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Sniper"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "This Barrett .50 caliber rifle comes in snow camouflage and withstands harsh conditions very well giving it an advantage with distance and adaptability over its opponents.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "CHICAGO TYPEWRITER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/10.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Wasteland"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Thompson Submachine Gun"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "This chrome plated tommy gun is a fully automatic .45 that seeks trouble in the barren wasteland. Often used by gangsters and g-men in the 1920s.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "TRENCH SWEEPER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/11.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Guatemala"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Thompson Submachine Gun"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "This classic tommy gun clears the jungle and trenches in warfare. A favorite during ww2.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "BIG MAC",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/12.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Mount Olympus"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "MAC-11"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "The big mac is mostly used for gang violence but has extended range with the longer barrel for the sicarios as well.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "GANGLAND",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/13.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Permafrost"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Uzi"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "This basic uzi is notorious for violent gang activity from drive-bys to robbery and murder. It's your average weapon for cold blooded criminals.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "BLACK BEAR",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/14.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Airstrike"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "This modern ak-47 is equipped with a state of the art aim assisted optic for long distance targets. Special feature includes called in airstrike in background.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "TRAILBLAZER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/15.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Slopes"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "PPSH-41"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "This ppsh-41 dominates its rival mp40 with superior fire rate on the ski race",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "ICEMAN",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/16.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Permafrost"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "PPSH-41"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "This ppsh-41 chambered in 7.62x25mm is highly resistant to the elements and has a very high fire rate at 900 rounds per minute.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "PAPASHA",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/17.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Okinawa Island"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "PPSH-41"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "This ppsh-41 was often nicknamed daddy or father in russian due to the play on the three-letter prefix ppsh and signified appreciation for the weapons reliability and effectiveness.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "PABLO",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/18.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Classified Location"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Thompson Submachine Gun"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "A customized gold plated tommy gun for an infamous cartel kingpin in an undisclosed location.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "DUTCH",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/19.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Okinawa Island"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "M16A1"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "This m16A1 is equipped with an M203 grenade launcher for the ultimate battle against an ultimate Predator. There's something in those trees.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "FREEDOM",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/20.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Mount Olympus"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "M16A1"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "This classic m16a1 delivers freedom and democracy for bureaucrats whenever and wherever its deployed.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "MILITIA",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/21.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Trenches"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AR-15"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "ar15 equipped with an adjustable scope, and suppressor in the grit",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "AMERICA'S RIFLE",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/22.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Okinawa Island"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AR-15"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "This ar15 is equipped with an M203 grenade launcher making it easier to light up the forest when needed.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "DUKE",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/23.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Trenches"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Uzi"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "Hail to the king baby, this nostalgic gold plated uzi screams, \"Come get some!\"",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "HANS",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/24.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Guatemala"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "MP5"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "This standard mp5 is a classic used everywhere from nyc to the deep jungle by many.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "OPERATOR",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/25.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Trenches"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "MP5"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "This classic mp5 equipped with a red dot optic, and suppressor is perfect for any close quarters special operation.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "SPECIALIST",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/26.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Secret Headquarters"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "MP5"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "This mp5 has a special stock, optic, and fore grip designed for maximum concealment and quick draw making it perfect for surprising your guests.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "BIELSKI",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/27.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Okinawa Island"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "MP40"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "This mp40 is named after the resistance leader that created a refuge camp in Belarus during ww2 saving many lives. Remaining resilient in brutal conditions.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "ZE GERMAN",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/28.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Cafe"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "MP40"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "This mp40 has had a long day and rounded up many. Now it's strolling on in to a cafe & bar for a drink. Everyone's watching and trying not to sweat. Arch nemesis to the Thompson",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "ARCHER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/29.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Slopes"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "MP40"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "This mp40 fires while skiing down the mountain side in a winter wonderland.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "PEACEMAKER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/30.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Bosnia"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "the counterpart to the Barrett, peacemaker keeps Barrett safe from the closer range combatants.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "KALASHNIKOV",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/31.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Bosnia"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "Named after legendary arms designer, this original ak47 leads the fight with its ease of use and functionality. Rustic worn look from experience.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "THE ROYALE",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/32.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Trenches"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "all gucci'd out while in the thick of it",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "SHINOBI",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/33.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Greenland"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "an advanced ak47 in a battle for resources in greenland.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "ELF",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/34.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Elf Training Center"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "Legend has it the elves love this rifle. Santas little helpers have been spotted patrolling with these in various parts of the north pole.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "COMRADE",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/35.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Secret Headquarters"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "Brother to the Infiltrator, Comrade must finish the mission and stop the 2nd secret base. special feature, space rocket taking off.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "VINTOVKA",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/36.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Okinawa Island"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Dragunov"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "a dragunov with an extended barrel, used in a Japanese rainforest.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "RED FURY",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/37.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Mount Olympus"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Dragunov"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "This Dragunov is used for taking down the greek gods themselves using 7.62x54mmR 7BZ3 (B-32) Armor-piercing incendiary russian ammunition.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "VLADIMIR",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/38.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Black Forest"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Dragunov"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "A soviet Dragunov used for fighting in the misty forest",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "MR. CLAUSE",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/39.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "North Pole"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Dragunov"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "Santa's Dragunov is gold plated for the jolly toy bringer and ensures the north pole remains free.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "MILITANT",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/40.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Arctic Circle"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "an ak-47 equipped with an acog scope and suppressor in an ice war over resources.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "THOR",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/41.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Wasteland"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "superior firepower in the wasteland",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "REBEL",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/42.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Classified Location"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "The Rebel, equipped with an acog and flash suppressor, fights back against the Contractor and Mercenary.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "INFILTRATOR",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/43.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Elon's Base"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "an advanced ak-47 equipped with a special scope built to take down robots in the storming of the AI super base. special feature, space rocket launching.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "MAC DADDY",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/44.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Mount Olympus"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "MAC-11"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Legendary"
+      }
+    ],
+    "description": "This mac-11 hollow point 9mm comes with an extended magazine, foregrip, optic, infrared laser, specialized suppressor, and foldable stock. The name is earned as it goes head to head with anyone.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "ELSA",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/45.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Siberia"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "freezing temps & 7.62x.39",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "UKRAINIAN",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/46.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Polissya"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "This ak-47 serves in the Polissya forest of northern ukraine. Protecting part of europe's last ancient forests from deforestation.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "MRS. KASLAND",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/47.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Wasteland"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Legendary"
+      }
+    ],
+    "description": "The gucci Ak-47 in gold and platinum plus a special suppressor for extra stealth. She searches for her partner in crime in the wasteland.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "INVADER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/48.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Middle East"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "M4A1"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "m4a1 equipped with long range scope, suppressor, and an infrared laser in green kaspa themed color.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "CHAMELEON",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/49.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Middle East"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "M4A1"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "m4a1 equipped with magnified scope, suppressor, and desert paint job.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "MR. KASLAND",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/50.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Wasteland"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Honey Badger"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Legendary"
+      }
+    ],
+    "description": "Mr. Kasland, the only honey badger, journeys the wasteland to get to Mrs Kasland.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "CONTRACTOR",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/51.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Classified Location"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AR-15"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "ar15 deployed to an unnamed region for high value targets. equipped with an adjustable scope, and suppressor.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "SEAL",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/52.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Coral Reefs"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "M4A1"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "military firearm on underwater operation with magnified scope, infrared laser, and suppressor.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "STALKER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/53.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Amazon"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "M4A1"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "The jungle stalker using a magnified scope, suppressor and infrared laser in bitcoin colored theme.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "RUDOLPH",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/54.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "North Pole"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AR-15"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Ultra Rare"
+      }
+    ],
+    "description": "santas little helper is one of the finest ar15s protecting Mr. & Mrs. Clause and all their elves.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "ARCTIC FOX",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/55.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Siberia"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AR-15"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "an ar15 equipped with a thermal scope and foregrip this fox has a huge advantage to its counterparts.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "INSURGENT",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/56.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Classified Location"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Tec-9"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Rare"
+      }
+    ],
+    "description": "This Tec-9 submachine gun fights its counter parts amongst the chaos in the undisclosed location.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "JOHNNY",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/57.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Okinawa Island"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "BAR"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Common"
+      }
+    ],
+    "description": "this ww2 browning automatic rifle chambered in .30-06 fulfills every riflemans needs in the rainforest",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "BARRETT",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/58.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Bosnia"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "Sniper"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "the barrett .50 caliber makes an incredible 2 mile shot",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "YELLOWJACKET",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/59.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "The Amazon"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "A black and yellow ak-47 in the amazon jungle ready for action.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  },
+  {
+    "name": "REAPER",
+    "image": "ipfs://bafybeifnhe4f5s3zc5t7unwpo7c6bukjst6do5ilteuwqb5n6sqswind5m/60.png",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Siberia"
+      },
+      {
+        "trait_type": "Gun Type",
+        "value": "AK-47"
+      },
+      {
+        "trait_type": "Status",
+        "value": "Uncommon"
+      }
+    ],
+    "description": "The Reaper is armed with a trijicon scope and suppressor in the cold lands of Siberia, hunting the Ranger.",
+    "external_url": "",
+    "seller_fee_basis_points": 0,
+    "properties": {
+      "creators": []
+    },
+    "collection": {
+      "name": "",
+      "family": ""
+    },
+    "symbol": "",
+    "compiler": "https://onemint.io/"
+  }
+]

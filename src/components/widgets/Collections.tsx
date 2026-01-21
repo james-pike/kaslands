@@ -3,7 +3,7 @@ import { Card } from '../ui/Card';
 import Heading from '../Heading';
 
 // Define allowed rarity values
-type Rarity = 'Common' | 'Rare' | 'Epic' | 'Legendary';
+type Rarity = 'Common' | 'Uncommon' | 'Rare' | 'Ultra Rare' | 'Legendary';
 
 // Define item type
 interface CollectionItem {
@@ -12,70 +12,71 @@ interface CollectionItem {
   rarity: Rarity;
   collection: string;
   image: string;
+  description: string;
 }
 
-// Gun collection data derived from image filenames
+// Gun collection data from metadata.json
 const initialCollectionItems: CollectionItem[] = [
-  { id: 1, name: 'AK-47 Ice', rarity: 'Epic', collection: 'Guns', image: '/images/guns/AK-47-ICE.PNG' },
-  { id: 2, name: 'AK-74 Legendary', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/AK-74-LEGENDARY.PNG' },
-  { id: 3, name: 'AK Silenced', rarity: 'Rare', collection: 'Guns', image: '/images/guns/AK-SILENCED.PNG' },
-  { id: 4, name: 'AR-15', rarity: 'Common', collection: 'Guns', image: '/images/guns/AR-15-.PNG' },
-  { id: 5, name: 'AR-15 V1', rarity: 'Common', collection: 'Guns', image: '/images/guns/AR-15-1.PNG' },
-  { id: 6, name: 'AR-15 V2', rarity: 'Common', collection: 'Guns', image: '/images/guns/AR-15-2.PNG' },
-  { id: 7, name: 'AR-15 V3', rarity: 'Common', collection: 'Guns', image: '/images/guns/AR-15-3.PNG' },
-  { id: 8, name: 'AR-15 V4', rarity: 'Common', collection: 'Guns', image: '/images/guns/AR-15-4.PNG' },
-  { id: 9, name: 'AR-15 ACOG', rarity: 'Rare', collection: 'Guns', image: '/images/guns/AR-15-ACOG.PNG' },
-  { id: 10, name: 'AR-15 Desert', rarity: 'Rare', collection: 'Guns', image: '/images/guns/AR-15-DESERT.PNG' },
-  { id: 11, name: 'AR-15 Gold Snow', rarity: 'Epic', collection: 'Guns', image: '/images/guns/AR-15-GOLD-SNOW.PNG' },
-  { id: 12, name: 'AR-15 Ice', rarity: 'Epic', collection: 'Guns', image: '/images/guns/AR-15-ICE.PNG' },
-  { id: 13, name: 'AR-15 Legendary', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/AR-15-LEGENDARY.PNG' },
-  { id: 14, name: 'BAR', rarity: 'Common', collection: 'Guns', image: '/images/guns/BAR.PNG' },
-  { id: 15, name: 'Barrett 50 Cal', rarity: 'Rare', collection: 'Guns', image: '/images/guns/BARRETT-50CAL.PNG' },
-  { id: 16, name: 'Black AK V1', rarity: 'Common', collection: 'Guns', image: '/images/guns/BLACK-AK-1.PNG' },
-  { id: 17, name: 'Black AK V2', rarity: 'Common', collection: 'Guns', image: '/images/guns/BLACK-AK-2.PNG' },
-  { id: 18, name: 'Black AK V3', rarity: 'Common', collection: 'Guns', image: '/images/guns/BLACK-AK-3.PNG' },
-  { id: 19, name: 'Black AK V4', rarity: 'Common', collection: 'Guns', image: '/images/guns/BLACK-AK-4.PNG' },
-  { id: 20, name: 'Black AK V5', rarity: 'Common', collection: 'Guns', image: '/images/guns/BLACK-AK-5.PNG' },
-  { id: 21, name: 'Black AK Ice', rarity: 'Epic', collection: 'Guns', image: '/images/guns/BLACK-AK-ICE.PNG' },
-  { id: 22, name: 'Desert AK', rarity: 'Rare', collection: 'Guns', image: '/images/guns/DESERT-AK.PNG' },
-  { id: 23, name: 'Dragunov V1', rarity: 'Common', collection: 'Guns', image: '/images/guns/Dragunov-1.PNG' },
-  { id: 24, name: 'Dragunov V2', rarity: 'Common', collection: 'Guns', image: '/images/guns/Dragunov-2.PNG' },
-  { id: 25, name: 'Dragunov V3', rarity: 'Common', collection: 'Guns', image: '/images/guns/Dragunov-3.PNG' },
-  { id: 26, name: 'Dragunov V4', rarity: 'Common', collection: 'Guns', image: '/images/guns/Dragunov-4.PNG' },
-  { id: 27, name: 'Dragunov V5', rarity: 'Common', collection: 'Guns', image: '/images/guns/Dragunov-5.PNG' },
-  { id: 28, name: 'Gold AK', rarity: 'Epic', collection: 'Guns', image: '/images/guns/GOLD-AK.PNG' },
-  { id: 29, name: 'Gold MAC-11', rarity: 'Epic', collection: 'Guns', image: '/images/guns/GOLD-MAC11.PNG' },
-  { id: 30, name: 'Gold Plated AK V2', rarity: 'Epic', collection: 'Guns', image: '/images/guns/Gold_plated_AK2.PNG' },
-  { id: 31, name: 'Gold Plated AK V3', rarity: 'Epic', collection: 'Guns', image: '/images/guns/Gold_plated_AK3.PNG' },
-  { id: 32, name: 'Gold Plated AK V4', rarity: 'Epic', collection: 'Guns', image: '/images/guns/Gold_plated_AK4.PNG' },
-  { id: 33, name: 'Gold Plated AK V5', rarity: 'Epic', collection: 'Guns', image: '/images/guns/Gold_plated_AK5.PNG' },
-  { id: 34, name: 'Gold Tommy Gun', rarity: 'Epic', collection: 'Guns', image: '/images/guns/GOLD-TOMMY-GUN.PNG' },
-  { id: 35, name: 'M16', rarity: 'Common', collection: 'Guns', image: '/images/guns/M16.PNG' },
-  { id: 36, name: 'M16 Jungle', rarity: 'Rare', collection: 'Guns', image: '/images/guns/M16-JUNGLE.PNG' },
-  { id: 37, name: 'M16 Legendary', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/M16-LEGENDARY.PNG' },
-  { id: 38, name: 'MAC-11 Desert', rarity: 'Rare', collection: 'Guns', image: '/images/guns/MAC11-DESERT.PNG' },
-  { id: 39, name: 'MAC-11 Legendary', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/MAC11-LEGENDARY.PNG' },
-  { id: 40, name: 'MP5', rarity: 'Common', collection: 'Guns', image: '/images/guns/MP5.PNG' },
-  { id: 41, name: 'MP5 Legendary', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/MP5-LEGENDARY.PNG' },
-  { id: 42, name: 'MP5 Snow', rarity: 'Rare', collection: 'Guns', image: '/images/guns/MP5-SNOW.PNG' },
-  { id: 43, name: 'MP40 Bar', rarity: 'Rare', collection: 'Guns', image: '/images/guns/MP40-BAR.PNG' },
-  { id: 44, name: 'MP40 German', rarity: 'Rare', collection: 'Guns', image: '/images/guns/MP40-GERMAN.PNG' },
-  { id: 45, name: 'MP40 Wood', rarity: 'Rare', collection: 'Guns', image: '/images/guns/MP40-WOOD.PNG' },
-  { id: 46, name: 'OG AK', rarity: 'Common', collection: 'Guns', image: '/images/guns/OG-AK.PNG' },
-  { id: 47, name: 'PPSH-41', rarity: 'Common', collection: 'Guns', image: '/images/guns/PPSH-41.PNG' },
-  { id: 48, name: 'PPSH-41 Custom', rarity: 'Rare', collection: 'Guns', image: '/images/guns/PPSH-41-CUSTOM.PNG' },
-  { id: 49, name: 'PPSH-41 Snow', rarity: 'Rare', collection: 'Guns', image: '/images/guns/PPSH-41-SNOW.PNG' },
-  { id: 50, name: 'PTR-91', rarity: 'Common', collection: 'Guns', image: '/images/guns/PTR-91.PNG' },
-  { id: 51, name: 'PTR-91 Black', rarity: 'Rare', collection: 'Guns', image: '/images/guns/PTR-91-BLACK.PNG' },
-  { id: 52, name: 'Saiga-12', rarity: 'Common', collection: 'Guns', image: '/images/guns/SAIGA-12.PNG' },
-  { id: 53, name: 'SCAR Legendary', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/SCAR-LEGENDARY.PNG' },
-  { id: 54, name: 'Sniper Desert', rarity: 'Rare', collection: 'Guns', image: '/images/guns/SNIPER-DESERT.PNG' },
-  { id: 55, name: 'Sniper Ice', rarity: 'Epic', collection: 'Guns', image: '/images/guns/SNIPER-ICE.PNG' },
-  { id: 56, name: 'Thompson', rarity: 'Common', collection: 'Guns', image: '/images/guns/THOMPSON.PNG' },
-  { id: 57, name: 'Thompson Legendary', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/THOMPSON-LEGENDARY.PNG' },
-  { id: 58, name: 'UZI', rarity: 'Common', collection: 'Guns', image: '/images/guns/UZI.PNG' },
-  { id: 59, name: 'UZI Legendary', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/UZI-LEGENDARY.PNG' },
-  { id: 60, name: 'OG AK Classic', rarity: 'Common', collection: 'Guns', image: '/images/guns/OG AK.PNG' },
+  { id: 1, name: 'EL CHAPO', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/1.jpg', description: 'This Sinaloa cartel firearm is covered in gold and contains high explosive incendiary rounds for the violent paramilitary group.' },
+  { id: 2, name: 'RANGER', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/2.jpg', description: 'A resilient 5.56 rifle with a magnified scope out in Siberia' },
+  { id: 3, name: "DRAGON'S BREATH", rarity: 'Common', collection: 'Guns', image: '/images/guns/3.jpg', description: 'This Dragunov rifle scouts the forest using the PSO-1 scope along with its 7.62 Russian ammo.' },
+  { id: 4, name: 'MERCENARY', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/4.jpg', description: 'This Barrett .50 caliber sniper rifle comes in desert tan for operations in the sand. Fights against the Insurgent and Rebel.' },
+  { id: 5, name: 'EMERALD', rarity: 'Rare', collection: 'Guns', image: '/images/guns/5.jpg', description: 'This ptr-91 has a parkerized finish and green furniture. It delivers lethal accuracy on the ski resort.' },
+  { id: 6, name: 'BULLSEYE', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/6.jpg', description: 'This precision target rifle chambered in .308 tends to have better than average accuracy for shooters.' },
+  { id: 7, name: 'HAMMER', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/7.jpg', description: 'This saiga 12 gauge shotgun, sometimes referred to as the Ak Shotgun, is a semi-auto to full auto weapon used by deployable special forces in the coast guard.' },
+  { id: 8, name: 'RATTLESNAKE', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/8.jpg', description: 'This FN SCAR developed for the elite provides exceptional performance and reliability with an interchangeable upper receiver & barrel for different missions.' },
+  { id: 9, name: 'SUB-ZERO', rarity: 'Rare', collection: 'Guns', image: '/images/guns/9.jpg', description: 'This Barrett .50 caliber rifle comes in snow camouflage and withstands harsh conditions very well giving it an advantage with distance and adaptability over its opponents.' },
+  { id: 10, name: 'CHICAGO TYPEWRITER', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/10.jpg', description: 'This chrome plated tommy gun is a fully automatic .45 that seeks trouble in the barren wasteland. Often used by gangsters and g-men in the 1920s.' },
+  { id: 11, name: 'TRENCH SWEEPER', rarity: 'Common', collection: 'Guns', image: '/images/guns/11.jpg', description: 'This classic tommy gun clears the jungle and trenches in warfare. A favorite during ww2.' },
+  { id: 12, name: 'BIG MAC', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/12.jpg', description: 'The big mac is mostly used for gang violence but has extended range with the longer barrel for the sicarios as well.' },
+  { id: 13, name: 'GANGLAND', rarity: 'Common', collection: 'Guns', image: '/images/guns/13.jpg', description: "This basic uzi is notorious for violent gang activity from drive-bys to robbery and murder. It's your average weapon for cold blooded criminals." },
+  { id: 14, name: 'BLACK BEAR', rarity: 'Rare', collection: 'Guns', image: '/images/guns/14.jpg', description: 'This modern ak-47 is equipped with a state of the art aim assisted optic for long distance targets. Special feature includes called in airstrike in background.' },
+  { id: 15, name: 'TRAILBLAZER', rarity: 'Common', collection: 'Guns', image: '/images/guns/15.jpg', description: 'This ppsh-41 dominates its rival mp40 with superior fire rate on the ski race' },
+  { id: 16, name: 'ICEMAN', rarity: 'Common', collection: 'Guns', image: '/images/guns/16.jpg', description: 'This ppsh-41 chambered in 7.62x25mm is highly resistant to the elements and has a very high fire rate at 900 rounds per minute.' },
+  { id: 17, name: 'PAPASHA', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/17.jpg', description: 'This ppsh-41 was often nicknamed daddy or father in russian due to the play on the three-letter prefix ppsh and signified appreciation for the weapons reliability and effectiveness.' },
+  { id: 18, name: 'PABLO', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/18.jpg', description: 'A customized gold plated tommy gun for an infamous cartel kingpin in an undisclosed location.' },
+  { id: 19, name: 'DUTCH', rarity: 'Rare', collection: 'Guns', image: '/images/guns/19.jpg', description: "This m16A1 is equipped with an M203 grenade launcher for the ultimate battle against an ultimate Predator. There's something in those trees." },
+  { id: 20, name: 'FREEDOM', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/20.jpg', description: 'This classic m16a1 delivers freedom and democracy for bureaucrats whenever and wherever its deployed.' },
+  { id: 21, name: 'MILITIA', rarity: 'Common', collection: 'Guns', image: '/images/guns/21.jpg', description: 'ar15 equipped with an adjustable scope, and suppressor in the grit' },
+  { id: 22, name: "AMERICA'S RIFLE", rarity: 'Common', collection: 'Guns', image: '/images/guns/22.jpg', description: 'This ar15 is equipped with an M203 grenade launcher making it easier to light up the forest when needed.' },
+  { id: 23, name: 'DUKE', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/23.jpg', description: 'Hail to the king baby, this nostalgic gold plated uzi screams, "Come get some!"' },
+  { id: 24, name: 'HANS', rarity: 'Common', collection: 'Guns', image: '/images/guns/24.jpg', description: 'This standard mp5 is a classic used everywhere from nyc to the deep jungle by many.' },
+  { id: 25, name: 'OPERATOR', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/25.jpg', description: 'This classic mp5 equipped with a red dot optic, and suppressor is perfect for any close quarters special operation.' },
+  { id: 26, name: 'SPECIALIST', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/26.jpg', description: 'This mp5 has a special stock, optic, and fore grip designed for maximum concealment and quick draw making it perfect for surprising your guests.' },
+  { id: 27, name: 'BIELSKI', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/27.jpg', description: 'This mp40 is named after the resistance leader that created a refuge camp in Belarus during ww2 saving many lives. Remaining resilient in brutal conditions.' },
+  { id: 28, name: 'ZE GERMAN', rarity: 'Rare', collection: 'Guns', image: '/images/guns/28.jpg', description: "This mp40 has had a long day and rounded up many. Now it's strolling on in to a cafe & bar for a drink. Everyone's watching and trying not to sweat. Arch nemesis to the Thompson" },
+  { id: 29, name: 'ARCHER', rarity: 'Common', collection: 'Guns', image: '/images/guns/29.jpg', description: 'This mp40 fires while skiing down the mountain side in a winter wonderland.' },
+  { id: 30, name: 'PEACEMAKER', rarity: 'Common', collection: 'Guns', image: '/images/guns/30.jpg', description: 'the counterpart to the Barrett, peacemaker keeps Barrett safe from the closer range combatants.' },
+  { id: 31, name: 'KALASHNIKOV', rarity: 'Rare', collection: 'Guns', image: '/images/guns/31.jpg', description: 'Named after legendary arms designer, this original ak47 leads the fight with its ease of use and functionality. Rustic worn look from experience.' },
+  { id: 32, name: 'THE ROYALE', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/32.jpg', description: "all gucci'd out while in the thick of it" },
+  { id: 33, name: 'SHINOBI', rarity: 'Common', collection: 'Guns', image: '/images/guns/33.jpg', description: 'an advanced ak47 in a battle for resources in greenland.' },
+  { id: 34, name: 'ELF', rarity: 'Rare', collection: 'Guns', image: '/images/guns/34.jpg', description: 'Legend has it the elves love this rifle. Santas little helpers have been spotted patrolling with these in various parts of the north pole.' },
+  { id: 35, name: 'COMRADE', rarity: 'Rare', collection: 'Guns', image: '/images/guns/35.jpg', description: 'Brother to the Infiltrator, Comrade must finish the mission and stop the 2nd secret base. special feature, space rocket taking off.' },
+  { id: 36, name: 'VINTOVKA', rarity: 'Common', collection: 'Guns', image: '/images/guns/36.jpg', description: 'a dragunov with an extended barrel, used in a Japanese rainforest.' },
+  { id: 37, name: 'RED FURY', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/37.jpg', description: 'This Dragunov is used for taking down the greek gods themselves using 7.62x54mmR 7BZ3 (B-32) Armor-piercing incendiary russian ammunition.' },
+  { id: 38, name: 'VLADIMIR', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/38.jpg', description: 'A soviet Dragunov used for fighting in the misty forest' },
+  { id: 39, name: 'MR. CLAUSE', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/39.jpg', description: 'Santa\'s Dragunov is gold plated for the jolly toy bringer and ensures the north pole remains free.' },
+  { id: 40, name: 'MILITANT', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/40.jpg', description: 'an ak-47 equipped with an acog scope and suppressor in an ice war over resources.' },
+  { id: 41, name: 'THOR', rarity: 'Rare', collection: 'Guns', image: '/images/guns/41.jpg', description: 'superior firepower in the wasteland' },
+  { id: 42, name: 'REBEL', rarity: 'Common', collection: 'Guns', image: '/images/guns/42.jpg', description: 'The Rebel, equipped with an acog and flash suppressor, fights back against the Contractor and Mercenary.' },
+  { id: 43, name: 'INFILTRATOR', rarity: 'Rare', collection: 'Guns', image: '/images/guns/43.jpg', description: 'an advanced ak-47 equipped with a special scope built to take down robots in the storming of the AI super base. special feature, space rocket launching.' },
+  { id: 44, name: 'MAC DADDY', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/44.jpg', description: 'This mac-11 hollow point 9mm comes with an extended magazine, foregrip, optic, infrared laser, specialized suppressor, and foldable stock. The name is earned as it goes head to head with anyone.' },
+  { id: 45, name: 'ELSA', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/45.jpg', description: 'freezing temps & 7.62x.39' },
+  { id: 46, name: 'UKRAINIAN', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/46.jpg', description: 'This ak-47 serves in the Polissya forest of northern ukraine. Protecting part of europe\'s last ancient forests from deforestation.' },
+  { id: 47, name: 'MRS. KASLAND', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/47.jpg', description: 'The gucci Ak-47 in gold and platinum plus a special suppressor for extra stealth. She searches for her partner in crime in the wasteland.' },
+  { id: 48, name: 'INVADER', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/48.jpg', description: 'm4a1 equipped with long range scope, suppressor, and an infrared laser in green kaspa themed color.' },
+  { id: 49, name: 'CHAMELEON', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/49.jpg', description: 'm4a1 equipped with magnified scope, suppressor, and desert paint job.' },
+  { id: 50, name: 'MR. KASLAND', rarity: 'Legendary', collection: 'Guns', image: '/images/guns/50.jpg', description: 'Mr. Kasland, the only honey badger, journeys the wasteland to get to Mrs Kasland.' },
+  { id: 51, name: 'CONTRACTOR', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/51.jpg', description: 'ar15 deployed to an unnamed region for high value targets. equipped with an adjustable scope, and suppressor.' },
+  { id: 52, name: 'SEAL', rarity: 'Rare', collection: 'Guns', image: '/images/guns/52.jpg', description: 'military firearm on underwater operation with magnified scope, infrared laser, and suppressor.' },
+  { id: 53, name: 'STALKER', rarity: 'Rare', collection: 'Guns', image: '/images/guns/53.jpg', description: 'The jungle stalker using a magnified scope, suppressor and infrared laser in bitcoin colored theme.' },
+  { id: 54, name: 'RUDOLPH', rarity: 'Ultra Rare', collection: 'Guns', image: '/images/guns/54.jpg', description: 'santas little helper is one of the finest ar15s protecting Mr. & Mrs. Clause and all their elves.' },
+  { id: 55, name: 'ARCTIC FOX', rarity: 'Rare', collection: 'Guns', image: '/images/guns/55.jpg', description: 'an ar15 equipped with a thermal scope and foregrip this fox has a huge advantage to its counterparts.' },
+  { id: 56, name: 'INSURGENT', rarity: 'Rare', collection: 'Guns', image: '/images/guns/56.jpg', description: 'This Tec-9 submachine gun fights its counter parts amongst the chaos in the undisclosed location.' },
+  { id: 57, name: 'JOHNNY', rarity: 'Common', collection: 'Guns', image: '/images/guns/57.jpg', description: 'this ww2 browning automatic rifle chambered in .30-06 fulfills every riflemans needs in the rainforest' },
+  { id: 58, name: 'BARRETT', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/58.jpg', description: 'the barrett .50 caliber makes an incredible 2 mile shot' },
+  { id: 59, name: 'YELLOWJACKET', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/59.jpg', description: 'A black and yellow ak-47 in the amazon jungle ready for action.' },
+  { id: 60, name: 'REAPER', rarity: 'Uncommon', collection: 'Guns', image: '/images/guns/60.jpg', description: 'The Reaper is armed with a trijicon scope and suppressor in the cold lands of Siberia, hunting the Ranger.' },
 ];
 
 export default component$(() => {
@@ -86,9 +87,10 @@ export default component$(() => {
   // Define rarity order for sorting
   const rarityOrder: Record<Rarity, number> = {
     Common: 1,
-    Rare: 2,
-    Epic: 3,
-    Legendary: 4,
+    Uncommon: 2,
+    Rare: 3,
+    'Ultra Rare': 4,
+    Legendary: 5,
   };
 
   // Computed: filtered & sorted items
@@ -166,8 +168,9 @@ export default component$(() => {
               >
                 <option value="All">All Rarities</option>
                 <option value="Common">Common</option>
+                <option value="Uncommon">Uncommon</option>
                 <option value="Rare">Rare</option>
-                <option value="Epic">Epic</option>
+                <option value="Ultra Rare">Ultra Rare</option>
                 <option value="Legendary">Legendary</option>
               </select>
             </div>
@@ -194,21 +197,28 @@ export default component$(() => {
     filteredItems.value.map((item) => (
       <div
         key={item.id}
-        class="bg-gray-800/95 rounded-lg text-white shadow-md hover:bg-gray-700 transition-colors duration-150 overflow-hidden"
+        class="group relative bg-gray-800/95 rounded-lg text-white shadow-md hover:bg-gray-700 transition-colors duration-150 overflow-hidden"
       >
-        <img
-          src={item.image}
-          alt={item.name}
-          class="w-full h-48 object-cover"
-        />
+        <div class="relative">
+          <img
+            src={item.image}
+            alt={item.name}
+            class="w-full h-48 object-cover"
+          />
+          {/* Description overlay on hover */}
+          <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center p-4">
+            <p class="text-white text-sm text-center">{item.description}</p>
+          </div>
+        </div>
         <div class="p-2">
-          <h3 class="font-semibold text-base mb-1 truncate">{item.name.replace(/ Legendary$/, '')}</h3>
+          <h3 class="font-semibold text-base mb-1 truncate">{item.name}</h3>
           <div class="flex justify-between flex-wrap gap-2 text-gray-300 text-xs">
             <span>ID: {item.id}</span>
             <span class={
               item.rarity === 'Legendary' ? 'text-orange-400' :
-              item.rarity === 'Rare' ? 'text-yellow-400' :
-              item.rarity === 'Epic' ? 'text-purple-400' :
+              item.rarity === 'Ultra Rare' ? 'text-purple-400' :
+              item.rarity === 'Rare' ? 'text-blue-400' :
+              item.rarity === 'Uncommon' ? 'text-green-400' :
               'text-gray-400'
             }>{item.rarity}</span>
           </div>
