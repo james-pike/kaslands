@@ -423,7 +423,9 @@ export default component$(() => {
           <div class="px-5 py-0 mb-0.75 pb-7 max-w-6xl border-none mx-[6px] bg-gray-900/60">
             <div class="flex flex-row gap-3 justify-center">
               <a
-                href="#"
+                href="https://kaspa.com/nft/collections/KASLANDS"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="bg-pink-600/60 hover:bg-pink-600/75 group relative inline-flex items-center justify-center px-10 py-3 rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,105,180,0.5)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                 role="button"
                 aria-label="Mint NFT"

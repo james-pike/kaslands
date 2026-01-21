@@ -405,7 +405,7 @@ useStylesScoped$(`
               </a>
 
               <a
-                href="#"
+                href="https://x.com/i/communities/1974567804901917065"
                 class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
                 aria-label="X (Twitter)"
                 target="_blank"
@@ -580,7 +580,7 @@ useStylesScoped$(`
             <div class="items-center flex mr-2 justify-between w-full md:w-auto gap-2">
               {/* Social Icons */}
               <a
-                href="#"
+                href="https://x.com/i/communities/1974567804901917065"
                 class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-black/30 transition-all"
                 aria-label="X (Twitter)"
                 target="_blank"
@@ -614,7 +614,9 @@ useStylesScoped$(`
 
               {/* MINT Button */}
               <a
-                href="#"
+                href="https://kaspa.com/nft/collections/KASLANDS"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="w-full sm:w-auto bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-3 pl-4 py-2 rounded-md shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                 role="button"
                 aria-label="Mint NFT"

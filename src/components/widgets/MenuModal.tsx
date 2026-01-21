@@ -170,7 +170,9 @@ export default component$(() => {
             <div class="sm:max-w-md px-5 pt-4 flex flex-row items-center justify-between gap-4 lg:justify-start lg:max-w-7xl">
               <div class="flex-shrink-0">
                 <a
-                  href="#"
+                  href="https://kaspa.com/nft/collections/KASLANDS"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="bg-pink-600/40 hover:bg-pink-600/60 group relative inline-flex items-center justify-center px-3 pl-4 py-2 rounded-md shadow-lg hover:shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-pink-600 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-full before:bg-white before:opacity-0 before:transform before:-translate-x-full group-hover:before:opacity-100 group-hover:before:translate-x-0 before:transition-all before:duration-500"
                   role="button"
                   aria-label="Mint NFT"
@@ -195,7 +197,9 @@ export default component$(() => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/i/communities/1974567804901917065"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-black/30 transition-all"
                   aria-label="X (Twitter)"
                 >
