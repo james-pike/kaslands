@@ -1,4 +1,5 @@
 import { component$, useSignal, $, useVisibleTask$, useStyles$ } from "@builder.io/qwik";
+import { server$ } from "@builder.io/qwik-city";
 import { Carousel } from '@qwik-ui/headless';
 import { type DocumentHead } from "@builder.io/qwik-city";
 import { FileQuestionIcon, MountainIcon } from "lucide-qwik";
@@ -7,6 +8,46 @@ import { SITE } from "~/config.mjs";
 import Collections from "~/components/widgets/Collections";
 import AboutCarousel from "~/components/widgets/AboutCarousel";
 import { useTabContext } from "~/contexts/TabContext";
+
+// Mailchimp subscription server function
+const subscribeToMailchimp = server$(async (email: string, listType: 'newsletter' | 'notify') => {
+  const API_KEY = process.env.MAILCHIMP_API_KEY || '';
+  const DC = API_KEY.split('-')[1] || 'us13';
+  const LIST_ID = process.env.MAILCHIMP_LIST_ID || '';
+
+  const url = `https://${DC}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${btoa(`anystring:${API_KEY}`)}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email_address: email,
+        status: 'subscribed',
+        tags: [listType === 'notify' ? 'art-print-notify' : 'newsletter'],
+        merge_fields: {
+          FNAME: 'James',
+        },
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      return { success: true, message: 'Successfully subscribed!' };
+    } else if (data.title === 'Member Exists') {
+      return { success: true, message: 'You are already subscribed!' };
+    } else {
+      return { success: false, message: data.detail || 'Subscription failed. Please try again.' };
+    }
+  } catch (error) {
+    console.error('Mailchimp error:', error);
+    return { success: false, message: 'An error occurred. Please try again.' };
+  }
+});
 
 // Gun Icon component for MINT button
 const GunIcon = component$(() => {
@@ -51,13 +92,6 @@ const CameraIcon = component$(() => {
   );
 });
 
-interface Product {
-  id: number;
-  name: string;
-  price: string;
-  description: string;
-  badge?: string;
-}
 
 interface Faq {
   id: number;
@@ -228,28 +262,14 @@ export default component$(() => {
     }
   });
 
-  // Merch products
-  const products = useSignal<Product[]>([
-    {
-      id: 1,
-      name: "Kaslands Hoodie",
-      price: "0.025 KAS",
-      description: "Premium quality hoodie with neon Kaslands logo. Ultra-soft cotton blend.",
-      badge: "Best Seller",
-    },
-    {
-      id: 2,
-      name: "Neon T-Shirt",
-      price: "0.015 KAS",
-      description: "Classic fit t-shirt featuring the iconic Kaslands neon design.",
-    },
-    {
-      id: 3,
-      name: "Kaslands Cap",
-      price: "0.012 KAS",
-      description: "Adjustable snapback cap with embroidered logo. One size fits all.",
-    },
-  ]);
+  // Newsletter and notification form state
+  const newsletterEmail = useSignal('');
+  const notifyEmail = useSignal('');
+  const newsletterStatus = useSignal<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const notifyStatus = useSignal<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const newsletterMessage = useSignal('');
+  const notifyMessage = useSignal('');
+  const showNotifyModal = useSignal(false);
 
   // FAQ items
   const faqs = useSignal<Faq[]>([
@@ -469,7 +489,7 @@ export default component$(() => {
                 <AboutCarousel />
 
                 {/* Bottom CTA Section */}
-                <div class="max-w-6xl md:mx-auto mb-0.5 mx-[6px] md:px-0">
+                <div class="max-w-6xl md:mx-auto mb-0.5 md:mb-1.5 md:mt-1 mx-[6px] md:px-0">
                   <div class="bg-gray-900/80 bg-gradient-to-r from-pink-600/30 to-purple-600/30 p-5 md:p-8 border-2 border-pink-500/30 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
                       Join Kaslands
@@ -575,52 +595,75 @@ export default component$(() => {
                         Art Print Bundle
                       </h2>
                       <p class="text-white/90 mb-4 text-lg">
-                        High-quality prints of our top NFT collections. Set of 3 prints featuring stunning Kaslands artwork.
+                        A set of 10 high-resolution prints photographed by Jules.
                       </p>
                       <div class="flex items-center gap-4 mb-6">
-                        <span class="text-3xl font-bold text-pink-500">0.020 KAS</span>
+                        <span class="text-3xl font-bold text-pink-500">287 KAS</span>
                       </div>
-                      <button class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-xs font-semibold text-white transition-all duration-300 hover:shadow-lg w-full md:w-auto">
+                      <button
+                        onClick$={() => { showNotifyModal.value = true; }}
+                        class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-xs font-semibold text-white transition-all duration-300 hover:shadow-lg w-full md:w-auto"
+                      >
                         Notify When Available
                       </button>
                     </div>
                   </div>
 
-                  {/* Product Grid */}
-                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {products.value.map((product) => (
-                      <div
-                        key={product.id}
-                        class="bg-black/80 rounded-xs border-2 border-pink-500/20 overflow-hidden hover:border-pink-500/50 transition-all duration-300 group"
-                      >
-                        {/* Product Image Placeholder */}
-                        <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 h-48 flex items-center justify-center relative overflow-hidden">
-                          <div class="text-7xl opacity-80 group-hover:scale-110 transition-transform duration-300">
-                            {product.id === 1 && "👕"}
-                            {product.id === 2 && "👔"}
-                            {product.id === 3 && "🧢"}
-                          </div>
-                          {product.badge && (
-                            <span class="absolute top-4 right-4 bg-pink-600/80 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                              {product.badge}
-                            </span>
-                          )}
-                        </div>
-
-                        {/* Product Info */}
-                        <div class="p-4">
-                          <h3 class="text-lg font-bold text-white mb-2">{product.name}</h3>
-                          <p class="text-white/80 mb-3 text-sm">{product.description}</p>
-                          <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-pink-500">{product.price}</span>
-                          </div>
-                          <button class="w-full bg-pink-600/40 hover:bg-pink-600/60 px-6 py-2 rounded-xs font-semibold text-white transition-all duration-300 border-2 border-pink-500/30">
-                            Coming Soon
+                  {/* Notify Modal */}
+                  {showNotifyModal.value && (
+                    <div class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick$={(e) => {
+                      if (e.target === e.currentTarget) showNotifyModal.value = false;
+                    }}>
+                      <div class="bg-gray-900 border-2 border-pink-500/30 rounded-lg p-6 max-w-md w-full">
+                        <div class="flex justify-between items-center mb-4">
+                          <h3 class="text-xl font-bold text-white">Get Notified</h3>
+                          <button
+                            onClick$={() => { showNotifyModal.value = false; notifyStatus.value = 'idle'; notifyMessage.value = ''; }}
+                            class="text-white/60 hover:text-white text-2xl"
+                          >
+                            &times;
                           </button>
                         </div>
+                        <p class="text-white/80 mb-4">Enter your email to be notified when the Art Print Bundle becomes available.</p>
+                        {notifyStatus.value === 'success' ? (
+                          <div class="text-green-400 text-center py-4">{notifyMessage.value}</div>
+                        ) : (
+                          <form preventdefault:submit onSubmit$={async () => {
+                            if (!notifyEmail.value) return;
+                            notifyStatus.value = 'loading';
+                            const result = await subscribeToMailchimp(notifyEmail.value, 'notify');
+                            if (result.success) {
+                              notifyStatus.value = 'success';
+                              notifyMessage.value = result.message;
+                              notifyEmail.value = '';
+                            } else {
+                              notifyStatus.value = 'error';
+                              notifyMessage.value = result.message;
+                            }
+                          }}>
+                            <input
+                              type="email"
+                              placeholder="Enter your email"
+                              value={notifyEmail.value}
+                              onInput$={(e) => { notifyEmail.value = (e.target as HTMLInputElement).value; }}
+                              class="w-full px-4 py-3 rounded-xs bg-black/60 border-2 border-pink-500/30 text-white placeholder-white/50 focus:outline-none focus:border-pink-500/60 mb-4"
+                              required
+                            />
+                            {notifyStatus.value === 'error' && (
+                              <p class="text-red-400 text-sm mb-4">{notifyMessage.value}</p>
+                            )}
+                            <button
+                              type="submit"
+                              disabled={notifyStatus.value === 'loading'}
+                              class="w-full bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-xs font-semibold text-white transition-all duration-300 hover:shadow-lg disabled:opacity-50"
+                            >
+                              {notifyStatus.value === 'loading' ? 'Subscribing...' : 'Notify Me'}
+                            </button>
+                          </form>
+                        )}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  )}
                 {/* Newsletter Section */}
                 <div class="mt-6">
                   <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
@@ -630,16 +673,46 @@ export default component$(() => {
                     <p class="text-white/90 mb-4 text-base max-w-2xl mx-auto">
                       Be the first to know when our merch drops. Join our community and get exclusive early access.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                      <input
-                        type="email"
-                        placeholder="Enter your email"
-                        class="flex-1 px-4 py-3 rounded-xs bg-black/60 border-2 border-pink-500/30 text-white placeholder-white/50 focus:outline-none focus:border-pink-500/60"
-                      />
-                      <button class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-xs font-semibold text-white transition-all duration-300 hover:shadow-lg">
-                        Subscribe
-                      </button>
-                    </div>
+                    {newsletterStatus.value === 'success' ? (
+                      <div class="text-green-400 text-center py-4 max-w-md mx-auto">{newsletterMessage.value}</div>
+                    ) : (
+                      <form
+                        preventdefault:submit
+                        onSubmit$={async () => {
+                          if (!newsletterEmail.value) return;
+                          newsletterStatus.value = 'loading';
+                          const result = await subscribeToMailchimp(newsletterEmail.value, 'newsletter');
+                          if (result.success) {
+                            newsletterStatus.value = 'success';
+                            newsletterMessage.value = result.message;
+                            newsletterEmail.value = '';
+                          } else {
+                            newsletterStatus.value = 'error';
+                            newsletterMessage.value = result.message;
+                          }
+                        }}
+                        class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto"
+                      >
+                        <input
+                          type="email"
+                          placeholder="Enter your email"
+                          value={newsletterEmail.value}
+                          onInput$={(e) => { newsletterEmail.value = (e.target as HTMLInputElement).value; }}
+                          class="flex-1 px-4 py-3 rounded-xs bg-black/60 border-2 border-pink-500/30 text-white placeholder-white/50 focus:outline-none focus:border-pink-500/60"
+                          required
+                        />
+                        <button
+                          type="submit"
+                          disabled={newsletterStatus.value === 'loading'}
+                          class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-xs font-semibold text-white transition-all duration-300 hover:shadow-lg disabled:opacity-50"
+                        >
+                          {newsletterStatus.value === 'loading' ? 'Subscribing...' : 'Subscribe'}
+                        </button>
+                      </form>
+                    )}
+                    {newsletterStatus.value === 'error' && (
+                      <p class="text-red-400 text-sm mt-2">{newsletterMessage.value}</p>
+                    )}
                   </div>
                 </div>
               </Card.Root>
