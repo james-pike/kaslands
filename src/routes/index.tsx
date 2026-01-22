@@ -604,7 +604,7 @@ export default component$(() => {
                         onClick$={() => { showNotifyModal.value = true; }}
                         class="bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-xs font-semibold text-white transition-all duration-300 hover:shadow-lg w-full md:w-auto"
                       >
-                        Notify When Available
+                        Coming Soon
                       </button>
                     </div>
                   </div>

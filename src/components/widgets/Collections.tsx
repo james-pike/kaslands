@@ -233,18 +233,6 @@ export default component$(() => {
         </main>
       </div>
 
-      {/* Bottom CTA Section */}
-      <div class="mt-6">
-        <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-            Join Kaslands
-          </h2>
-          <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
-            Explore collections, join our community and be a part of the legacy.
-          </p>
-        </div>
-      </div>
-
       {/* Back to Top Button - Mobile Only */}
       {showBackToTop.value && (
         <button
