@@ -415,7 +415,7 @@ export default component$(() => {
             <div class="relative py-8 md:py-20 px-0 md:px-8 mx-2 transform-gpu">
               <div class="relative z-10 flex flex-col items-center justify-center text-center">
                 {/* Large Kaslands Logo */}
-                <h1 class="neon-text text-[4.125rem] md:text-8xl lg:text-9xl mb-6 md:mb-12 !tracking-tight md:!tracking-wide brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
+                <h1 class="neon-text text-[4.125rem] md:text-8xl lg:text-9xl mb-10 md:mb-12 !tracking-tight md:!tracking-wide brightness-100 px-4 md:px-0 transform-gpu backface-hidden">
                   Kaslands
                 </h1>
 
