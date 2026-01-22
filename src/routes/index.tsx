@@ -624,7 +624,7 @@ export default component$(() => {
                             &times;
                           </button>
                         </div>
-                        <p class="text-white/80 mb-4">Enter email to be notified when Art Print Bundle becomes available.</p>
+                        <p class="text-white/80 mb-4">Enter your email to be notified when Art Print Bundle becomes available.</p>
                         {notifyStatus.value === 'success' ? (
                           <div class="text-green-400 text-center py-4">{notifyMessage.value}</div>
                         ) : (
