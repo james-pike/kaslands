@@ -624,7 +624,7 @@ export default component$(() => {
                             &times;
                           </button>
                         </div>
-                        <p class="text-white/80 mb-4">Enter your email to be notified when the Art Print Bundle becomes available.</p>
+                        <p class="text-white/80 mb-4">Enter email to be notified when Art Print Bundle becomes available.</p>
                         {notifyStatus.value === 'success' ? (
                           <div class="text-green-400 text-center py-4">{notifyMessage.value}</div>
                         ) : (
@@ -643,7 +643,7 @@ export default component$(() => {
                           }}>
                             <input
                               type="email"
-                              placeholder="Enter your email"
+                              placeholder="Enter email"
                               value={notifyEmail.value}
                               onInput$={(e) => { notifyEmail.value = (e.target as HTMLInputElement).value; }}
                               class="w-full px-4 py-3 rounded-xs bg-black/60 border-2 border-pink-500/30 text-white placeholder-white/50 focus:outline-none focus:border-pink-500/60 mb-4"
@@ -671,7 +671,7 @@ export default component$(() => {
                       Stay Updated
                     </h2>
                     <p class="text-white/90 mb-4 text-base max-w-2xl mx-auto">
-                      Stay updated to know when merch drops.
+                      Stay updated to get notified when merch drops.
                     </p>
                     {newsletterStatus.value === 'success' ? (
                       <div class="text-green-400 text-center py-4 max-w-md mx-auto">{newsletterMessage.value}</div>
