@@ -657,7 +657,7 @@ export default component$(() => {
                               disabled={notifyStatus.value === 'loading'}
                               class="w-full bg-pink-600/60 hover:bg-pink-600/80 px-8 py-3 rounded-xs font-semibold text-white transition-all duration-300 hover:shadow-lg disabled:opacity-50"
                             >
-                              {notifyStatus.value === 'loading' ? 'Subscribing...' : 'Notify Me'}
+                              {notifyStatus.value === 'loading' ? 'Subscribing...' : 'Get Notified'}
                             </button>
                           </form>
                         )}
@@ -671,7 +671,7 @@ export default component$(() => {
                       Stay Updated
                     </h2>
                     <p class="text-white/90 mb-4 text-base max-w-2xl mx-auto">
-                      Be the first to know when our merch drops. Join our community and get exclusive early access.
+                      Stay updated to know when merch drops.
                     </p>
                     {newsletterStatus.value === 'success' ? (
                       <div class="text-green-400 text-center py-4 max-w-md mx-auto">{newsletterMessage.value}</div>
@@ -733,12 +733,33 @@ export default component$(() => {
                 {/* Bottom CTA Section */}
                 <div class="mt-6">
                   <div class="bg-gradient-to-r from-pink-600/40 to-purple-600/40 p-5 md:p-8 border-2 border-pink-500/30 text-center">
-                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-                      Join Kaslands
+                    <h2 class="text-lg md:text-xl font-bold text-white mb-3">
+                      Get in touch for more information
                     </h2>
-                    <p class="text-white/90 mb-6 text-lg max-w-2xl mx-auto">
-                      Explore collections, join our community and be a part of the legacy.
-                    </p>
+                    <div class="flex justify-center gap-3">
+                      <a
+                        href="https://x.com/i/communities/1974567804901917065"
+                        class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-3 px-3 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
+                        aria-label="X (Twitter)"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-twitter-x w-6 h-6" viewBox="0 0 16 16">
+                          <path d="M12.6 0.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867 -5.07 -4.425 5.07H0.316l5.733 -6.57L0 0.75h5.063l3.495 4.633L12.601 0.75Zm-0.86 13.028h1.36L4.323 2.145H2.865z" stroke-width="1"></path>
+                        </svg>
+                      </a>
+                      <a
+                        href="https://web.telegram.org/k/#-5034383505"
+                        class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-3 px-3 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
+                        aria-label="Telegram"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z" fill="white"></path>
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </Card.Root>
