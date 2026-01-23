@@ -22,7 +22,7 @@ const getOrCreateAudio = (): HTMLAudioElement => {
   if (!globalAudio) {
     globalAudio = new Audio('/images/hero1.mp3');
     globalAudio.preload = 'auto';
-    globalAudio.loop = false;
+    globalAudio.loop = true;
     console.log('Created new global audio element');
   }
   return globalAudio;
