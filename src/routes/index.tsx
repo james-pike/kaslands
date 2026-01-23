@@ -749,7 +749,7 @@ export default component$(() => {
                         </svg>
                       </a>
                       <a
-                        href="https://web.telegram.org/k/#-5034383505"
+                        href="https://t.me/kaslandsofficial"
                         class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-3 px-3 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
                         aria-label="Telegram"
                         target="_blank"

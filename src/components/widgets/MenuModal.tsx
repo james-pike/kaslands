@@ -188,7 +188,7 @@ export default component$(() => {
               </div>
               <div class="flex-shrink-0 flex gap-2">
                 <a
-                  href="https://web.telegram.org/k/#-5034383505"
+                  href="https://t.me/kaslandsofficial"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-black/30 transition-all"

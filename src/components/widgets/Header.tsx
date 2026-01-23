@@ -418,7 +418,7 @@ useStylesScoped$(`
               </a>
 
               <a
-                href="https://web.telegram.org/k/#-5034383505"
+                href="https://t.me/kaslandsofficial"
                 class="btn bg-white/10 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-white/20 transition-all"
                 aria-label="Telegram"
                 target="_blank"
@@ -593,7 +593,7 @@ useStylesScoped$(`
               </a>
 
               <a
-                href="https://web.telegram.org/k/#-5034383505"
+                href="https://t.me/kaslandsofficial"
                 class="btn bg-black/20 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm py-2 px-2 font-semibold shadow-none text-md hover:bg-black/30 transition-all"
                 aria-label="Telegram"
                 target="_blank"
