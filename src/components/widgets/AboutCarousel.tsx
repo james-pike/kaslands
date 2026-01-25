@@ -60,7 +60,7 @@ export default component$(() => {
       content: (
         <>
           <p class="text-white/90 mb-4 leading-relaxed text-base">
-            Kaslands is more than just an NFT collection—it's a creative vision brought to life on the Kaspa blockchain.
+            Kaslands is more than just an NFT collection—it's a creative vision brought to life on the Kaspa blockdag.
             Founded by Jules, an artist and entrepreneur passionate about 80s culture, family, and adventure, Kaslands
             represents the fusion of retro aesthetics with cutting-edge web3 technology.
           </p>
